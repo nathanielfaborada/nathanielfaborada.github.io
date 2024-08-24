@@ -1,0 +1,50 @@
+<html lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        My Portfolio
+    </title>
+
+    <link rel="stylesheet" href="stylesheet.css">
+    <body>
+        <div class="myImage-Holder">
+            <div class="myImage"></div>
+        </div>
+
+        <div class="myJob">
+            <h1 id="job">Front-End Developer</h1>
+        </div>
+        <div class="my-Name">
+            <img id="img" src="https://res.cloudinary.com/diwwqfwjb/image/upload/v1724351872/nathskiesport/cpn4ct3hptadwertnk7l.png" alt="icon">
+
+            <h1 id="myName"> Faborada Nathaniel F. </h1>
+        </div>
+        <div class="linkme">
+                <button id="copy_paste_literacy" onclick="switchContent('myMoto'); return false;">Copy Paste Literacy</button>
+                <button id="skill_set" onclick="switchContent('myskill'); return false;"> Skill Set </button>
+                <button id="social_links" onclick="toggleDiv()"> Social Links</button>
+                <h1 class="know_you">
+                    Know You Know
+                </h1>
+        </div>
+        <div class="content">
+
+            <div id="myMoto" class="slashing">
+                <h1>I copy a Knowledge </h1>
+                <h1>And</h1>
+                <h1>Paste it to my system</h1>
+
+            </div>
+            <div id="myskill" class="hidden"></div>
+            <div class="SocialLinks"></div>
+            <div class="hidden container"></div>
+            <div class="hidden container"></div>
+            <div class="hidden container"></div>
+            
+        </div>
+        
+        
+ 
+        <script src="function.js"></script>
+    </body>
+</html>

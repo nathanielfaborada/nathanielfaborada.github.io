@@ -1,50 +1,93 @@
+<!DOCTYPE html>
 <html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        My Portfolio
-    </title>
-
+    <title>To Do Portfolio</title>
     <link rel="stylesheet" href="stylesheet.css">
-    <body>
-        <div class="myImage-Holder">
-            <div class="myImage"></div>
+</head>
+<body>
+    <div class="container">
+        <div class="content Item-1">
+            <img src="https://res.cloudinary.com/diwwqfwjb/image/upload/v1724351819/nathskiesport/iw7bmzed7kj6qbfglvcm.jpg" alt="Profile pic">
         </div>
-
-        <div class="myJob">
-            <h1 id="job">Front-End Developer</h1>
-        </div>
-        <div class="my-Name">
-            <img id="img" src="https://res.cloudinary.com/diwwqfwjb/image/upload/v1724351872/nathskiesport/cpn4ct3hptadwertnk7l.png" alt="icon">
-
-            <h1 id="myName"> Faborada Nathaniel F. </h1>
-        </div>
-        <div class="linkme">
-                <button id="copy_paste_literacy" onclick="switchContent('myMoto'); return false;">Copy Paste Literacy</button>
-                <button id="skill_set" onclick="switchContent('myskill'); return false;"> Skill Set </button>
-                <button id="social_links" onclick="toggleDiv()"> Social Links</button>
-                <h1 class="know_you">
-                    Know You Know
-                </h1>
-        </div>
-        <div class="content">
-
-            <div id="myMoto" class="slashing">
-                <h1>I copy a Knowledge </h1>
-                <h1>And</h1>
-                <h1>Paste it to my system</h1>
-
+        <div class="content Item-2">
+            <div class="saphire">
+                <h1 class="Aiming Top-1">Front End Developer</h1>
+                <h1 class="Aiming Top-2"> Faborada, Nathaniel F</h1>
+                    
             </div>
-            <div id="myskill" class="hidden"></div>
-            <div class="SocialLinks"></div>
-            <div class="hidden container"></div>
-            <div class="hidden container"></div>
-            <div class="hidden container"></div>
+        </div>
+        <div class="content Item-3">
+            <div class="content_button">
+                <button class="switching Power-1" onclick="switchContent('Javascript'); return false;"></button>
+                <button class="switching Power-2" onclick="switchContent('C'); return false;"></button>
+                <button class="switching Power-3"onclick="switchContent('Python'); return false;"></button>
+            </div>
+ 
+        </div>
+        <div class="content Item-4">
+            <div class="content_button-2">
+                <button class="clicking Speed-1"onclick="switchContent('CPL'); return false;">Copy Paste Literacy</button>
+                <button class="clicking Speed-2" onclick="switchContent('SkillSet'); return false;">Skill Set</button>
+                <button class="clicking Speed-3" onclick="switchContent('Social-Skill'); return false;">Social Skill</button>
+            </div>        
+        </div>
+        <div class="contents">
+            <div id="Javascript" class="hidden Javascript">
+                    <h1>Javascript:</h1>
+                    <h1>Im still learning</h1>
+         
+            </div>
+            <div id="C" class="hidden C">
+                <h1>C:</h1> 
+                <h1>Im still learning</h1>
+            </div>
+
+            <!-- Default View -->
+
+            <div id="Python" class="Python">
+                    <h1>Python:</h1>
+                    <button>BankUI</button>
+                    <button>Contact Search</button>
+                    <button>File-Sorter</button>
+            </div>
+
+            <div id="CPL" class="hidden CopyPasteLiteracy">
+
+                    <h1>I copy a Knowledge</h1>
+                    <h1>And</h1>
+                    <h1>Paste It to my system</h1>
+            </div>
+
+            <div id="SkillSet" class="hidden skillset">
+
+                <h1>Fast Learner</h1>
+                <h1>Problem Solving Skill</h1>
+            
+            </div>
+            <div id="Social-Skill" class="hidden Social">
+                
+                    <a href="">
+                        <img src="https://res.cloudinary.com/diwwqfwjb/image/upload/c_fit,h_50,w_50/nathskiesport/hq1xyht5qk0r4sxuasgq.jpg" alt="Facebook">
+                        <h1>Faborada Nathaniel</h1>
+                    </a>
+                    <a href="">
+                        <img src="https://res.cloudinary.com/diwwqfwjb/image/upload/v1724772701/nathskiesport/wolnlvtiiwoyf1wyntra.jpg" alt="Github">
+                        <h1>nathanielfaborada</h1>
+                    </a>
+                    <a href="">
+                        <img src="https://res.cloudinary.com/diwwqfwjb/image/upload/v1724351857/nathskiesport/mdfafryzjvncayoqhu4n.webp" alt="Insta">
+                        <h1>nthan05</h1>
+                    </a>
+            </div>
             
         </div>
-        
-        
- 
-        <script src="function.js"></script>
-    </body>
+        <div class="content Item-6">
+            <h1 class="typemode">Programming Languages</h1>
+        </div>
+    </div>
+
+    <script src="function.js"></script>
+</body>
 </html>

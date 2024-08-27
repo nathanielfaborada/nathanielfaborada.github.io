@@ -1,664 +1,363 @@
+*{
+    padding: 0;
+    margin: 10px;
+}
 body{
-   background-color: #08d1c7;
+    background-color: #0D0D0D;
+    font-family: Arial, Helvetica, sans-serif;
+    height : 90vh;
+    justify-items: center;
+    align-items: center;
+    justify-content: center; 
+    display: flex;
 
 
 }
-
-.myImage-Holder{
-   background-color: black;
-   border-radius: 25px;
+.container{
+    width: 1300px;
+    height: 600px;
+    background-color: #0D0D0D; 
+    flex-wrap: wrap;
+    display: inline-flex;
+    
 }
-
-.myImage{
-   margin: 10px;
-   background-image: url(https://res.cloudinary.com/diwwqfwjb/image/upload/v1724351819/nathskiesport/iw7bmzed7kj6qbfglvcm.jpg);
-   background-size: cover;
-   border-radius: 50px;
-}
-
-.myJob{ 
-   background-color: black;
-   border-radius: 25px;
-   text-align: center;
-}
-
-.my-Name{
-   background-color: black;
-   border-radius: 25px;
-   text-align: right;
-}
-
-.my-Name img{
-   float: left;
-}
-
-.linkme{
-   border-radius: 25px;
-   background-image: url(https://res.cloudinary.com/diwwqfwjb/image/upload/v1724351916/nathskiesport/fb2nwtipoe5tezzvcvp6.gif);
-}
-
-
-.linkme button{
-   background-color: #0b6477;
-   color: white;
-   border-radius: 50px;
-}
-
-.linkme button.clicked {
-   color: lightgreen;
-}
-
 
 .content{
-   background-color: #45DFB1;
-   border-radius: 25px;
+    background-color: #1E1E1E;
+    border-radius: 50px;
 }
 
-.know_you{
-   background-color: #0b6477;
-   border-radius: 50px;
-   text-align: center;
+.Item-1{
+    width: 300px;
+    background-color: #1E1E1E;
+    height: 300px;
+    justify-items: center;
+    align-items: center;
+    justify-content: center; 
+    display: inline-flex;
+}
+.Item-1 img{
+    border-radius: 150px;
+    height: 250px;
+    width: 250px;
+}
 
+.Item-2{
+    width: 680px;
+    height: 300px;
+    background-color: #0D0D0D;
+    justify-items: center;
+    align-items: center;
+    justify-content: center; 
+    display:inline-flex;
 }
 
 
-
-
-
-@media (min-width: 0px) {
-   
-   
-   .myImage-Holder{
-      position: fixed;
-      top: 20px;
-      left: 20px;
-      width: 100px;
-      height: 100px;
-   }
-
-   .myImage{
-      width: 80px;
-      height: 80px;
-   }
-   .myJob{
-      position: fixed;
-      top: 20px;
-      left: 130px;
-      height: 100px;
-      width: 180px;
-   }
-   #job{
-      color: white;
-      font-size: 28px;
-   }
-
-   .my-Name{
-      position: fixed;
-      top: 130px;
-      left: 20px;
-      height: 40px;
-      width: 290px;
-   }
-   
-   #myName{
-      color: white;
-      font-size: 18px;
-      padding-right: 30px;
-   }
-
-   #img{
-      margin: 5px;
-      width: 30px;
-      height: 30px;
-      padding-left: 30px;
-   }
-
-   .linkme{
-      position: fixed;
-      top: 180px;
-      left: 20px;
-      width: 290px;
-      height: 130px;
-   }
-
-   #copy_paste_literacy{
-      position: fixed;
-      font-size: 14px;
-      top: 190px;
-      left: 80px;
-      width: 170px;
-      height: 30px;
-   }
-
-   #skill_set{
-      position: fixed;
-      font-size: 14px;
-      top: 228px;
-      left: 80px;
-      width: 170px;
-      height: 30px;
-   }
-
-   #social_links{
-      position: fixed;
-      font-size: 14px;
-      top: 265px;
-      left: 80px;
-      width: 170px;
-      height: 30px;
-   }
-  
-   .know_you {
-      display: none
-   }
-   .content{
-      position: fixed;
-      top: 320px;
-      left: 20px;
-      width: 290px;
-      height: 130px;
-   }
-
-   
-   .slashing{
-      background-color: #121212;
-      margin: 20px;
-      width: 250px;
-      height:90px;
-      border-radius: 20px;
-   }
-   
-   .slashing h1, .hidden h1 {
-      text-align: center;
-      width: 240px;
-      color: white;
-      margin: 15px 0;
-      font-size: 15px;
-   }
-   
-   .hidden {
-      display: none;
-   }
-
-   
-}
-@media screen and (min-width:326px){
- 
-   .myImage-Holder{
-      position: fixed;
-      top: 20px;
-      left: 20px;
-      width: 100px;
-      height: 100px;
-   }
-
-   .myImage{
-      width: 80px;
-      height: 80px;
-   }
-   .myJob{
-      position: fixed;
-      top: 20px;
-      left: 130px;
-      height: 100px;
-      width: 230px;
-   }
-
-   #job{
-      color: white;
-      font-size: 28px;
-   }
-
-   .my-Name{
-      position: fixed;
-      width: 340px;
-   }
-
-   #myName{
-      color: white; 
-      font-size: 18\px;
-      padding-right: 80px;
-   }
-
-   #img{
-      margin: 5px;
-      width: 30px;
-      height: 30px;
-      padding-left: 30px;
-   }
-
-   .linkme{
-      position: fixed;
-      top: 180px;
-      left: 20px;
-      width: 340px;
-      height: 130px;
-   }
-
-   #copy_paste_literacy{
-      position: fixed;
-      font-size: 14px;
-      top: 190px;
-      left: 110px;
-      width: 170px;
-      height: 30px;
-   }
-
-   #skill_set{
-      position: fixed;
-      font-size: 14px;
-      top: 228px;
-      left: 110px;
-      width: 170px;
-      height: 30px;
-   }
-
-   #social_links{
-      position: fixed;
-      font-size: 14px;
-      top: 265px;
-      left: 110px;
-      width: 170px;
-      height: 30px;
-   }
-  
-   .know_you {
-      display: none
-   }
-   .content{
-      position: fixed;
-      top: 320px;
-      left: 20px;  
-      width: 340px;
-      height: 130px;
-   }
-
-   .slashing{
-      background-color: #121212;
-      margin: 20px;
-      width: 300px;
-      height:90px;
-      border-radius: 20px;
-   }
-   
-   .slashing h1, .hidden h1 {
-      text-align: center;
-      width: 300px;
-      color: white;
-      margin: 15px 0;
-      font-size: 15px;
-   }
-   
-   .hidden {
-      display: none;
-   }
-   
-   
-}
-
-@media (min-width:376px){
-   .myImage-Holder{
-      position: fixed;
-      top: 20px;
-      left: 20px;
-      width: 120px;
-      height: 120px;
-   }
-   .myImage{
-      width: 100px;
-      height: 100px;
-   }
-   .myJob{
-      position: fixed;
-      top: 20px;
-      left: 150px;
-      height: 120px;
-      width: 260px;
-   }
-
-   #job{
-      color: white;
-      font-size: 33px;  
-   }
-
-   .my-Name{
-      position: fixed;
-      top: 150px;
-      left: 20px;
-      height: 50px;
-      width: 390px;
-   }
-   
-   #myName{
-      color: white;
-      font-size: 20px;
-      padding-right: 90px;
-   }
-
-   #img{
-      margin: 10px;
-      width: 30px;
-      height: 30px;
-      padding-left: 50px;
-   }
-
-   .linkme{
-      position: fixed;
-      top: 210px;
-      left: 20px;
-      width: 390px;
-      height: 130px;
-   }
-   
-   #copy_paste_literacy{
-      position: fixed;
-      font-size: 14px;
-      top: 225px;
-      left: 130px;
-      width: 190px;
-      height: 30px;
-   }
-
-   #skill_set{
-      position: fixed;
-      font-size: 14px;
-      top: 260px;
-      left: 130px;
-      width: 190px;
-      height: 30px;
-   }
-
-   #social_links{
-      position: fixed;
-      font-size: 14px;
-      top: 295px;
-      left: 130px;
-      width: 190px;
-      height: 30px;
-   }
-   .know_you{
-      display: none;
-   }
-   .content{
-      position: fixed;
-      top: 350px;
-      left: 20px;
-      width: 390px;
-      height: 130px;
-   }
-
-   .slashing{
-      background-color: #121212;
-      margin: 20px;
-      width: 350px;
-      height:90px;
-      border-radius: 20px;
-   }
-   
-   .slashing h1, .hidden h1 {
-      text-align: center;
-      width: 360px;
-      color: white;
-      margin: 15px 0;
-      font-size: 15px;
-   }
-   
-   .hidden {
-      display: none;
-   }
+.saphire{
+    text-align: center;
+    color: #ffffff;
+    display: block;
 
 }
 
-@media (min-width:426px){
-   .myImage-Holder{
-      position: fixed;
-      top: 40px;
-      left: 20px;
-      width: 235px;
-      height: 235px;
-   }
-   .myImage{
-      border-radius: 110px;
-      width: 220px;
-      height: 220px;
-   }
-   .myJob{
-      position: fixed;
-      top: 115px;
-      left: 270px;
-      height: 160px;
-      width: 360px;
-   }
-
-   #job{
-      color: white;
-      font-size: 50px; 
-   }
-
-   .my-Name{
-      position: fixed;
-      top: 40px;
-      left: 270px;
-      height: 70px;
-      width: 300px;
-   }
-   
-   #myName{
-      margin: 25px;
-      color: white;
-      font-size:18px;
-      padding-right: 20px;
-   }
-
-   #img{
-      margin: 20px;
-      width: 30px;
-      height: 30px;
-      padding-left: 1px;
-   }
-
-   .linkme{
-      position: fixed;
-      top: 290px;
-      left: 20px;
-      width: 235px;
-      height: 235px;
-   }
-   
-   #copy_paste_literacy{
-      position: fixed;
-      font-size: 14px;
-      top: 330px;
-      left: 30px;
-      width: 210px;
-      height: 35px;
-   }
-
-   #skill_set{
-      position: fixed;
-      font-size: 14px;
-      top: 390px;
-      left: 30px;
-      width: 210px;
-      height: 35px;
-   }
-
-   #social_links{
-      position: fixed;
-      font-size: 14px;
-      top: 440px;
-      left: 30px;
-      width: 210px;
-      height: 35px;
-   }
-
-   .know_you{
-      color: white;
-      border-radius: 20px;
-      width: 180px;
-      text-align: center;
-      padding-top: 15px;
-      height: 40px;
-      position: fixed;
-      font-size: 20;
-      top: 35px;
-      left: 580px;
-   }
-
-   .content{
-      position: fixed;
-      top: 290px;
-      left: 270px;
-      width: 350px;
-      height: 235px;
-   }
-   .slashing{
-      background-color: #121212;
-      margin: 20px;
-      width: 300px;
-      height:190px;
-      border-radius: 20px;
-   }
-   
-   .slashing h1, .hidden h1 {
-      text-align: center;
-      width: 290px;
-      color: white;
-      margin: 20px 0;
-      font-size: 25px;
-   }
-   
-   .hidden {
-      display: none;
-   }
+.Aiming{
+    width: 680px;
+    border-radius: 25px;
+    background-color: #1E1E1E;
+    justify-items: center;
+    align-items: center;
+    justify-content: center; 
+    display: flex;
 
 }
 
-@media (min-width: 769px) {
-   .myImage-Holder{
-      position: fixed;
-      top: 20px;
-      left: 20px;
-      width: 300px;
-      height: 300px;
-   }
-   .myImage{
-      border-radius: 190px;
-      width: 280px;
-      height: 280px;
-   }
-   .myJob{
-      position: fixed;
-      top: 90px;
-      left: 340px;
-      height: 230px;
-      width: 750px;
-   }
+.Top-1{
+    height: 180px;
+    margin: 20px;
+    font-size: 70px;
+}
+.Top-2{
+    height: 100px;
+    margin: 20px;
+    font-size: 45px;
+}
 
-   #job{
-      margin: 5px;
-      color: white;
-      font-size: 85px; 
-   }
-
-   .my-Name{
-      position: fixed;
-      border-radius: 50px;
-      top: 20px;
-      left: 340px;
-      height: 60px;
-      width: 600px;
-   }
-   
-   #myName{
-      margin: 15px;
-      color: white;
-      font-size:30px;
-      padding-right: 150px; 
-   }
-
-   #img{
-      margin: 10px;
-      width: 40px;
-      height: 40px;
-      padding-left: 10px;
-   }
-
-   .linkme{
-      position: fixed;
-      top: 330px;
-      left: 20px;
-      width: 300px;
-      height: 300px;
-   }
-   
-   #copy_paste_literacy{
-      position: fixed;
-      font-size: 17px;
-      top: 380px;
-      left: 35px;
-      width: 270px;
-      height: 55px;
-   }
-
-   #skill_set{
-      position: fixed;
-      font-size: 17px;
-      top:450px;
-      left: 35px;
-      width: 270px;
-      height: 55px;
-   }
-
-   #social_links{
-      position: fixed;
-      font-size: 17px;
-      top: 520px;
-      left: 35px;
-      width: 270px;
-      height: 55px;
-   }
-   .know_you{
-      display: flex;
-      position: fixed;   
-      font-size: 30px;
-      top: 0px;
-      left: 950px;
-      width: 300px;
-      padding-left: 70px;
-      height: 45px;
-      border-radius: 50px;
-   }
-
-   .content{
-      position: fixed;
-      top: 330px;
-      left: 340px;
-      width: 750px;
-      height: 300px;
-   }
-
-   .slashing{
-      background-color: #121212;
-      margin: 50px;
-      width: 650px;
-      height:200px;
-      border-radius: 50px;
-   }
-   
-   .slashing h1, .hidden h1 {
-      text-align: center;
-      width: 650px;
-      color: white;
-      margin: 15px 0;
-      font-size: 45px;
-   }
-   
-   .hidden {
-      display: none;
-   }
-
-   
+.Item-3{
+    
+    /* position: absolute; */
+    justify-items: center;
+    align-items: center;
+    justify-content: center; 
+    display: flex;
+    width: 240px;
+    height: 300px;
+    background-color: #0D0D0D;
+}
 
 
+
+.switching{
+    height: 80px;
+
+    width: 80px;
+    border-radius: 20px;
+}
+
+
+.content_button{
+    
+    display: block;
+    width: 100px;
+    height: 300px;
+}
+
+
+.Power-1{
+    background-image: url(https://res.cloudinary.com/diwwqfwjb/image/upload/v1724351829/nathskiesport/qbb7jewxxnt8weoqrqo6.jpg);
+    background-size: cover;
+}
+
+.Power-2{
+    background-image: url(https://res.cloudinary.com/diwwqfwjb/image/upload/c_crop,h_860,w_860/nathskiesport/jp1pmij0a0pgroih1f9e.jpg  );
+    background-size: cover;
+
+}
+
+.Power-3{
+    background-image: url(https://res.cloudinary.com/diwwqfwjb/image/upload/c_crop,h_750,w_750/nathskiesport/iza8ti8tfyey03qzoqp4.jpg);
+    background-size: cover;
+} 
+
+.Item-4{
+    justify-items: center;
+    align-items: center;
+    justify-content: center; 
+    display: flex;
+    width: 300px;
+    height: 265px;
+    background-image: url(https://res.cloudinary.com/diwwqfwjb/image/upload/v1724351916/nathskiesport/fb2nwtipoe5tezzvcvp6.gif);
+}
+
+.content_button-2{
+    display: block;
+    width: 250px;
+    height: 210px;
+}
+.clicking{
+    border-radius: 25px;
+    width: 240px;
+    height: 50px;
+    background-color: #1E1E1E;
+    color: #ffffff;
+    font-size: medium;
+}
+
+
+.contents{
+    justify-items: center;
+    align-items: center;
+    justify-content: center; 
+    display: flex;
+    width: 680px;
+    height: 265px;
+    background-color: #1E1E1E;
+
+} 
+
+.Javascript {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    background-color: #141723;
+    color: white;
+    width: 480px;
+    height: 200px;
+    border-radius: 25px;
+}
+
+
+.Javascript h1{
+    text-align: center;
+}
+
+.C{
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    background-color: #141723;
+    color: white;
+    width: 480px;
+    height: 200px;
+    border-radius: 25px;
+}
+
+.C h1{
+    text-align: center;
+}
+.Python{
+    background-color: #141723;
+    color: #ffffff;
+    width: 480px;
+    height: 200px;
+    border-radius: 25px;
+}
+.Python h1{
+    text-align: center;
+    margin: 30px;
+    
+}
+
+.Python button{
+    font-size: 18px;
+    width: 130px;
+    height: 50px;
+    border-radius: 25px;
+}
+
+
+.CopyPasteLiteracy{
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    color: #ffffff;
+    background-color: #141723;
+    width: 480px;
+    height: 200px;
+    border-radius: 25px;
+}
+
+.skillset{
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    color: #ffffff;
+    background-color: #141723;
+    border-radius: 25PX;
+    text-align: center;
+    width: 480px;
+    height: 200px;
+}
+
+
+.Social a {
+    display: flex;
+    align-items: center; 
+    text-decoration: none; 
+    margin: 10px 0; 
+}
+
+.Social img {
+    margin-right: 10px;
+    width: 50px; 
+    height: 50px; 
+}
+
+.Social h1 {
+    font-size: 40px; 
+    padding-left: 20px; 
+    color: #ffffff; 
+}
+
+.hidden {
+    display: none;
+ }
+.Item-6{
+    justify-items: center;
+    align-items: center;
+    justify-content: center; 
+    display: flex;
+
+    width: 240px;
+    height: 265px;
+    background-color: #1E1E1E;
+}
+
+
+.Item-6 h1{
+    color: #ffffff;
+    text-align: center;
+    font-size: 20px;
+    margin: 20px;
+    text-decoration: solid;
+    text-transform: uppercase;
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+} 
+
+
+@media (max-width:425px) {
+    body{
+        width: 425px;
+        height: 660px;
+    }
+
+    .container{
+        width: 505px;
+        height: 660px;
+    }
+
+
+    .Item-1{
+        width: 150px;
+        height: 150px;
+    }
+
+    .Item-1 img{
+        width: 120px;
+        height: 120px;
+    }
+
+    .Item-2{
+        margin: 20px;
+        width: 50px;
+        height: 150px;
+    }
+
+    .saphire{
+        width: 50px;
+        height: 200px;
+    }
+
+    .Top-1{
+        width: 230px;
+        height:70px;
+        font-size: 28px;
+
+    }
+    .Top-2{
+        height: 70px;
+        width: 230px;
+        font-size: 28px;
+    }
+
+    .Item-3{
+        width: 500px;
+        height: 70px;
+        border-radius: 10px;
+    }
+
+    .switching{
+        width: 50px;
+        height: 50px;
+    }
+
+    .content_button{
+        padding-left: 125px;
+        margin: auto;
+        height: 50px;
+      
+        width: 605px;
+        display: inline;
+    }
+
+    .Item-4{
+        width: 450px;
+        height: 200px;
+    }
+
+    
 }

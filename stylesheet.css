@@ -702,7 +702,150 @@ body{
         font-size: 26px;
     }
     .Item-6{
-        width: 120px;
+        width: 220px;
+        height: 200px;
+    }
+
+    .typemode{
+        font-size: 16px;
+        text-transform: uppercase;
+        writing-mode: vertical-lr;
+        text-orientation: upright;
+    }
+
+    .hidden{
+        display: none;
+    }
+
+
+}
+
+@media only screen and (max-width:1200px) and (min-width:1025px){
+    body{
+        width: 768px;
+        height: auto;
+        justify-items: center;
+        align-items: center;
+        justify-content: center; 
+        display: flex;
+    }
+
+    .container{
+        width: 768px;
+        height: auto;
+    }
+
+
+    .Item-1{
+        width: 250px;
+        height: 250px;
+    }
+
+    .Item-1 img{
+        width: 240px;
+        height: 240px;
+    }
+
+    .Item-2{
+        width: 450px;
+        height: 250px;
+    }
+
+
+    .Top-1{
+        width: 450px;
+        height:130px;
+        font-size: 48px;
+
+    }
+    .Top-2{
+        height: 110px;
+        width: 450px;
+        font-size: 28px;
+    }
+
+    .Item-3{
+        width: 720px;
+        height: 100px;
+        border-radius: 10px;
+    }
+
+    .switching{
+        width: 70px;
+        height: 70px;
+    }
+
+    .content_button{
+        padding-left: 60px;
+        height: 80px;
+        width: 360px;
+    }
+
+    .Item-4{
+        width: 720px;
+        height: 200px;
+    }
+    .contents{
+        width: 720px;
+        height: 200px;
+    }
+    .Python{
+        width: 430px;
+        height: 150px;
+ 
+    } 
+
+    .Python h1{
+        font-size: 20px;
+        margin: 15px;
+    }
+
+    .Python button{
+        font-size: 14px;
+        width:100px;
+        border-radius: 25px;
+    
+    }
+
+    .Javascript{
+        width: 330px;
+        height: 150px;
+        font-size: 16px;
+
+
+    }
+
+    .C{
+        width: 330px;
+        height: 150px;
+        font-size: 16px;
+
+    }
+
+    .CopyPasteLiteracy{
+        height: 150px;
+        width: 330px;
+        font-size: 12px;
+
+    }
+
+    .skillset{
+        height: 150px;
+        width: 330px;
+        font-size: 12px;
+
+    }
+
+    .Social img{
+        width: 30px;
+        height: 30px;
+    }
+
+    .Social h1{
+        font-size: 26px;
+    }
+    .Item-6{
+        width: 720px;
         height: 50px;
     }
 
@@ -718,6 +861,145 @@ body{
 
 }
 
-@media only screen and (max-width:1200px) and (min-width:1025px){
+@media only screen and (max-width:1339px) and (min-width:1024px){
+
+    body{
+        width: 1339px;
+        height: 680px;
+        justify-items: center;
+        align-items: center;
+        justify-content: center; 
+        display: flex;
+    }
+
+    .container{
+        width: 1339px;
+        height: 680px;
+    }
+
+
+    .Item-1{
+        width: 340px;
+        height: 340px;
+    }
+
+    .Item-1 img{
+        width: 240px;
+        height: 240px;
+    }
+
+    .Item-2{
+        width: 680px;
+        height: 340px;
+    }
+
+
+    .Top-1{
+        width: 680px;
+        height:190px;
+        font-size: 70px;
+
+    }
+    .Top-2{
+        height: 130px;
+        width: 680px;
+        font-size: 58px;
+    }
+
+    .Item-3{
+        width: 230px;
+        height: 340px;
+        border-radius: 10px;
+    }
+
+    .switching{
+        width: 65px;
+        height: 65px;
+    }
+
+    .content_button{
+        padding-left: 60px;
+        height: 255px;
+        width: 360px;
+    }
+
+    .Item-4{
+        width: 340px;
+        height: 300px;
+    }
+    .contents{
+        width: 680px;
+        height: 300px;
+    }
+    .Python{
+        width: 500px;
+        height: 200px;
+ 
+    } 
+
+    .Python h1{
+        font-size: 26px;
+        margin: 15px;
+    }
+
+    .Python button{
+        font-size: 14px;
+        width:120px;
+        border-radius: 25px;
+    
+    }
+
+    .Javascript{
+        width: 500px;
+        height: 200px;
+        font-size: 16px;
+
+
+    }
+
+    .C{
+        width: 500px;
+        height: 200px;
+        font-size: 16px;
+
+    }
+
+    .CopyPasteLiteracy{
+        width: 500px;
+        height: 200px;
+        font-size: 12px;
+
+    }
+
+    .skillset{
+        width: 500px;
+        height: 200px;
+        font-size: 12px;
+
+    }
+
+    .Social img{
+        width: 30px;
+        height: 30px;
+    }
+
+    .Social h1{
+        font-size: 26px;
+    }
+    .Item-6{
+        width: 220px;
+        height: 300px;
+    }
+
+    .typemode{
+        font-size: 20px;
+        text-transform: uppercase;
+        writing-mode: vertical-lr;
+        text-orientation: upright;
+    }
+
+    .hidden{
+        display: none;
+    }
 
 }

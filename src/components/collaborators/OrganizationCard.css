@@ -1,6 +1,6 @@
 #organization-grid-full {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 16px;
     margin-top: 12px;
     width: 100%;
@@ -12,38 +12,40 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
     gap: 16px;
     padding: 16px 20px;
-    background: #ffffff;
-    border: 1px solid #e4e6eb;
-    border-radius: 12px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
-    transition: all 0.2s ease;
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg, 10px);
+    box-shadow: var(--shadow-card);
+    transition: background-color 150ms cubic-bezier(0.22, 1, 0.36, 1),
+        border-color 150ms cubic-bezier(0.22, 1, 0.36, 1);
     box-sizing: border-box;
     min-width: 0;
     width: 100%;
 }
 
 #organization-grid-full .group-card:hover {
-    border-color: #bcc0c4;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    background-color: var(--bg-surface-subtle);
+    border-color: var(--border-strong);
 }
 
 .group-card-main {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 14px;
-    min-width: 0;
-    flex: 1;
+    min-width: 180px;
+    flex: 1 1 220px;
     overflow: hidden;
 }
 
 #organization-grid-full .group-thumb {
     width: 52px;
     height: 52px;
-    border-radius: 10px;
-    border: 1px solid #e4e6eb;
-    background: #ffffff;
+    border-radius: var(--radius-md, 6px);
+    border: 1px solid var(--border-subtle);
+    background-color: #ffffff;
     object-fit: contain;
     padding: 4px;
     flex-shrink: 0;
@@ -58,32 +60,36 @@
 
 #organization-grid-full .group-name {
     font-size: 1rem;
-    font-weight: 600;
-    color: #050505;
+    font-weight: 700;
+    color: var(--text-primary);
     margin: 0;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
+#organization-grid-full .group-desc {
+    font-size: 0.84375rem;
+    color: var(--text-secondary);
+    line-height: 1.45;
+    margin: 4px 0 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
 #organization-grid-full .group-meta {
     display: flex;
     align-items: center;
     gap: 6px;
-    font-size: 0.85rem;
-    color: #65676b;
-    margin-top: 4px;
+    font-family: var(--font-mono);
+    font-size: 0.78125rem;
+    color: var(--text-muted);
+    margin-top: 6px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-}
-
-#organization-grid-full .globe-icon {
-    width: 14px;
-    height: 14px;
-    color: #65676b;
-    opacity: 0.85;
-    flex-shrink: 0;
 }
 
 .org-visit-btn {
@@ -91,55 +97,48 @@
     align-items: center;
     justify-content: center;
     gap: 6px;
-    padding: 6px 12px;
-    background-color: #f0f2f5;
-    border: 1px solid #e4e6eb;
-    border-radius: 6px;
-    font-size: 0.8rem;
+    min-height: 44px;
+    min-width: 44px;
+    padding: 10px 14px;
+    background-color: var(--bg-surface-subtle);
+    border: 1px solid var(--border-interactive);
+    border-radius: var(--radius-md, 6px);
+    font-size: 0.8125rem;
     font-weight: 600;
-    color: #050505;
+    color: var(--text-primary);
     text-decoration: none;
     white-space: nowrap;
     flex-shrink: 0;
-    transition: all 0.2s ease;
+    transition: background-color 150ms cubic-bezier(0.22, 1, 0.36, 1),
+        border-color 150ms cubic-bezier(0.22, 1, 0.36, 1),
+        color 150ms cubic-bezier(0.22, 1, 0.36, 1);
     cursor: pointer;
     box-sizing: border-box;
+    margin-left: auto;
 }
 
 .org-visit-btn:hover {
-    background-color: #e4e6eb;
-    border-color: #d8dadf;
-    transform: translateY(-1px);
-    color: #000000;
+    background-color: var(--bg-surface-hover);
+    border-color: var(--text-muted);
+    color: var(--text-primary);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     #organization-grid-full {
-        grid-template-columns: 1fr !important;
-        width: 100%;
-        max-width: 100%;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+    }
+}
+
+@media (max-width: 640px) {
+    #organization-grid-full {
+        grid-template-columns: minmax(0, 1fr);
         gap: 12px;
-        box-sizing: border-box;
-        overflow-x: hidden;
     }
 
     #organization-grid-full .group-card {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+        padding: 14px;
         gap: 12px;
-        padding: 12px 14px;
-        width: 100%;
-        max-width: 100%;
-        box-sizing: border-box;
-        overflow: hidden;
-    }
-
-    .group-card-main {
-        gap: 10px;
-        min-width: 0;
-        flex: 1;
-        overflow: hidden;
     }
 
     #organization-grid-full .group-thumb {
@@ -147,18 +146,8 @@
         height: 44px;
     }
 
-    #organization-grid-full .group-name {
-        font-size: 0.9rem;
-    }
-
-    #organization-grid-full .group-meta {
-        font-size: 0.78rem;
-    }
-
     .org-visit-btn {
-        flex-shrink: 0;
-        padding: 6px 10px;
-        font-size: 0.8rem;
-        min-height: 34px;
+        width: 100%;
+        margin-left: 0;
     }
 }

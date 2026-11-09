@@ -24,7 +24,7 @@ export default function Avatar({
     <img
       src={imageSrc}
       alt={alt}
-      className={`w-full h-full object-cover ${className}`.trim()}
+      className={className}
       loading={loading}
       fetchPriority={fetchPriority}
       decoding="async"

@@ -1,13 +1,14 @@
 import React from 'react';
 import SectionCard from '../common/SectionCard';
 import CollaboratorCard from './CollaboratorCard';
-import SkeletonCard from '../common/SkeletonCard';
-import { GITHUB_USERS } from '../../data/collaboratorsData';
+import {
+  GITHUB_USERS,
+  COLLABORATORS_MAP,
+} from '../../data/collaboratorsData';
 import './Collaborators.css';
 
 export default function CollaboratorsSidebarWidget({
-  profileMap = {},
-  isLoading = false,
+  profileMap = COLLABORATORS_MAP,
   onSeeAll,
 }) {
   const topUsers = GITHUB_USERS.slice(0, 3);
@@ -22,23 +23,23 @@ export default function CollaboratorsSidebarWidget({
         if (onSeeAll) onSeeAll();
       }}
     >
-      See all collaborators
+      View All ({GITHUB_USERS.length})
     </a>
   );
 
   return (
     <SectionCard title="Collaborators" headerAction={headerAction}>
       <div id="collaborators-grid" className="collaborators-grid">
-        {isLoading
-          ? Array.from({ length: 3 }).map((_, idx) => (
-              <SkeletonCard key={idx} />
-            ))
-          : topUsers.map((username) => (
-              <CollaboratorCard
-                key={username}
-                user={profileMap[username]}
-              />
-            ))}
+        {topUsers.map((username) => {
+          const userObj = profileMap[username] || {
+            login: username,
+            name: username,
+            avatar_url: `https://github.com/${username}.png?size=160`,
+            html_url: `https://github.com/${username}`,
+          };
+
+          return <CollaboratorCard key={username} user={userObj} />;
+        })}
       </div>
     </SectionCard>
   );

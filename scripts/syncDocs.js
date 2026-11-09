@@ -1,0 +1,43 @@
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const rootDir = path.resolve(__dirname, '..');
+
+const distDir = path.join(rootDir, 'dist');
+const docsDir = path.join(rootDir, 'docs');
+const publicDir = path.join(rootDir, 'public');
+
+// GitHub Pages serves static builds from docs/ on the main branch.
+if (fs.existsSync(distDir)) {
+  if (fs.existsSync(docsDir)) {
+    fs.rmSync(docsDir, { recursive: true, force: true });
+  }
+  fs.mkdirSync(docsDir, { recursive: true });
+  fs.cpSync(distDir, docsDir, { recursive: true });
+  console.log('Synchronized dist/ to docs/ for GitHub Pages.');
+}
+
+const publicAssetsDir = path.join(publicDir, 'assets');
+if (fs.existsSync(publicAssetsDir)) {
+  const distAssetsDir = path.join(distDir, 'assets');
+  const docsAssetsDir = path.join(docsDir, 'assets');
+  if (!fs.existsSync(distAssetsDir)) fs.mkdirSync(distAssetsDir, { recursive: true });
+  if (!fs.existsSync(docsAssetsDir)) fs.mkdirSync(docsAssetsDir, { recursive: true });
+  fs.cpSync(publicAssetsDir, distAssetsDir, { recursive: true });
+  fs.cpSync(publicAssetsDir, docsAssetsDir, { recursive: true });
+  console.log('Synchronized public/assets/ to build output directories.');
+}
+
+const redirectsFile = path.join(publicDir, '_redirects');
+if (fs.existsSync(redirectsFile)) {
+  if (fs.existsSync(distDir)) {
+    fs.copyFileSync(redirectsFile, path.join(distDir, '_redirects'));
+  }
+  if (fs.existsSync(docsDir)) {
+    fs.copyFileSync(redirectsFile, path.join(docsDir, '_redirects'));
+  }
+  console.log('Copied _redirects to build output directories.');
+}

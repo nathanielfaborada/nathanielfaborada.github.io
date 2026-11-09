@@ -1,28 +1,34 @@
 .work-experience-item {
     display: flex;
     align-items: flex-start;
-    gap: 16px;
+    gap: 14px;
     margin-top: 4px;
 }
 
 .work-experience-item:not(:last-child) {
-    margin-bottom: 20px;
+    margin-bottom: 18px;
     padding-bottom: 16px;
-    border-bottom: 1px solid #f0f2f5;
+    border-bottom: 1px solid var(--border-subtle);
 }
 
 .work-company-icon {
-    width: 48px;
-    height: 48px;
-    border-radius: 10px;
-    border: 1px solid #e4e6eb;
-    background: #f8f9fa;
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-md, 6px);
+    border: 1px solid var(--border-subtle);
+    background-color: var(--bg-surface-subtle);
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    color: #1877f2;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    color: var(--accent-text);
+}
+
+.work-company-img {
+    width: 100%;
+    height: 100%;
+    border-radius: var(--radius-md, 6px);
+    object-fit: cover;
 }
 
 .work-company-content {
@@ -31,21 +37,20 @@
 }
 
 .work-company-title {
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 700;
-    color: #050505;
+    color: var(--text-primary);
     margin: 0 0 10px 0;
     line-height: 1.3;
 }
 
-/* Timeline Structure for Roles */
 .work-timeline {
     display: flex;
     flex-direction: column;
     position: relative;
     padding-left: 14px;
     margin-left: 4px;
-    border-left: 2px solid #e4e6eb;
+    border-left: 2px solid var(--border-subtle);
     gap: 14px;
 }
 
@@ -62,9 +67,9 @@
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: #1877f2;
-    border: 2px solid #ffffff;
-    box-shadow: 0 0 0 1px #e4e6eb;
+    background-color: var(--accent-text);
+    border: 2px solid var(--bg-surface);
+    box-shadow: 0 0 0 1px var(--border-strong);
 }
 
 .timeline-role-content {
@@ -74,75 +79,41 @@
 }
 
 .timeline-role-title {
-    font-size: 0.95rem;
+    font-size: 0.9375rem;
     font-weight: 600;
-    color: #1c1e21;
+    color: var(--text-primary);
     line-height: 1.35;
 }
 
 .timeline-role-period {
-    font-size: 0.85rem;
-    color: #65676b;
+    font-family: var(--font-mono);
+    font-size: 0.78125rem;
+    color: var(--text-muted);
     margin-top: 1px;
 }
 
-.experience-action-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 3px 6px;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: all 0.15s ease;
-    border: 1px solid transparent;
+.timeline-role-desc {
+    font-size: 0.84375rem;
+    color: var(--text-secondary);
+    line-height: 1.55;
+    margin-top: 4px;
 }
 
-.experience-action-btn.edit-btn {
-    background: #f0f2f5;
-    border-color: #ced0d4;
-    color: #1877f2;
-}
-
-.experience-action-btn.edit-btn:hover {
-    background: #e4e6eb;
-}
-
-.experience-action-btn.delete-btn {
-    background: #ffebe8;
-    border-color: #f2ab99;
-    color: #c92a2a;
-}
-
-.experience-action-btn.delete-btn:hover {
-    background: #fcdbd5;
-}
-
-.work-company-img {
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-    object-fit: cover;
-}
-
-@media (max-width: 768px) {
+@media (max-width: 640px) {
     .work-experience-item {
         gap: 12px;
     }
 
     .work-company-icon {
-        width: 42px;
-        height: 42px;
+        width: 40px;
+        height: 40px;
     }
 
     .work-company-title {
-        font-size: 1rem;
+        font-size: 0.95rem;
     }
 
     .timeline-role-title {
-        font-size: 0.9rem;
-    }
-
-    .timeline-role-period {
-        font-size: 0.8rem;
+        font-size: 0.875rem;
     }
 }

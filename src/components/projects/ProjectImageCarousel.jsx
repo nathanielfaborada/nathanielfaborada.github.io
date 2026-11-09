@@ -1,34 +1,35 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
+import {
+  ChevronLeftIcon,
+  ChevronRightIcon,
+  ExpandIcon,
+  CloseIcon,
+} from '../common/Icons';
 import './ProjectImageCarousel.css';
 
 export default function ProjectImageCarousel({
   images = [],
   title = 'Project Screenshot',
 }) {
-  // Normalize images to array of valid strings
   const imagesList = React.useMemo(() => {
     if (!images) return [];
     if (Array.isArray(images)) {
-      return images.filter((img) => typeof img === 'string' && img.trim().length > 0);
+      return images.filter(
+        (img) => typeof img === 'string' && img.trim().length > 0
+      );
     }
     if (typeof images === 'string' && images.trim().length > 0) {
-      if (images.includes(',')) {
-        return images
-          .split(',')
-          .map((s) => s.trim())
-          .filter(Boolean);
-      }
       return [images.trim()];
     }
     return [];
   }, [images]);
 
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isHovered, setIsHovered] = useState(false);
   const [failedImages, setFailedImages] = useState({});
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
   const touchStartXRef = useRef(null);
+  const expandButtonRef = useRef(null);
 
-  // Keep index within bounds if images change
   useEffect(() => {
     if (currentIndex >= imagesList.length) {
       setCurrentIndex(0);
@@ -42,21 +43,46 @@ export default function ProjectImageCarousel({
 
   const handlePrev = useCallback(() => {
     if (imagesList.length <= 1) return;
-    setCurrentIndex((prev) => (prev - 1 + imagesList.length) % imagesList.length);
+    setCurrentIndex(
+      (prev) => (prev - 1 + imagesList.length) % imagesList.length
+    );
   }, [imagesList.length]);
 
-  // Auto-play timer: 4 seconds when not hovered
+  const openLightbox = () => {
+    if (!failedImages[currentIndex]) {
+      setIsLightboxOpen(true);
+    }
+  };
+
+  const closeLightbox = useCallback(() => {
+    setIsLightboxOpen(false);
+    if (expandButtonRef.current) {
+      expandButtonRef.current.focus();
+    }
+  }, []);
+
   useEffect(() => {
-    if (imagesList.length <= 1 || isHovered) return;
+    if (!isLightboxOpen) return undefined;
 
-    const timer = setInterval(() => {
-      handleNext();
-    }, 4000);
+    function handleLightboxKeyDown(e) {
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        closeLightbox();
+      } else if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        handleNext();
+      } else if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        handlePrev();
+      }
+    }
 
-    return () => clearInterval(timer);
-  }, [imagesList.length, isHovered, handleNext]);
+    document.addEventListener('keydown', handleLightboxKeyDown);
+    return () => {
+      document.removeEventListener('keydown', handleLightboxKeyDown);
+    };
+  }, [isLightboxOpen, closeLightbox, handleNext, handlePrev]);
 
-  // Touch Swipe Handlers for Mobile
   const handleTouchStart = (e) => {
     touchStartXRef.current = e.touches[0].clientX;
   };
@@ -76,12 +102,16 @@ export default function ProjectImageCarousel({
     touchStartXRef.current = null;
   };
 
-  // Keyboard navigation when focused
   const handleKeyDown = (e) => {
     if (e.key === 'ArrowRight') {
       handleNext();
     } else if (e.key === 'ArrowLeft') {
       handlePrev();
+    } else if (e.key === 'Enter' || e.key === ' ') {
+      if (e.target === e.currentTarget) {
+        e.preventDefault();
+        openLightbox();
+      }
     }
   };
 
@@ -93,7 +123,6 @@ export default function ProjectImageCarousel({
     return (
       <div className="carousel-container">
         <div className="carousel-fallback">
-          <span className="carousel-fallback-icon">🖼️</span>
           <span className="carousel-fallback-text">{title}</span>
         </div>
       </div>
@@ -101,110 +130,183 @@ export default function ProjectImageCarousel({
   }
 
   const hasMultiple = imagesList.length > 1;
+  const activeUrl = imagesList[currentIndex];
 
   return (
-    <div
-      className="carousel-container"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      onTouchStart={handleTouchStart}
-      onTouchEnd={handleTouchEnd}
-      onKeyDown={handleKeyDown}
-      tabIndex={0}
-      role="region"
-      aria-label={`${title} image gallery`}
-    >
-      {/* Slides Viewport */}
-      <div className="carousel-slides-wrapper">
-        {imagesList.map((url, index) => {
-          const isActive = index === currentIndex;
-          const isError = failedImages[index];
+    <>
+      <div
+        className="carousel-container"
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+        onKeyDown={handleKeyDown}
+        tabIndex={0}
+        role="region"
+        aria-label={`${title} screenshot gallery`}
+      >
+        <div className="carousel-slides-wrapper">
+          {imagesList.map((url, index) => {
+            const isActive = index === currentIndex;
+            const isError = failedImages[index];
 
-          return (
-            <div
-              key={`${url}-${index}`}
-              className={`carousel-slide ${isActive ? 'active' : ''}`}
-              aria-hidden={!isActive}
-            >
-              {!isError ? (
-                <img
-                  src={url}
-                  alt={`${title} screenshot ${index + 1}`}
-                  className="carousel-image w-full h-full object-cover"
-                  loading="eager"
-                  fetchPriority={index === 0 || isActive ? 'high' : 'auto'}
-                  decoding="async"
-                  onError={() => handleImageError(index)}
-                />
-              ) : (
-                <div className="carousel-fallback">
-                  <span className="carousel-fallback-icon">🖼️</span>
-                  <span className="carousel-fallback-text">
-                    {title} — Slide {index + 1}
-                  </span>
-                </div>
-              )}
-            </div>
-          );
-        })}
-      </div>
-
-      {/* Navigation Arrows (rendered if multiple images) */}
-      {hasMultiple && (
-        <>
-          <button
-            type="button"
-            className="carousel-nav-btn carousel-nav-prev"
-            onClick={(e) => {
-              e.stopPropagation();
-              handlePrev();
-            }}
-            aria-label="Previous image"
-            title="Previous"
-          >
-            ❮
-          </button>
-
-          <button
-            type="button"
-            className="carousel-nav-btn carousel-nav-next"
-            onClick={(e) => {
-              e.stopPropagation();
-              handleNext();
-            }}
-            aria-label="Next image"
-            title="Next"
-          >
-            ❯
-          </button>
-        </>
-      )}
-
-      {/* Counter Badge in Corner */}
-      {hasMultiple && (
-        <div className="carousel-counter">
-          {currentIndex + 1} / {imagesList.length}
+            return (
+              <div
+                key={`${url}-${index}`}
+                className={`carousel-slide ${isActive ? 'active' : ''}`}
+                aria-hidden={!isActive}
+              >
+                {!isError ? (
+                  <img
+                    src={url}
+                    alt={`${title} screenshot ${index + 1}`}
+                    className="carousel-image"
+                    loading={index === 0 ? 'eager' : 'lazy'}
+                    fetchPriority={index === 0 || isActive ? 'high' : 'auto'}
+                    decoding="async"
+                    onClick={openLightbox}
+                    onError={() => handleImageError(index)}
+                  />
+                ) : (
+                  <div className="carousel-fallback">
+                    <span className="carousel-fallback-text">
+                      {title}: Slide {index + 1}
+                    </span>
+                  </div>
+                )}
+              </div>
+            );
+          })}
         </div>
-      )}
 
-      {/* Pagination Dots */}
-      {hasMultiple && (
-        <div className="carousel-pagination">
-          {imagesList.map((_, index) => (
+        {!failedImages[currentIndex] && (
+          <button
+            ref={expandButtonRef}
+            type="button"
+            className="carousel-expand-btn"
+            onClick={(e) => {
+              e.stopPropagation();
+              openLightbox();
+            }}
+            aria-label={`Expand ${title} screenshot ${currentIndex + 1}`}
+            title="Expand screenshot"
+          >
+            <ExpandIcon size={15} />
+          </button>
+        )}
+
+        {hasMultiple && (
+          <>
             <button
-              key={index}
               type="button"
-              className={`carousel-dot ${index === currentIndex ? 'active' : ''}`}
+              className="carousel-nav-btn carousel-nav-prev"
               onClick={(e) => {
                 e.stopPropagation();
-                setCurrentIndex(index);
+                handlePrev();
               }}
-              aria-label={`Go to slide ${index + 1}`}
-              title={`Slide ${index + 1}`}
+              aria-label="Previous screenshot"
+              title="Previous screenshot"
+            >
+              <ChevronLeftIcon size={18} />
+            </button>
+
+            <button
+              type="button"
+              className="carousel-nav-btn carousel-nav-next"
+              onClick={(e) => {
+                e.stopPropagation();
+                handleNext();
+              }}
+              aria-label="Next screenshot"
+              title="Next screenshot"
+            >
+              <ChevronRightIcon size={18} />
+            </button>
+          </>
+        )}
+
+        {hasMultiple && (
+          <div className="carousel-counter">
+            {currentIndex + 1} / {imagesList.length}
+          </div>
+        )}
+
+        {hasMultiple && (
+          <div className="carousel-pagination">
+            {imagesList.map((_, index) => (
+              <button
+                key={index}
+                type="button"
+                className={`carousel-dot ${
+                  index === currentIndex ? 'active' : ''
+                }`}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setCurrentIndex(index);
+                }}
+                aria-label={`Go to slide ${index + 1}`}
+                title={`Slide ${index + 1}`}
+              />
+            ))}
+          </div>
+        )}
+      </div>
+
+      {isLightboxOpen && activeUrl && (
+        <div
+          className="carousel-lightbox"
+          role="dialog"
+          aria-modal="true"
+          aria-label={`${title} full-size screenshot preview`}
+        >
+          <div
+            className="carousel-lightbox-backdrop"
+            onClick={closeLightbox}
+          />
+          <div className="carousel-lightbox-content">
+            <button
+              type="button"
+              className="carousel-lightbox-close"
+              onClick={closeLightbox}
+              aria-label="Close full-size preview"
+            >
+              <CloseIcon size={20} />
+            </button>
+
+            {hasMultiple && (
+              <button
+                type="button"
+                className="carousel-nav-btn carousel-nav-prev"
+                onClick={handlePrev}
+                aria-label="Previous screenshot"
+              >
+                <ChevronLeftIcon size={20} />
+              </button>
+            )}
+
+            <img
+              src={activeUrl}
+              alt={`${title} screenshot ${currentIndex + 1}`}
+              className="carousel-lightbox-img"
             />
-          ))}
+
+            {hasMultiple && (
+              <button
+                type="button"
+                className="carousel-nav-btn carousel-nav-next"
+                onClick={handleNext}
+                aria-label="Next screenshot"
+              >
+                <ChevronRightIcon size={20} />
+              </button>
+            )}
+
+            {hasMultiple && (
+              <div className="carousel-counter">
+                {currentIndex + 1} / {imagesList.length}
+              </div>
+            )}
+          </div>
         </div>
       )}
-    </div>
+    </>
   );
 }

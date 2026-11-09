@@ -1,84 +1,151 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
 import Avatar from '../common/Avatar';
 import Button from '../common/Button';
-import { ResumeDocIcon, LockIcon } from '../common/Icons';
-import { useAuth } from '../../context/AuthContext';
+import {
+  ResumeDocIcon,
+  SunIcon,
+  MoonIcon,
+  GithubIcon,
+  LinkedinIcon,
+  MailIcon,
+  LocationIcon,
+} from '../common/Icons';
 import { PROFILE_DATA } from '../../data/profileData';
 import './ProfileHeader.css';
 
+function renderBioWithHighlights(bioText = '', highlights = []) {
+  if (!bioText) return null;
+  if (!Array.isArray(highlights) || highlights.length === 0) {
+    return bioText;
+  }
+
+  const escaped = highlights
+    .filter(Boolean)
+    .map((term) => term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
+
+  if (escaped.length === 0) {
+    return bioText;
+  }
+
+  const pattern = new RegExp(`(${escaped.join('|')})`, 'g');
+  const parts = bioText.split(pattern);
+  const highlightSet = new Set(highlights);
+
+  return parts.map((part, index) =>
+    highlightSet.has(part) ? (
+      <span key={index} className="bio-highlight">
+        {part}
+      </span>
+    ) : (
+      part
+    )
+  );
+}
+
 export default function ProfileHeader({
   profile = PROFILE_DATA,
+  theme = 'light',
+  onToggleTheme,
 }) {
-  const { isLoggedIn, openLoginModal } = useAuth();
-  const location = useLocation();
-
-  // Check if current route is /admin_nathaniel (via pathname or hash)
-  const normalizedPath = (location.pathname || '').replace(/\/+$/, '');
-  const normalizedHash = (location.hash || '').replace(/^#\/?/, '/').replace(/\/+$/, '');
-  const isAdminRoute = normalizedPath === '/admin_nathaniel' || normalizedHash === '/admin_nathaniel';
+  const isDark = theme === 'dark';
 
   return (
-    <div className="profile-card">
-      <div className="banner">
-        <img
-          src={profile.bannerUrl}
-          alt="Header Cover"
-          loading="eager"
-          fetchPriority="high"
-          decoding="async"
-          className="w-full h-full object-cover"
-        />
+    <header className="dossier-hero">
+      {/* Top architectural status bar */}
+      <div className="dossier-topbar">
+        <div className="dossier-status-pill">
+          <span className="status-dot-indicator" aria-hidden="true" />
+          <span className="status-label">{profile.statusBadge || 'Available for projects'}</span>
+        </div>
+
+        <div className="dossier-topbar-controls">
+          {onToggleTheme && (
+            <button
+              type="button"
+              className="theme-toggle-btn"
+              onClick={onToggleTheme}
+              aria-label={
+                isDark ? 'Switch to light theme' : 'Switch to dark theme'
+              }
+            >
+              {isDark ? <SunIcon size={16} /> : <MoonIcon size={16} />}
+              <span>{isDark ? 'Light' : 'Dark'}</span>
+            </button>
+          )}
+        </div>
       </div>
 
-      <div className="profile-info">
-        <div className="avatar-wrapper">
+      {/* Main hero dossier body */}
+      <div className="dossier-body">
+        <div className="dossier-portrait-frame">
           <Avatar
             src={profile.avatarUrl}
             alt={profile.name}
-            className="avatar"
+            className="dossier-portrait-img"
           />
         </div>
-        <div className="details flex flex-col md:flex-row md:justify-between md:items-start md:gap-6 w-full">
-          <div className="name-col flex flex-col flex-1 min-w-0">
-            <h1 className="name">
-              {profile.name} <span className="nickname">{profile.nickname}</span>
-              <span className="wave">{profile.waveEmoji}</span>
-            </h1>
-            <p className="bio">
-              Aspiring Junior software developer based in Pandi, Bulacan, specializing in{' '}
-              <span className="bio-highlight">React</span>,{' '}
-              <span className="bio-highlight">Node.js</span>, and{' '}
-              <span className="bio-highlight">REST API</span> development. Builds clean,
-              responsive applications with a focus on automation, and performance.
-            </p>
+
+        <div className="dossier-summary">
+          <div className="dossier-title-row">
+            <h1 className="dossier-name">{profile.name}</h1>
+            {profile.nickname && (
+              <span className="dossier-nickname">{profile.nickname}</span>
+            )}
+            <span className="dossier-role-tag">{profile.roleBadge}</span>
           </div>
 
-          <div className="profile-actions-wrapper flex items-center justify-start md:justify-end gap-2 w-full md:w-auto md:shrink-0 mt-3 md:mt-0">
+          <div className="dossier-location-row">
+            <LocationIcon size={15} className="dossier-location-icon" />
+            <span>Pandi, Bulacan, Philippines (UTC+8)</span>
+          </div>
+
+          <p className="dossier-bio">
+            {renderBioWithHighlights(profile.bio, profile.bioHighlights)}
+          </p>
+
+          <div className="dossier-actions">
             <Button
               href={profile.resumeUrl}
-              className="resume-btn flex items-center justify-center w-full md:w-auto px-6 py-2.5 rounded-lg"
+              className="dossier-btn dossier-btn-primary"
               target="_blank"
             >
-              <ResumeDocIcon size={16} />
-              <span>Resume</span>
+              <ResumeDocIcon size={15} />
+              <span>{profile.resumeLabel || 'View Resume (PDF)'}</span>
             </Button>
 
-            {/* Render Lock Button ONLY on /admin_nathaniel AND when NOT logged in */}
-            {isAdminRoute && !isLoggedIn && (
-              <button
-                type="button"
-                className="admin-login-trigger"
-                onClick={openLoginModal}
-                title="Admin Login (Ctrl+Shift+L)"
-                aria-label="Admin Login"
+            <Button
+              href="mailto:faboradanathaniel@gmail.com"
+              className="dossier-btn dossier-btn-secondary"
+            >
+              <MailIcon size={15} />
+              <span>Contact Email</span>
+            </Button>
+
+            <div className="dossier-social-strip">
+              <a
+                href="https://github.com/nathanielfaborada"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="dossier-icon-btn"
+                aria-label="GitHub profile of Nathaniel Faborada"
+                title="GitHub (@nathanielfaborada)"
               >
-                <LockIcon size={15} />
-              </button>
-            )}
+                <GithubIcon size={18} />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/nathaniel-faborada/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="dossier-icon-btn"
+                aria-label="LinkedIn profile of Nathaniel Faborada"
+                title="LinkedIn"
+              >
+                <LinkedinIcon size={18} />
+              </a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </header>
   );
 }

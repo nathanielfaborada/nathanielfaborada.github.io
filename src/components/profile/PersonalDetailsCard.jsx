@@ -19,14 +19,23 @@ export default function PersonalDetailsCard({
   details = PROFILE_DATA.personalDetails,
 }) {
   return (
-    <SectionCard title="Personal details">
+    <SectionCard title="Personal Details">
       <ul className="detail-list">
         {details.map((item) => {
           const IconComponent = iconMap[item.iconType] || GlobeIcon;
+          const isEmailOrLink = item.iconType === 'email' || Boolean(item.href);
+          const linkHref = item.href || `mailto:${item.text}`;
+
           return (
-            <li key={item.id}>
-              <IconComponent />
-              <span>{item.text}</span>
+            <li key={item.id} className="detail-item">
+              <IconComponent className="detail-icon" />
+              {isEmailOrLink ? (
+                <a href={linkHref} className="detail-link">
+                  {item.text}
+                </a>
+              ) : (
+                <span className="detail-text">{item.text}</span>
+              )}
             </li>
           );
         })}

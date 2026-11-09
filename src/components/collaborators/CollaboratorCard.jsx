@@ -5,24 +5,20 @@ import { ExternalLinkIcon } from '../common/Icons';
 import './CollaboratorCard.css';
 
 export default function CollaboratorCard({ user }) {
-  if (!user || !user.avatar_url) {
-    return <div className="collab-card collab-error">Failed to load</div>;
-  }
+  if (!user) return null;
 
-  const displayName = user.name || user.login;
-  const followersCount =
-    typeof user.followers === 'number'
-      ? `${user.followers.toLocaleString()} Followers`
-      : '0 Followers';
-  const followingCount =
-    typeof user.following === 'number'
-      ? `${user.following.toLocaleString()} Following`
-      : '0 Following';
+  const login = user.login || '';
+  const displayName = user.name || login;
+  const avatarUrl =
+    user.avatar_url || `https://github.com/${login}.png?size=160`;
+  const profileUrl = user.html_url || `https://github.com/${login}`;
+  const roleLabel = user.role || (login ? `@${login}` : 'Collaborator');
+  const projectLabel = user.project || '';
 
   return (
     <div className="collab-card">
       <Avatar
-        src={user.avatar_url}
+        src={avatarUrl}
         alt={displayName}
         className="collab-avatar"
       />
@@ -30,16 +26,25 @@ export default function CollaboratorCard({ user }) {
         <span className="collab-name" title={displayName}>
           {displayName}
         </span>
-        <span className="collab-stat">{followersCount}</span>
-        <span className="collab-stat">{followingCount}</span>
+        {roleLabel && (
+          <span className="collab-stat" title={roleLabel}>
+            {roleLabel}
+          </span>
+        )}
+        {projectLabel && (
+          <span className="collab-stat" title={projectLabel}>
+            {projectLabel}
+          </span>
+        )}
       </div>
       <Button
-        href={user.html_url}
+        href={profileUrl}
         className="collab-visit"
         target="_blank"
+        aria-label={`View GitHub Profile for ${displayName}`}
       >
         <ExternalLinkIcon size={13} />
-        Visit
+        <span>View GitHub Profile</span>
       </Button>
     </div>
   );

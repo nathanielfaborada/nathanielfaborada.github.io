@@ -1,309 +1,326 @@
+/* ==============================================================================
+   ENGINEERING PROJECT CARD (Monochrome Minimalist)
+   ============================================================================== */
+
 .project-card {
-    background: #fff;
-    border-radius: 12px;
-    padding: 20px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg, 6px);
+    padding: 22px;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 16px;
+    min-width: 0;
+    transition: border-color 0.15s ease;
 }
 
-.project-author {
+.project-card:hover {
+    border-color: var(--border-interactive);
+}
+
+/* Flagship capstone card treatment */
+.project-card-featured {
+    border-color: var(--text-primary);
+    border-top: 2px solid var(--text-primary);
+}
+
+/* Top architectural metadata strip */
+.project-topbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
     gap: 8px;
-    width: 100%;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border-subtle);
 }
 
-.project-author-left {
+.project-topbar-left {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     gap: 8px;
-    min-width: 0;
 }
 
-.project-avatar {
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-.project-author-name {
-    font-size: 0.95rem;
-    font-weight: 700;
-    color: #111;
-}
-
-.badge-icon {
+.project-category-badge {
     display: inline-flex;
     align-items: center;
-    color: #4a90d9;
-}
-
-/* Primary Headline & Secondary Category Meta */
-.project-headline-row {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 10px;
-    flex-wrap: wrap;
-}
-
-.project-headline {
-    font-size: 1.1rem;
+    font-size: 0.74rem;
     font-weight: 700;
-    color: #050505;
-    line-height: 1.45;
-    letter-spacing: -0.01em;
-    flex: 1;
-    min-width: 200px;
-}
-
-.project-headline strong {
-    font-weight: 700;
-    color: #050505;
-}
-
-.project-category {
-    font-size: 0.875rem;
-    color: #65676b;
-    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
 }
 
 .project-date-badge {
     display: inline-flex;
     align-items: center;
-    gap: 4px;
-    padding: 3px 8px;
-    background: #f0f2f5;
-    color: #65676b;
-    border-radius: 6px;
-    font-size: 0.76rem;
+    gap: 5px;
+    font-family: var(--font-mono, monospace);
+    font-size: 0.74rem;
+    color: var(--text-muted);
+    padding: 2px 6px;
+    background-color: var(--bg-surface-subtle);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-xs, 2px);
+}
+
+.project-featured-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 2px 8px;
+    background-color: var(--text-primary);
+    color: var(--text-on-accent);
+    font-family: var(--font-mono, monospace);
+    font-size: 0.72rem;
     font-weight: 600;
-    white-space: nowrap;
-    border: 1px solid #e4e6eb;
-    line-height: 1.2;
-    flex-shrink: 0;
-    margin-top: 2px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    border-radius: var(--radius-xs, 2px);
 }
 
-.pin { margin-right: 4px; }
-
-/* Body Description */
-.project-desc {
-    font-size: 0.9375rem;
-    color: #1c1e21;
-    line-height: 1.5;
+.featured-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: var(--text-on-accent);
 }
 
-.project-desc.project-notice {
-    color: #4b4d52;
+/* Headline */
+.project-headline-row {
+    margin-top: -2px;
 }
 
-.see-more-btn {
-    display: inline-block;
-    background: none;
-    border: none;
-    padding: 0;
-    margin-left: 6px;
-    font-size: 0.9375rem;
-    font-weight: 600;
-    color: #1877f2;
-    cursor: pointer;
-    text-decoration: none;
-    font-family: inherit;
-    transition: color 0.15s ease;
+.project-headline {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+    margin: 0;
 }
 
-.see-more-btn:hover {
-    color: #166fe5;
-    text-decoration: underline;
+/* Body prose */
+.project-body {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
-.see-less-btn {
-    display: block;
-    margin-top: 8px;
-    margin-left: 0;
-    font-size: 0.875rem;
+.project-description {
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin: 0;
 }
 
-.monitor { margin-right: 4px; }
-.email { margin-right: 4px; }
-
-/* Contribution Bullet List with Proper Indentation & Typography */
+/* Architectural highlights */
 .project-contributions {
-    margin-top: 2px;
+    background-color: var(--bg-surface-subtle);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md, 4px);
+    padding: 14px 18px;
+    margin-top: 4px;
 }
 
-.project-bullet-list {
-    padding-left: 1.25rem;
-    list-style-type: disc;
-    list-style-position: outside;
-    margin-top: 12px;
-    margin-bottom: 8px;
+.contributions-title {
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--text-primary);
+    margin: 0 0 10px 0;
+}
+
+.contributions-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
     display: flex;
     flex-direction: column;
     gap: 8px;
 }
 
-.project-bullet-list li {
-    font-size: 0.9375rem;
-    color: #1c1e21;
+.contribution-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 0.88rem;
     line-height: 1.5;
-    padding-left: 2px;
+    color: var(--text-secondary);
 }
 
+.contribution-bullet {
+    color: var(--text-primary);
+    flex-shrink: 0;
+    margin-top: 3px;
+}
+
+.contribution-text {
+    flex: 1;
+}
+
+/* Notice */
+.project-notice {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px 14px;
+    background-color: var(--bg-surface-subtle);
+    border-left: 2px solid var(--text-primary);
+    border-radius: 0 var(--radius-sm, 2px) var(--radius-sm, 2px) 0;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.notice-icon {
+    color: var(--text-primary);
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.notice-text {
+    margin: 0;
+    line-height: 1.45;
+}
+
+/* Expand toggle */
+.see-more-btn {
+    align-self: flex-start;
+    background: transparent;
+    border: none;
+    padding: 6px 0;
+    min-height: 44px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    cursor: pointer;
+    text-decoration: underline;
+    display: inline-flex;
+    align-items: center;
+}
+
+.see-more-btn:hover {
+    color: var(--text-muted);
+}
+
+/* Tags */
 .project-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 4px;
+    gap: 6px;
+    margin-top: -2px;
 }
 
-/* Footer */
+/* Footer & Action Links */
 .project-footer {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding-top: 12px;
-    border-top: 1px solid #f0f0f0;
-    margin-top: 6px;
-}
-
-.project-stars {
-    font-size: 0.875rem;
-    color: #65676b;
+    justify-content: flex-end;
+    padding-top: 14px;
+    border-top: 1px solid var(--border-subtle);
+    margin-top: 4px;
 }
 
 .project-links {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     gap: 8px;
 }
 
-/* Button Hierarchy (Primary "Visit" vs. Secondary "Source") */
 .project-btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 6px;
-    padding: 6px 12px;
-    border-radius: 6px;
-    font-size: 0.8rem;
+    padding: 8px 16px;
+    min-height: 44px;
+    border-radius: var(--radius-sm, 2px);
+    font-size: 0.85rem;
     font-weight: 600;
     text-decoration: none;
-    transition: all 0.18s ease;
     cursor: pointer;
-    line-height: 1.4;
+    transition: all 0.15s ease;
     box-sizing: border-box;
 }
 
 .project-btn-primary {
-    background: #e4e6eb;
-    color: #050505;
-    border: 1px solid #ced0d4;
+    background-color: var(--text-primary);
+    color: var(--text-on-accent);
+    border: 1px solid var(--text-primary);
 }
 
 .project-btn-primary:hover {
-    background: #d8dadf;
-    color: #000;
-    border-color: #bec3c9;
+    background-color: var(--bg-surface);
+    color: var(--text-primary);
 }
 
 .project-btn-secondary {
-    background: transparent;
-    color: #65676b;
-    font-weight: 500;
-    border: 1px solid #ced0d4;
+    background-color: var(--bg-surface);
+    color: var(--text-primary);
+    border: 1px solid var(--border-interactive);
 }
 
 .project-btn-secondary:hover {
-    background: #f0f2f5;
-    color: #050505;
-    border-color: #bec3c9;
+    background-color: var(--text-primary);
+    border-color: var(--text-primary);
+    color: var(--text-on-accent);
 }
 
-.project-link {
-    display: inline-flex;
+/* External certificate preview */
+.certificate-external-preview {
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 5px;
-    font-size: 0.82rem;
-    color: #444;
-    text-decoration: none;
-    transition: color 0.15s;
+    text-align: center;
+    gap: 12px;
+    padding: 24px 20px;
+    background-color: var(--bg-surface-subtle);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md, 4px);
 }
 
-.project-link:hover { color: #4a90d9; }
+.cert-preview-icon {
+    color: var(--text-primary);
+}
+
+.cert-preview-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0 0 4px 0;
+}
+
+.cert-preview-text {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    margin: 0;
+    max-width: 480px;
+}
 
 @media (max-width: 768px) {
     .project-card {
-        padding: 14px 16px;
-        border-radius: 10px;
-        gap: 10px;
-    }
-
-    .project-author {
-        flex-wrap: wrap;
-        gap: 8px;
-    }
-
-    .card-admin-actions {
-        gap: 4px;
-    }
-
-    .card-admin-actions button {
-        padding: 3px 6px !important;
-        font-size: 0.72rem !important;
-    }
-
-    .project-headline-row {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 6px;
+        padding: 16px;
+        gap: 12px;
     }
 
     .project-headline {
-        font-size: 1rem;
-        word-break: break-word;
-        overflow-wrap: break-word;
-    }
-
-    .project-author-name {
-        font-size: 0.9rem;
-    }
-
-    .project-desc,
-    .project-bullet-list li {
-        font-size: 0.875rem;
-        line-height: 1.5;
-    }
-
-    .see-more-btn {
-        font-size: 0.875rem;
-    }
-
-    .project-bullet-list {
-        padding-left: 1.15rem;
-        gap: 6px;
-        margin-top: 8px;
-    }
-
-    .project-btn {
-        min-height: 36px;
-        padding: 6px 12px;
-        font-size: 0.8rem;
+        font-size: 1.1rem;
     }
 
     .project-footer {
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 10px;
-        padding-top: 10px;
+        justify-content: stretch;
     }
 
     .project-links {
-        gap: 8px;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .project-btn {
+        width: 100%;
     }
 }

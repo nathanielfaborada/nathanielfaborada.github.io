@@ -1,106 +1,78 @@
 import React from 'react';
 import CollaboratorCard from './CollaboratorCard';
 import OrganizationCard from './OrganizationCard';
-import SkeletonCard from '../common/SkeletonCard';
-import SkeletonOrgCard from '../common/SkeletonOrgCard';
-import { useAuth } from '../../context/AuthContext';
-import { PlusIcon } from '../common/Icons';
-import { GITHUB_GROUPS, GITHUB_ORGANIZATIONS } from '../../data/collaboratorsData';
+import {
+  GITHUB_GROUPS,
+  COLLABORATORS_MAP,
+  STATIC_ORGANIZATIONS,
+} from '../../data/collaboratorsData';
 import './Collaborators.css';
 
 export default function CollaboratorsFullView({
-  profileMap = {},
-  isUsersLoading = false,
-  organizations = [],
-  isOrgsLoading = false,
-  onOpenCreateModal,
-  onEditOrganization,
-  onDeleteOrganization,
+  profileMap = COLLABORATORS_MAP,
+  organizations = STATIC_ORGANIZATIONS,
 }) {
-  const { isLoggedIn } = useAuth();
-
   return (
     <div id="view-collaborators" className="collaborators-full-view">
-      {/* Collaborators Section */}
-      <div className="collab-full-header">
+      <section className="collab-full-header">
         <h2 className="collab-full-title">Collaborators</h2>
 
         <div id="collaborators-grid-full" className="collaborators-grid-full">
           {GITHUB_GROUPS.map((group) => (
             <div className="collab-group" key={group.label}>
-              <h3 className="collab-group-label">— {group.label}</h3>
+              <h3 className="collab-group-label">{group.label}</h3>
               <div className="collab-group-grid">
-                {isUsersLoading
-                  ? group.users.map((_, idx) => (
-                      <SkeletonCard key={idx} />
-                    ))
-                  : group.users.map((username) => (
-                      <CollaboratorCard
-                        key={username}
-                        user={profileMap[username]}
-                      />
-                    ))}
+                {group.users.map((entry) => {
+                  const username =
+                    typeof entry === 'string' ? entry : entry.login;
+                  const userObj =
+                    typeof entry === 'object' && entry !== null
+                      ? { ...(profileMap[username] || {}), ...entry }
+                      : profileMap[username] || {
+                          login: username,
+                          name: username,
+                          avatar_url: `https://github.com/${username}.png?size=160`,
+                          html_url: `https://github.com/${username}`,
+                          project: group.label,
+                        };
+
+                  return (
+                    <CollaboratorCard
+                      key={`${group.label}-${username}`}
+                      user={userObj}
+                    />
+                  );
+                })}
               </div>
             </div>
           ))}
         </div>
-      </div>
+      </section>
 
-      {/* Organization Section */}
-      <div className="collab-full-header" style={{ marginTop: '16px' }}>
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '16px' }}>
-          <h2 className="collab-full-title" style={{ margin: 0 }}>Organization</h2>
-          {isLoggedIn && (
-            <button
-              type="button"
-              onClick={() => onOpenCreateModal && onOpenCreateModal('organization')}
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '4px',
-                padding: '4px 10px',
-                background: '#1877f2',
-                color: '#ffffff',
-                border: 'none',
-                borderRadius: '6px',
-                fontSize: '0.78rem',
-                fontWeight: 600,
-                cursor: 'pointer',
-              }}
-            >
-              <PlusIcon size={12} />
-              Add Org
-            </button>
-          )}
-        </div>
+      <section className="collab-full-header">
+        <h2 className="collab-full-title">Organizations</h2>
 
         <div id="organization-grid-full">
-          {isOrgsLoading ? (
-            Array.from({ length: GITHUB_ORGANIZATIONS.length }).map(
-              (_, idx) => <SkeletonOrgCard key={idx} />
-            )
-          ) : organizations.length > 0 ? (
-            organizations.map((org) => (
+          {organizations.map((org) => {
+            const orgObj =
+              typeof org === 'string'
+                ? {
+                    login: org,
+                    name: org,
+                    avatar_url: `https://github.com/${org}.png?size=160`,
+                    html_url: `https://github.com/${org}`,
+                  }
+                : org;
+
+            return (
               <OrganizationCard
-                key={org.id || org.login}
-                org={org}
-                onEdit={onEditOrganization}
-                onDelete={onDeleteOrganization}
+                key={orgObj.id || orgObj.login}
+                org={orgObj}
               />
-            ))
-          ) : (
-            <p
-              style={{
-                color: 'var(--color-text-secondary, #666)',
-                fontSize: '14px',
-                padding: '12px 0',
-              }}
-            >
-              No organizations found.
-            </p>
-          )}
+            );
+          })}
         </div>
-      </div>
+      </section>
     </div>
   );
 }

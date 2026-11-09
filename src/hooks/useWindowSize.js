@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react';
 
 export function useWindowSize() {
   const [windowSize, setWindowSize] = useState({
-    width: typeof window !== 'undefined' ? window.innerWidth : 1024,
-    height: typeof window !== 'undefined' ? window.innerHeight : 768,
+    width: typeof window !== 'undefined' ? window.innerWidth : 1280,
+    height: typeof window !== 'undefined' ? window.innerHeight : 800,
   });
 
   useEffect(() => {
@@ -18,10 +18,13 @@ export function useWindowSize() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  const isMobile = windowSize.width <= 768;
+  const { width, height } = windowSize;
 
   return {
-    ...windowSize,
-    isMobile,
+    width,
+    height,
+    isMobile: width <= 640,
+    isTablet: width > 640 && width <= 1024,
+    isCompact: width <= 1024,
   };
 }

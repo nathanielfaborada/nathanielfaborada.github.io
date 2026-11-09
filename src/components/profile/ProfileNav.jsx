@@ -1,4 +1,5 @@
 import React from 'react';
+import { HAS_CERTIFICATES } from '../../data/projectsData';
 import './ProfileNav.css';
 
 export default function ProfileNav({
@@ -22,18 +23,20 @@ export default function ProfileNav({
           <a
             href="#all"
             className={activeTab === 'all' ? 'active' : ''}
+            aria-current={activeTab === 'all' ? 'page' : undefined}
             onClick={(e) => handleTabClick(e, 'all')}
           >
             All
           </a>
         </li>
         <li
-          className={`mobile-only ${activeTab === 'about' ? 'active' : ''}`}
+          className={`compact-only ${activeTab === 'about' ? 'active' : ''}`.trim()}
           data-tab="about"
         >
           <a
             href="#about"
             className={activeTab === 'about' ? 'active' : ''}
+            aria-current={activeTab === 'about' ? 'page' : undefined}
             onClick={(e) => handleTabClick(e, 'about')}
           >
             About
@@ -46,23 +49,27 @@ export default function ProfileNav({
           <a
             href="#collaborators"
             className={activeTab === 'collaborators' ? 'active' : ''}
+            aria-current={activeTab === 'collaborators' ? 'page' : undefined}
             onClick={(e) => handleTabClick(e, 'collaborators')}
           >
             Collaborators
           </a>
         </li>
-        <li
-          className={activeTab === 'certificates' ? 'active' : ''}
-          data-tab="certificates"
-        >
-          <a
-            href="#certificates"
+        {HAS_CERTIFICATES && (
+          <li
             className={activeTab === 'certificates' ? 'active' : ''}
-            onClick={(e) => handleTabClick(e, 'certificates')}
+            data-tab="certificates"
           >
-            Certificates
-          </a>
-        </li>
+            <a
+              href="#certificates"
+              className={activeTab === 'certificates' ? 'active' : ''}
+              aria-current={activeTab === 'certificates' ? 'page' : undefined}
+              onClick={(e) => handleTabClick(e, 'certificates')}
+            >
+              Certificates
+            </a>
+          </li>
+        )}
       </ul>
     </nav>
   );

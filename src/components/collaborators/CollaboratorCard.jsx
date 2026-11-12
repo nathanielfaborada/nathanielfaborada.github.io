@@ -13,7 +13,11 @@ export default function CollaboratorCard({ user }) {
     user.avatar_url || `https://github.com/${login}.png?size=160`;
   const profileUrl = user.html_url || `https://github.com/${login}`;
   const roleLabel = user.role || (login ? `@${login}` : 'Collaborator');
-  const projectLabel = user.project || '';
+  const projectsList = Array.isArray(user.projects)
+    ? user.projects
+    : user.project
+    ? [user.project]
+    : [];
 
   return (
     <div className="collab-card">
@@ -31,10 +35,14 @@ export default function CollaboratorCard({ user }) {
             {roleLabel}
           </span>
         )}
-        {projectLabel && (
-          <span className="collab-stat" title={projectLabel}>
-            {projectLabel}
-          </span>
+        {projectsList.length > 0 && (
+          <div className="collab-projects-pills">
+            {projectsList.map((p) => (
+              <span key={p} className="collab-project-pill">
+                {p}
+              </span>
+            ))}
+          </div>
         )}
       </div>
       <Button

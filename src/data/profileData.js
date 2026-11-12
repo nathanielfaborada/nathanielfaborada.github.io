@@ -1,20 +1,31 @@
 export const PROFILE_DATA = {
   name: "Nathaniel Faborada",
   nickname: "(Niel)",
-  roleBadge: "Full-Stack & API Developer",
-  statusBadge: "Available for full-time & contract roles",
+  roleBadge: "Junior Software Developer",
+  statusBadge: "Available for Junior Developer Roles",
   avatarUrl:
     "https://res.cloudinary.com/diwwqfwjb/image/upload/v1781856471/709708660_122106236192438631_9022214745816065291_n_zbqziu.jpg",
   authorAvatarUrl:
     "https://res.cloudinary.com/diwwqfwjb/image/upload/v1776094289/542451323_122191510964372800_7390414124574237799_n_kg4uvt.jpg",
   bannerUrl:
     "https://res.cloudinary.com/diwwqfwjb/image/upload/v1776094457/HeaderCoverPortfolioImage_dkzcih.png",
-  resumeUrl: "assets/Faborada_Nathaniel_Web_dev.pdf",
+  resumeUrl: "assets/Nathaniel_Faborada_Resume.pdf",
   resumeLabel: "View Resume (PDF)",
-  bio: "Full-stack developer specializing in React, Node.js, and relational database systems. I design role-based platforms, automated invitation and workflow pipelines, and clean REST APIs built for stability and real-world utility.",
-  bioHighlights: ["React", "Node.js", "REST APIs", "relational database"],
+  applicationLetterUrl: "assets/Nathaniel_Faborada_Application_Letter.pdf",
+  applicationLetterLabel: "View Application Letter (PDF)",
+  phone: "+63 9666712004",
+  email: "faboradanathaniel@gmail.com",
+  location: "Pandi, Bulacan, Philippines",
+  bio: "Junior Software Developer and Computer Science graduate based in Pandi, Bulacan. Builds clean, reliable, and user-friendly web applications that solve real problems.",
+  bioHighlights: ["Web development", "Clean design", "Problem solving", "Performance"],
 
   personalDetails: [
+    {
+      id: "location",
+      label: "Location",
+      text: "Pandi, Bulacan, Philippines",
+      iconType: "location",
+    },
     {
       id: "email",
       label: "Email",
@@ -23,16 +34,31 @@ export const PROFILE_DATA = {
       iconType: "email",
     },
     {
-      id: "location",
-      label: "Location",
-      text: "Pandi, Bulacan, Philippines",
-      iconType: "location",
+      id: "phone",
+      label: "Phone",
+      text: "+63 9666712004",
+      href: "tel:+639666712004",
+      iconType: "phone",
     },
     {
       id: "languages",
       label: "Languages",
-      text: "Filipino, English",
+      text: "Tagalog (Fluent), English (Conversational)",
       iconType: "languages",
+    },
+    {
+      id: "github",
+      label: "GitHub",
+      text: "github.com/nathanielfaborada",
+      href: "https://github.com/nathanielfaborada",
+      iconType: "github",
+    },
+    {
+      id: "linkedin",
+      label: "LinkedIn",
+      text: "linkedin.com/in/nathaniel-faborada",
+      href: "https://www.linkedin.com/in/nathaniel-faborada/",
+      iconType: "linkedin",
     },
   ],
 
@@ -41,16 +67,10 @@ export const PROFILE_DATA = {
       company: "JCAS Logistics",
       roles: [
         {
-          title: "Internship Developer",
-          period: "April 2025 - May 2025",
+          title: "Software Developer Intern",
+          period: "April 2025 - September 2025",
           description:
-            "Collaborated on logistics workflow interfaces, prototyping mobile screens and mapping Supabase table schemas for fleet and HR modules.",
-        },
-        {
-          title: "Freelance Developer",
-          period: "June 2025 - Sept 2025",
-          description:
-            "Implemented UI refinements, managed backend integration endpoints, and resolved data synchronization issues for internal dispatch operations.",
+            "Built internal HR modules, driver companion tools, and operations dashboards using FlutterFlow and Supabase to support dispatch workflows and driver management.",
         },
       ],
     },
@@ -58,31 +78,50 @@ export const PROFILE_DATA = {
 
   learnedSkills: {
     description:
-      "Core languages, frameworks, and infrastructure tools applied across production projects.",
+      "Core languages, frameworks, and tools directly applied across production, capstone, and commercial projects.",
     categories: [
       {
-        label: "Frontend Engineering",
-        items: ["JavaScript (ES6+)", "React 19", "HTML5 / CSS3", "Tailwind CSS", "FlutterFlow"],
+        label: "Programming Languages",
+        items: ["JavaScript", "Python", "PHP", "C++"],
       },
       {
-        label: "Backend & Systems",
-        items: ["Node.js", "Express", "RESTful APIs", "FastAPI", "Python", "PHP", "JWT Auth"],
+        label: "Databases",
+        items: ["PostgreSQL", "MySQL", "Supabase"],
       },
       {
-        label: "Databases & DevOps",
-        items: ["PostgreSQL", "MySQL", "Supabase", "Docker", "GitHub Actions"],
+        label: "Tools & Frameworks",
+        items: [
+          "Node.js",
+          "React",
+          "Laravel",
+          "Express.js",
+          "Alpine.js",
+          "FlutterFlow",
+          "Docker",
+          "Git/GitHub",
+          "REST APIs",
+        ],
       },
       {
-        label: "Cloud & APIs",
-        items: ["Netlify", "Railway", "Brevo Email API", "Google Gemini API"],
+        label: "Design Tools",
+        items: ["Figma", "Canva", "GIMP"],
+      },
+      {
+        label: "Other Competencies",
+        items: ["UI/UX design", "Graphic design"],
+      },
+      {
+        label: "AI Tools",
+        items: ["ChatGPT", "Claude", "Gemini"],
       },
     ],
   },
 
   education: {
-    institution: "College of Mary Immaculate of Pandi Bulacan Inc.",
+    institution: "College of Mary Immaculate",
     degree: "Bachelor of Science in Computer Science",
-    period: "2022 - 2026",
+    period: "Graduated (2022 - 2026)",
+    location: "Pandi, Bulacan",
   },
 
   socialLinks: [
@@ -95,6 +134,11 @@ export const PROFILE_DATA = {
       platform: "linkedin",
       label: "LinkedIn (in/nathaniel-faborada)",
       url: "https://www.linkedin.com/in/nathaniel-faborada/",
+    },
+    {
+      platform: "website",
+      label: "Portfolio (nathanielfaborada.github.io)",
+      url: "https://nathanielfaborada.github.io",
     },
   ],
 };

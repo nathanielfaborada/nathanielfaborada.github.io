@@ -1,0 +1,95 @@
+.notfound-container {
+  max-width: 680px;
+  margin: 48px auto;
+  padding: 0 20px;
+  width: 100%;
+}
+
+.notfound-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 48px 32px;
+  text-align: center;
+  box-shadow: var(--shadow-card);
+}
+
+.notfound-badge-wrap {
+  margin-bottom: 16px;
+}
+
+.notfound-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background-color: var(--bg-surface-subtle);
+  color: var(--text-primary);
+  border: 1px solid var(--border-subtle);
+}
+
+.notfound-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+}
+
+.notfound-description {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  max-width: 440px;
+  margin: 0 auto 28px;
+}
+
+.notfound-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.notfound-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 18px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  min-height: 44px; /* Minimum 44px touch target (antislop-human) */
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.notfound-btn:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+.notfound-btn-primary {
+  background-color: var(--text-primary);
+  color: var(--bg-canvas);
+  border: 1px solid var(--text-primary);
+}
+
+.notfound-btn-primary:hover {
+  opacity: 0.9;
+}
+
+.notfound-btn-secondary {
+  background-color: var(--bg-surface);
+  color: var(--text-primary);
+  border: 1px solid var(--border-subtle);
+}
+
+.notfound-btn-secondary:hover {
+  background-color: var(--bg-surface-hover);
+  border-color: var(--border-interactive);
+}

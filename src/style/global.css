@@ -1,34 +1,38 @@
 :root {
-    /* Pure Minimal Monochrome (Light Mode) */
-    --bg-canvas: #FAFAFA;
+    /* Warm Coffee & Roasted Bean (Light Mode) */
+    --bg-canvas: #FBF8F5;
     --bg-surface: #FFFFFF;
-    --bg-surface-subtle: #F4F4F5;
-    --bg-surface-hover: #E4E4E7;
-    --bg-surface-active: #D4D4D8;
-    --bg-surface-inverse: #09090B;
-    --bg-nav-sticky: rgba(255, 255, 255, 0.95);
+    --bg-surface-subtle: #F3ECE2;
+    --bg-surface-hover: #E9DFCF;
+    --bg-surface-active: #DECFC0;
+    --bg-surface-inverse: #23170F;
+    --bg-nav-sticky: rgba(251, 248, 245, 0.95);
 
-    --text-primary: #09090B;
-    --text-secondary: #27272A;
-    --text-muted: #52525B;
+    --text-primary: #23170F;
+    --text-secondary: #4A3B32;
+    --text-muted: #786659;
     --text-on-accent: #FFFFFF;
 
-    --accent-primary: #09090B;
-    --accent-hover: #27272A;
-    --accent-text: #09090B;
-    --accent-text-hover: #27272A;
-    --accent-subtle: #F4F4F5;
-    --accent-subtle-text: #09090B;
-    --accent-border: #09090B;
+    --accent-primary: #9E5727;
+    --accent-hover: #83451B;
+    --accent-text: #9E5727;
+    --accent-text-hover: #83451B;
+    --accent-subtle: #F3ECE2;
+    --accent-subtle-text: #23170F;
+    --accent-border: #9E5727;
 
-    --border-subtle: #E4E4E7;
-    --border-strong: #D4D4D8;
-    --border-interactive: #71717A;
-    --focus-ring: #09090B;
+    --border-subtle: #E8DFD5;
+    --border-strong: #D5C6B7;
+    --border-interactive: #8A7463;
+    --focus-ring: #9E5727;
 
-    --status-online: #09090B;
-    --shadow-card: none;
-    --shadow-elevated: 0 4px 16px rgba(0, 0, 0, 0.08);
+    --status-online: #2E7D32;
+    --bg-overlay: rgba(35, 23, 15, 0.92);
+    --bg-overlay-control: rgba(35, 23, 15, 0.78);
+    --text-on-overlay: #F8F3EC;
+    --border-overlay: rgba(248, 243, 236, 0.25);
+    --shadow-card: 0 1px 3px rgba(35, 23, 15, 0.05);
+    --shadow-elevated: 0 4px 16px rgba(35, 23, 15, 0.08);
 
     --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     --font-mono: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
@@ -61,34 +65,38 @@
 }
 
 [data-theme="dark"] {
-    /* Pure Minimal Monochrome (Dark Mode) */
-    --bg-canvas: #09090B;
-    --bg-surface: #121214;
-    --bg-surface-subtle: #18181B;
-    --bg-surface-hover: #27272A;
-    --bg-surface-active: #3F3F46;
-    --bg-surface-inverse: #FAFAFA;
-    --bg-nav-sticky: rgba(18, 18, 20, 0.95);
+    /* Warm Coffee & Roasted Bean (Dark Mode) */
+    --bg-canvas: #130E0B;
+    --bg-surface: #1C1612;
+    --bg-surface-subtle: #261E19;
+    --bg-surface-hover: #332922;
+    --bg-surface-active: #44372E;
+    --bg-surface-inverse: #F8F3EC;
+    --bg-nav-sticky: rgba(28, 22, 18, 0.95);
 
-    --text-primary: #FAFAFA;
-    --text-secondary: #E4E4E7;
-    --text-muted: #A1A1AA;
-    --text-on-accent: #09090B;
+    --text-primary: #F8F3EC;
+    --text-secondary: #D7CCC0;
+    --text-muted: #A49486;
+    --text-on-accent: #130E0B;
 
-    --accent-primary: #FAFAFA;
-    --accent-hover: #E4E4E7;
-    --accent-text: #FAFAFA;
-    --accent-text-hover: #E4E4E7;
-    --accent-subtle: #18181B;
-    --accent-subtle-text: #FAFAFA;
-    --accent-border: #FAFAFA;
+    --accent-primary: #D98A4F;
+    --accent-hover: #E5A169;
+    --accent-text: #D98A4F;
+    --accent-text-hover: #E5A169;
+    --accent-subtle: #261E19;
+    --accent-subtle-text: #F8F3EC;
+    --accent-border: #D98A4F;
 
-    --border-subtle: #27272A;
-    --border-strong: #3F3F46;
-    --border-interactive: #71717A;
-    --focus-ring: #FAFAFA;
+    --border-subtle: #312720;
+    --border-strong: #483930;
+    --border-interactive: #8C7769;
+    --focus-ring: #D98A4F;
 
-    --status-online: #FAFAFA;
+    --status-online: #4ADE80;
+    --bg-overlay: rgba(19, 14, 11, 0.94);
+    --bg-overlay-control: rgba(28, 22, 18, 0.85);
+    --text-on-overlay: #F8F3EC;
+    --border-overlay: rgba(248, 243, 236, 0.2);
     --shadow-card: none;
     --shadow-elevated: 0 4px 16px rgba(0, 0, 0, 0.6);
 }
@@ -105,6 +113,7 @@ html {
     font-size: 16px;
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
+    overflow-x: hidden;
 }
 
 body {
@@ -116,6 +125,8 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     transition: background-color 0.2s ease, color 0.2s ease;
+    overflow-x: hidden;
+    width: 100%;
 }
 
 /* Universal accessible focus ring (R-32) */
@@ -132,102 +143,19 @@ body {
 .app-container {
     max-width: 1180px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 24px;
     width: 100%;
     box-sizing: border-box;
 }
 
-/* Desktop layout (>= 1025px): 340px sticky sidebar + fluid content */
-.page-layout {
-    display: grid;
-    grid-template-columns: 320px minmax(0, 1fr);
-    gap: 24px;
-    width: 100%;
-    margin: 0 0 60px;
-    padding: 0;
-    align-items: start;
-}
-
-.sidebar {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    position: sticky;
-    top: 68px;
-    min-width: 0;
-}
-
-.main-content {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    min-width: 0;
-    width: 100%;
-}
-
-/* Responsive visibility helpers */
-.compact-only {
-    display: none;
-}
-
-.desktop-only {
-    display: block;
-}
-
-/* Tablet & Compact Laptop (641px - 1024px) */
-@media (max-width: 1024px) and (min-width: 641px) {
+@media (max-width: 768px) {
     .app-container {
-        padding: 0 16px;
-    }
-
-    .compact-only {
-        display: block;
-    }
-
-    .desktop-only {
-        display: none;
-    }
-
-    .page-layout {
-        grid-template-columns: 1fr;
-        gap: 16px;
-        margin: 0 0 48px;
-    }
-
-    .sidebar {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 16px;
-        position: static;
-        top: auto;
+        padding: 0 20px;
     }
 }
 
-/* Mobile View (<= 640px) */
-@media (max-width: 640px) {
+@media (max-width: 480px) {
     .app-container {
-        padding: 0 12px;
-    }
-
-    .compact-only {
-        display: block;
-    }
-
-    .desktop-only {
-        display: none;
-    }
-
-    .page-layout {
-        grid-template-columns: 1fr;
-        gap: 12px;
-        margin: 0 0 40px;
-    }
-
-    .sidebar {
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-        position: static;
-        top: auto;
+        padding: 0 14px;
     }
 }

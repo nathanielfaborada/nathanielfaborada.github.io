@@ -5,12 +5,13 @@
 .project-card {
     background-color: var(--bg-surface);
     border: 1px solid var(--border-subtle);
-    border-radius: var(--radius-lg, 6px);
-    padding: 22px;
+    border-radius: var(--radius-lg, 8px);
+    padding: 28px;
     display: flex;
     flex-direction: column;
     gap: 16px;
     min-width: 0;
+    box-shadow: var(--shadow-card);
     transition: border-color 0.15s ease;
 }
 
@@ -20,8 +21,11 @@
 
 /* Flagship capstone card treatment */
 .project-card-featured {
-    border-color: var(--text-primary);
-    border-top: 2px solid var(--text-primary);
+    border-color: var(--border-subtle);
+}
+
+.project-card-featured:hover {
+    border-color: var(--border-interactive);
 }
 
 /* Top architectural metadata strip */

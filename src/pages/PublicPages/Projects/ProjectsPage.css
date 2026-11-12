@@ -1,0 +1,15 @@
+.portfolio-projects-page {
+  width: 100%;
+}
+
+.projects-directory-list {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+@media (max-width: 640px) {
+  .projects-directory-list {
+    gap: 20px;
+  }
+}

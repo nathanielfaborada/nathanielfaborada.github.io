@@ -17,6 +17,7 @@ export default function EducationCard({
           <div className="work-roles">
             <span className="work-period">{education.degree}</span>
             <span className="work-period">{education.period}</span>
+            {education.location && <span className="work-period">{education.location}</span>}
           </div>
         </div>
       </div>

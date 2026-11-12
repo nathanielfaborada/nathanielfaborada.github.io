@@ -5,32 +5,45 @@ import {
   MailIcon,
   GlobeIcon,
   LanguageIcon,
+  PhoneIcon,
+  GithubIcon,
+  LinkedinIcon,
 } from '../common/Icons';
 import { PROFILE_DATA } from '../../data/profileData';
 
 const iconMap = {
+  phone: PhoneIcon,
   location: LocationIcon,
   email: MailIcon,
   country: GlobeIcon,
   languages: LanguageIcon,
+  github: GithubIcon,
+  linkedin: LinkedinIcon,
 };
 
 export default function PersonalDetailsCard({
   details = PROFILE_DATA.personalDetails,
 }) {
   return (
-    <SectionCard title="Personal Details">
+    <SectionCard title="Contact & Details">
       <ul className="detail-list">
         {details.map((item) => {
           const IconComponent = iconMap[item.iconType] || GlobeIcon;
-          const isEmailOrLink = item.iconType === 'email' || Boolean(item.href);
-          const linkHref = item.href || `mailto:${item.text}`;
+          const isLink = Boolean(item.href);
+          const isExternal = item.href && item.href.startsWith('http');
 
           return (
             <li key={item.id} className="detail-item">
-              <IconComponent className="detail-icon" />
-              {isEmailOrLink ? (
-                <a href={linkHref} className="detail-link">
+              <span className="detail-icon-wrap" aria-hidden="true">
+                <IconComponent className="detail-icon" size={17} />
+              </span>
+              {isLink ? (
+                <a
+                  href={item.href}
+                  className="detail-link"
+                  target={isExternal ? '_blank' : undefined}
+                  rel={isExternal ? 'noopener noreferrer' : undefined}
+                >
                   {item.text}
                 </a>
               ) : (

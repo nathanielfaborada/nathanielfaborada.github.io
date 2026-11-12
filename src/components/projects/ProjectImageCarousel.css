@@ -5,7 +5,7 @@
     border-radius: var(--radius-md, 6px);
     border: 1px solid var(--border-subtle);
     overflow: hidden;
-    background-color: #0f172a;
+    background-color: var(--bg-surface-subtle);
     user-select: none;
 }
 
@@ -46,7 +46,7 @@
     height: 100%;
     object-fit: cover;
     display: block;
-    background-color: #0f172a;
+    background-color: var(--bg-surface-subtle);
     cursor: pointer;
 }
 
@@ -57,15 +57,15 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #0f172a;
-    color: #f8fafc;
+    background-color: var(--bg-surface-subtle);
+    color: var(--text-primary);
     gap: 8px;
     padding: 20px;
     text-align: center;
 }
 
 .carousel-fallback-icon {
-    color: #cbd5e1;
+    color: var(--text-muted);
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -73,7 +73,7 @@
 
 .carousel-fallback-text {
     font-size: 0.875rem;
-    color: #cbd5e1;
+    color: var(--text-muted);
     font-weight: 500;
 }
 
@@ -86,9 +86,9 @@
     min-width: 44px;
     min-height: 44px;
     border-radius: 50%;
-    background-color: rgba(15, 23, 42, 0.82);
-    border: 1px solid rgba(248, 250, 252, 0.45);
-    color: #f8fafc;
+    background-color: var(--bg-overlay-control);
+    border: 1px solid var(--border-overlay);
+    color: var(--text-on-overlay);
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -106,16 +106,16 @@
 }
 
 .carousel-nav-btn:hover {
-    background-color: #0f172a;
-    border-color: #ffffff;
-    color: #ffffff;
+    background-color: var(--accent-primary);
+    border-color: var(--accent-primary);
+    color: var(--text-on-accent);
 }
 
 .carousel-nav-btn:focus-visible,
 .carousel-expand-btn:focus-visible,
 .carousel-dot:focus-visible {
-    outline: 2px solid #ffffff;
-    box-shadow: 0 0 0 4px #1d4ed8;
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 2px;
 }
 
 .carousel-nav-prev {
@@ -135,9 +135,9 @@
     min-width: 44px;
     min-height: 44px;
     border-radius: var(--radius-md, 6px);
-    background-color: rgba(15, 23, 42, 0.82);
-    border: 1px solid rgba(248, 250, 252, 0.45);
-    color: #f8fafc;
+    background-color: var(--bg-overlay-control);
+    border: 1px solid var(--border-overlay);
+    color: var(--text-on-overlay);
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -155,9 +155,9 @@
 }
 
 .carousel-expand-btn:hover {
-    background-color: #0f172a;
-    border-color: #ffffff;
-    color: #ffffff;
+    background-color: var(--accent-primary);
+    border-color: var(--accent-primary);
+    color: var(--text-on-accent);
 }
 
 .carousel-counter {
@@ -166,9 +166,9 @@
     right: 12px;
     padding: 4px 10px;
     border-radius: var(--radius-sm, 4px);
-    background-color: rgba(15, 23, 42, 0.85);
-    border: 1px solid rgba(248, 250, 252, 0.3);
-    color: #f8fafc;
+    background-color: var(--bg-overlay-control);
+    border: 1px solid var(--border-overlay);
+    color: var(--text-on-overlay);
     font-family: var(--font-mono);
     font-size: 0.75rem;
     font-weight: 600;
@@ -186,13 +186,15 @@
     gap: 2px;
     z-index: 5;
     padding: 0 8px;
-    background-color: rgba(15, 23, 42, 0.75);
-    border: 1px solid rgba(248, 250, 252, 0.25);
+    background-color: var(--bg-overlay-control);
+    border: 1px solid var(--border-overlay);
     border-radius: 9999px;
 }
 
 .carousel-dot {
-    min-width: 32px;
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
     min-height: 44px;
     padding: 0;
     background: transparent;
@@ -209,19 +211,19 @@
     width: 8px;
     height: 8px;
     border-radius: 9999px;
-    background-color: rgba(248, 250, 252, 0.55);
-    border: 1px solid rgba(15, 23, 42, 0.5);
+    background-color: var(--border-overlay);
+    border: 1px solid transparent;
     transition: width 150ms cubic-bezier(0.22, 1, 0.36, 1),
         background-color 150ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .carousel-dot:hover::after {
-    background-color: rgba(248, 250, 252, 0.9);
+    background-color: var(--text-on-overlay);
 }
 
 .carousel-dot.active::after {
     width: 22px;
-    background-color: #ffffff;
+    background-color: var(--accent-primary);
 }
 
 .carousel-lightbox {
@@ -237,7 +239,7 @@
 .carousel-lightbox-backdrop {
     position: absolute;
     inset: 0;
-    background-color: rgba(2, 6, 23, 0.92);
+    background-color: var(--bg-overlay);
     z-index: 1;
 }
 
@@ -269,8 +271,8 @@
     height: auto;
     object-fit: contain;
     border-radius: var(--radius-md, 6px);
-    border: 1px solid rgba(248, 250, 252, 0.2);
-    background-color: #0f172a;
+    border: 1px solid var(--border-overlay);
+    background-color: var(--bg-surface-subtle);
 }
 
 .carousel-lightbox-close {
@@ -282,21 +284,22 @@
     min-width: 44px;
     min-height: 44px;
     border-radius: 50%;
-    background-color: rgba(15, 23, 42, 0.9);
-    border: 1px solid rgba(248, 250, 252, 0.5);
-    color: #f8fafc;
+    background-color: var(--bg-overlay-control);
+    border: 1px solid var(--border-overlay);
+    color: var(--text-on-overlay);
     display: inline-flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     z-index: 1010;
+    transition: background-color 150ms ease, color 150ms ease;
 }
 
 .carousel-lightbox-close:hover,
 .carousel-lightbox-nav:hover {
-    background-color: #1d4ed8;
-    border-color: #ffffff;
-    color: #ffffff;
+    background-color: var(--accent-primary);
+    border-color: var(--accent-primary);
+    color: var(--text-on-accent);
 }
 
 .carousel-lightbox-nav {
@@ -308,14 +311,15 @@
     min-width: 48px;
     min-height: 48px;
     border-radius: 50%;
-    background-color: rgba(15, 23, 42, 0.9);
-    border: 1px solid rgba(248, 250, 252, 0.5);
-    color: #f8fafc;
+    background-color: var(--bg-overlay-control);
+    border: 1px solid var(--border-overlay);
+    color: var(--text-on-overlay);
     display: inline-flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     z-index: 1010;
+    transition: background-color 150ms ease, color 150ms ease;
 }
 
 .carousel-lightbox-prev {
@@ -329,9 +333,9 @@
 .carousel-lightbox-caption {
     font-family: var(--font-mono);
     font-size: 0.8125rem;
-    color: #f8fafc;
-    background-color: rgba(15, 23, 42, 0.85);
-    border: 1px solid rgba(248, 250, 252, 0.25);
+    color: var(--text-on-overlay);
+    background-color: var(--bg-overlay-control);
+    border: 1px solid var(--border-overlay);
     padding: 6px 14px;
     border-radius: var(--radius-sm, 4px);
     text-align: center;

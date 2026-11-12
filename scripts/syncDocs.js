@@ -41,3 +41,13 @@ if (fs.existsSync(redirectsFile)) {
   }
   console.log('Copied _redirects to build output directories.');
 }
+
+// Create 404.html fallback for GitHub Pages SPA client routing
+const distIndex = path.join(distDir, 'index.html');
+if (fs.existsSync(distIndex)) {
+  fs.copyFileSync(distIndex, path.join(distDir, '404.html'));
+  if (fs.existsSync(docsDir)) {
+    fs.copyFileSync(distIndex, path.join(docsDir, '404.html'));
+  }
+  console.log('Generated 404.html SPA router fallback for GitHub Pages.');
+}

@@ -8,6 +8,7 @@ import {
   InfoCircleIcon,
   AwardIcon,
   ExternalLinkIcon,
+  GithubIcon,
 } from '../common/Icons';
 import './ProjectCard.css';
 
@@ -189,6 +190,50 @@ export default function ProjectCard({ project }) {
           {project.tags.map((tag) => (
             <Badge key={tag} label={tag} />
           ))}
+        </div>
+      )}
+
+      {/* Project Action Links */}
+      {(project.source_code_url || project.backend_code_url || project.live_demo_url) && (
+        <div className="project-footer">
+          <div className="project-links">
+            {project.source_code_url && (
+              <a
+                href={project.source_code_url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="project-btn project-btn-secondary"
+                aria-label={project.backend_code_url ? `View frontend repository for ${cardTitle}` : `View repository for ${cardTitle}`}
+              >
+                <GithubIcon size={14} />
+                <span>{project.backend_code_url ? (project.frontend_repo_label || 'Frontend SPA') : 'Repository'}</span>
+              </a>
+            )}
+            {project.backend_code_url && (
+              <a
+                href={project.backend_code_url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="project-btn project-btn-secondary"
+                aria-label={`View backend repository for ${cardTitle}`}
+              >
+                <GithubIcon size={14} />
+                <span>{project.backend_repo_label || 'Backend API'}</span>
+              </a>
+            )}
+            {project.live_demo_url && (
+              <a
+                href={project.live_demo_url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="project-btn project-btn-primary"
+                aria-label={`View live demo for ${cardTitle}`}
+              >
+                <ExternalLinkIcon size={14} />
+                <span>Live Demo</span>
+              </a>
+            )}
+          </div>
         </div>
       )}
     </article>

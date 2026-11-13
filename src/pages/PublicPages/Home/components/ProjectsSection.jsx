@@ -1,8 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import ProjectCard from '../../../../components/projects/ProjectCard';
 import { PROJECTS_DATA } from '../../../../data/projectsData';
-import { ArrowRightIcon } from '../../../../components/common/Icons';
 import './ProjectsSection.css';
 
 export default function ProjectsSection() {
@@ -21,11 +19,6 @@ export default function ProjectsSection() {
             Web applications and systems built for college capstone and personal projects.
           </p>
         </div>
-
-        <Link to="/projects" className="hero-btn hero-btn-secondary">
-          <span>View All Projects ({PROJECTS_DATA.length})</span>
-          <ArrowRightIcon size={14} />
-        </Link>
       </div>
 
       {/* Projects List */}

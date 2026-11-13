@@ -25,18 +25,34 @@ export default function AboutPage() {
           paddingBottom: '80px',
         }}
       >
-        <div className="about-cards-grid">
-          <div className="about-col">
-            <WorkExperienceCard experiences={PROFILE_DATA.workExperience} />
-            <EducationCard education={PROFILE_DATA.education} />
-            <PersonalDetailsCard details={PROFILE_DATA.personalDetails} />
-          </div>
+        <div className="about-sections-wrapper">
+          {/* Section 1: Professional Background & Technical Skills */}
+          <section className="about-section" aria-label="Professional Background and Technical Skills">
+            <div className="about-cards-grid">
+              <div className="about-col">
+                <WorkExperienceCard experiences={PROFILE_DATA.workExperience} />
+                <EducationCard education={PROFILE_DATA.education} />
+                <PersonalDetailsCard details={PROFILE_DATA.personalDetails} />
+              </div>
 
-          <div className="about-col">
-            <LearnedSkillsCard skills={PROFILE_DATA.learnedSkills} />
-            <CreatorChannelsCard channels={PROFILE_DATA.creatorChannels} />
-            <DeveloperReferralsCard referrals={PROFILE_DATA.developerReferrals} />
-          </div>
+              <div className="about-col">
+                <LearnedSkillsCard skills={PROFILE_DATA.learnedSkills} />
+              </div>
+            </div>
+          </section>
+
+          {/* Section 2: Online Presence & Recommended Developer Resources */}
+          <section className="about-section" aria-label="Online Presence and Developer Resources">
+            <div className="about-cards-grid">
+              <div className="about-col">
+                <CreatorChannelsCard channels={PROFILE_DATA.creatorChannels} />
+              </div>
+
+              <div className="about-col">
+                <DeveloperReferralsCard referrals={PROFILE_DATA.developerReferrals} />
+              </div>
+            </div>
+          </section>
         </div>
       </div>
     </div>

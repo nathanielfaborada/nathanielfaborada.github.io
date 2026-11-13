@@ -1,169 +1,270 @@
-.about-sections-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 28px;
-}
+/* ==========================================================================
+   About Page Layout & Styles (Full-Width Symmetrical Modular Architecture)
+   ========================================================================== */
 
-.about-section {
+.portfolio-about-page {
   width: 100%;
 }
 
-.about-cards-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 28px;
-  align-items: start;
-}
-
-.about-col {
+.about-page-flow {
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 32px;
 }
 
-/* Contact & Details List */
-.detail-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+/* ==========================================================================
+   Hero Introduction Banner
+   ========================================================================== */
+.about-hero-header {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg, 8px);
+  padding: clamp(24px, 3.5vw, 36px);
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 }
 
-.detail-item {
+.about-hero-badge-row {
   display: flex;
   align-items: center;
-  gap: 12px;
-  font-size: 0.875rem;
-  color: var(--text-secondary);
-  min-height: 28px;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
-.detail-icon-wrap {
-  width: 28px;
-  height: 28px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--bg-surface-subtle);
-  border-radius: var(--radius-sm, 4px);
+.about-role-pill {
+  font-size: 0.8125rem;
+  font-weight: 700;
   color: var(--accent-text);
+  background-color: var(--bg-surface-subtle);
+  border: 1px solid var(--border-subtle);
+  padding: 4px 12px;
+  border-radius: 9999px;
+  letter-spacing: 0.02em;
+}
+
+.about-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  background-color: var(--bg-surface-subtle);
+  border: 1px solid var(--border-subtle);
+  padding: 4px 12px;
+  border-radius: 9999px;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #22c55e;
   flex-shrink: 0;
 }
 
-.detail-icon {
-  width: 16px;
-  height: 16px;
-}
-
-.detail-link {
+.about-hero-title {
+  font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+  font-weight: 800;
   color: var(--text-primary);
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.15s ease;
-  word-break: break-all;
+  margin: 0;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
 }
 
-.detail-link:hover {
-  color: var(--accent-primary);
-  text-decoration: underline;
-}
-
-.detail-text {
+.about-hero-lead {
+  font-size: 1.05rem;
   color: var(--text-secondary);
+  line-height: 1.65;
+  margin: 0;
+  max-width: 860px;
 }
 
-/* Learned Skills inside SectionCard */
-.skills-desc {
-  font-size: 0.84375rem;
-  color: var(--text-muted);
-  line-height: 1.5;
-  margin: 0 0 16px 0;
-}
-
-.skills-category {
-  margin-bottom: 14px;
-}
-
-.skills-category:last-child {
-  margin-bottom: 0;
-}
-
-.skills-category-title {
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--accent-primary);
-  margin: 0 0 6px 0;
-}
-
-.skill-scroll {
+.about-hero-meta-row {
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 12px;
+  padding-top: 4px;
 }
 
-/* Education Card Elements */
-.work-item {
+.about-meta-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+  background-color: var(--bg-surface-subtle);
+  border: 1px solid var(--border-subtle);
+  padding: 6px 12px;
+  border-radius: var(--radius-sm, 4px);
+}
+
+.about-meta-chip svg {
+  color: var(--accent-text);
+}
+
+/* ==========================================================================
+   Full Section Wrapper
+   ========================================================================== */
+.about-full-section {
+  width: 100%;
+}
+
+.about-section-subhead {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin: 0 0 18px 0;
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   Section 1: Career & Academic Journey (2-Column Symmetry)
+   ========================================================================== */
+.about-journey-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.journey-card-item {
+  background-color: var(--bg-surface-subtle);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md, 6px);
+  padding: 20px;
   display: flex;
-  align-items: flex-start;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.journey-item-topbar {
+  display: flex;
+  align-items: center;
   gap: 14px;
 }
 
-.work-icon {
-  width: 44px;
-  height: 44px;
-  border-radius: var(--radius-md, 6px);
+.journey-icon-wrap {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-sm, 4px);
+  background-color: var(--bg-surface);
   border: 1px solid var(--border-subtle);
-  background-color: var(--bg-surface-subtle);
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
   color: var(--accent-text);
+  flex-shrink: 0;
 }
 
-.work-details {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.work-company {
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: var(--text-primary);
-}
-
-.work-roles {
+.journey-heading-wrap {
   display: flex;
   flex-direction: column;
   gap: 2px;
 }
 
-.work-period {
-  font-size: 0.8125rem;
+.journey-type-label {
+  font-size: 0.71875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent-primary);
+}
+
+.journey-entity-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.journey-role-pill-wrap {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.journey-role-title {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.journey-period-badge {
+  font-size: 0.78125rem;
   color: var(--text-muted);
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  padding: 2px 8px;
+  border-radius: var(--radius-sm, 4px);
+}
+
+.journey-desc {
+  font-size: 0.84375rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  margin: 0;
 }
 
 /* ==========================================================================
-   Creator & Social Channels Card
+   Section 2: Technical Skills Mosaic
    ========================================================================== */
-.creator-channels-list {
+.about-skills-intro {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin: 0 0 18px 0;
+  line-height: 1.5;
+}
+
+.about-skills-mosaic {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.skill-mosaic-category {
+  background-color: var(--bg-surface-subtle);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md, 6px);
+  padding: 16px;
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.creator-channel-card {
+.skill-mosaic-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent-primary);
+  margin: 0;
+}
+
+.skill-mosaic-pills {
   display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 11px 14px;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+/* ==========================================================================
+   Section 3: Creator Channels & Online Media
+   ========================================================================== */
+.about-channels-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+.about-channel-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px;
   min-height: 44px;
-  background-color: var(--bg-surface);
+  background-color: var(--bg-surface-subtle);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-md, 6px);
   text-decoration: none;
@@ -171,23 +272,29 @@
   transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
 }
 
-.creator-channel-card:hover {
+.about-channel-card:hover {
   transform: translateY(-2px);
-  background-color: var(--bg-surface-subtle);
+  background-color: var(--bg-surface);
   border-color: var(--accent-primary);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
 }
 
-.creator-channel-card:focus-visible {
+.about-channel-card:focus-visible {
   outline: 2px solid var(--accent-primary);
   outline-offset: 2px;
 }
 
-.creator-channel-icon-wrap {
-  width: 36px;
-  height: 36px;
+.about-channel-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.about-channel-icon-wrap {
+  width: 38px;
+  height: 38px;
   border-radius: var(--radius-sm, 4px);
-  background-color: var(--bg-surface-subtle);
+  background-color: var(--bg-surface);
   border: 1px solid var(--border-subtle);
   display: flex;
   align-items: center;
@@ -196,49 +303,27 @@
   flex-shrink: 0;
 }
 
-.creator-channel-icon {
-  flex-shrink: 0;
-}
-
-.creator-channel-info {
+.about-channel-names {
   display: flex;
   flex-direction: column;
-  gap: 3px;
+  gap: 2px;
   flex: 1;
   min-width: 0;
 }
 
-.creator-channel-heading {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.creator-channel-title {
-  font-size: 0.875rem;
+.about-channel-title {
+  font-size: 0.9rem;
   font-weight: 700;
   color: var(--text-primary);
 }
 
-.creator-channel-handle {
+.about-channel-handle {
   font-size: 0.75rem;
   font-weight: 600;
   color: var(--accent-text);
-  background-color: var(--bg-surface-subtle);
-  border: 1px solid var(--border-subtle);
-  padding: 1px 7px;
-  border-radius: var(--radius-sm, 4px);
 }
 
-.creator-channel-desc {
-  font-size: 0.78125rem;
-  color: var(--text-secondary);
-  line-height: 1.45;
-  margin: 0;
-}
-
-.creator-channel-action {
+.about-channel-arrow {
   color: var(--text-muted);
   display: flex;
   align-items: center;
@@ -247,27 +332,35 @@
   transition: color 0.15s ease, transform 0.15s ease;
 }
 
-.creator-channel-card:hover .creator-channel-action {
+.about-channel-card:hover .about-channel-arrow {
   color: var(--accent-primary);
   transform: translate(1px, -1px);
 }
 
-/* ==========================================================================
-   Developer Perks & Referrals Card
-   ========================================================================== */
-.developer-referrals-list {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+.about-channel-desc {
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+  margin: 0;
 }
 
-.developer-referral-card {
+/* ==========================================================================
+   Section 4: Recommended Developer Tools
+   ========================================================================== */
+.about-referrals-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 18px;
+}
+
+.about-referral-tile {
   display: flex;
-  align-items: flex-start;
+  flex-direction: column;
+  justify-content: space-between;
   gap: 14px;
-  padding: 12px 14px;
+  padding: 18px;
   min-height: 44px;
-  background-color: var(--bg-surface);
+  background-color: var(--bg-surface-subtle);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-md, 6px);
   text-decoration: none;
@@ -275,69 +368,52 @@
   transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
 }
 
-.developer-referral-card:hover {
+.about-referral-tile:hover {
   transform: translateY(-2px);
-  background-color: var(--bg-surface-subtle);
+  background-color: var(--bg-surface);
   border-color: var(--accent-primary);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
 }
 
-.developer-referral-card:focus-visible {
+.about-referral-tile:focus-visible {
   outline: 2px solid var(--accent-primary);
   outline-offset: 2px;
 }
 
-.developer-referral-icon-wrap {
-  width: 36px;
-  height: 36px;
+.about-referral-top {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.about-referral-icon-wrap {
+  width: 40px;
+  height: 40px;
   border-radius: var(--radius-sm, 4px);
-  background-color: var(--bg-surface-subtle);
+  background-color: var(--bg-surface);
   border: 1px solid var(--border-subtle);
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--accent-text);
   flex-shrink: 0;
-  margin-top: 2px;
 }
 
-.developer-referral-icon {
-  flex-shrink: 0;
-}
-
-.developer-referral-info {
+.about-referral-header-text {
   display: flex;
   flex-direction: column;
-  gap: 3px;
+  gap: 2px;
   flex: 1;
   min-width: 0;
 }
 
-.developer-referral-header {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.developer-referral-name {
-  font-size: 0.875rem;
+.about-referral-name {
+  font-size: 0.95rem;
   font-weight: 700;
   color: var(--text-primary);
 }
 
-.developer-referral-badge {
-  font-size: 0.6875rem;
-  font-weight: 700;
-  color: var(--accent-text);
-  background-color: var(--bg-surface-subtle);
-  border: 1px solid var(--border-subtle);
-  padding: 2px 7px;
-  border-radius: 9999px;
-  letter-spacing: 0.02em;
-}
-
-.developer-referral-category {
+.about-referral-cat {
   font-size: 0.71875rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -345,35 +421,123 @@
   color: var(--accent-primary);
 }
 
-.developer-referral-desc {
-  font-size: 0.78125rem;
+.about-referral-pill {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: var(--accent-text);
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  padding: 3px 8px;
+  border-radius: 9999px;
+  white-space: nowrap;
+}
+
+.about-referral-desc {
+  font-size: 0.8125rem;
   color: var(--text-secondary);
-  line-height: 1.45;
+  line-height: 1.5;
   margin: 0;
 }
 
-.developer-referral-action {
-  color: var(--text-muted);
+.about-referral-action {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--accent-primary);
+  margin-top: auto;
+}
+
+/* ==========================================================================
+   Section 5: Direct Contact Bar
+   ========================================================================== */
+.about-contact-bar {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.about-contact-node {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  min-height: 44px;
+  background-color: var(--bg-surface-subtle);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md, 6px);
+}
+
+.about-contact-icon-wrap {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm, 4px);
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
   display: flex;
   align-items: center;
   justify-content: center;
+  color: var(--accent-text);
   flex-shrink: 0;
-  margin-top: 4px;
-  transition: color 0.15s ease, transform 0.15s ease;
 }
 
-.developer-referral-card:hover .developer-referral-action {
+.about-contact-text-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.about-contact-label {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
   color: var(--accent-primary);
-  transform: translate(1px, -1px);
 }
 
+.about-contact-link {
+  font-size: 0.84375rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-decoration: none;
+  word-break: break-all;
+  transition: color 0.15s ease;
+}
+
+.about-contact-link:hover {
+  color: var(--accent-primary);
+  text-decoration: underline;
+}
+
+.about-contact-val {
+  font-size: 0.84375rem;
+  color: var(--text-secondary);
+}
+
+/* ==========================================================================
+   Mobile Responsive Reflows
+   ========================================================================== */
 @media (max-width: 840px) {
-  .about-cards-grid {
+  .about-journey-grid {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 16px;
   }
 
-  .about-col {
-    gap: 20px;
+  .about-page-flow {
+    gap: 24px;
+  }
+
+  .about-channels-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-referrals-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-contact-bar {
+    grid-template-columns: 1fr;
   }
 }

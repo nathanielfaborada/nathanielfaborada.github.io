@@ -14,13 +14,7 @@ export default function HomePage() {
   );
 
   return (
-    <div
-      className="app-container home-page-container"
-      style={{
-        paddingTop: 'clamp(28px, 4vw, 40px)',
-        paddingBottom: '80px',
-      }}
-    >
+    <div className="app-container home-page-container">
       <HomeHero />
       <ProjectsSection />
       <CollaboratorsTeaser />

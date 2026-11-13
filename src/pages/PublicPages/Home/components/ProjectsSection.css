@@ -1,14 +1,14 @@
 .home-projects-section {
   width: 100%;
-  margin-bottom: 32px;
+  margin-bottom: 24px;
 }
 
 .home-projects-header {
   background-color: var(--bg-surface);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-lg, 8px);
-  padding: 28px;
-  margin-bottom: 24px;
+  padding: 22px 28px;
+  margin-bottom: 20px;
   box-shadow: var(--shadow-card);
   display: flex;
   align-items: flex-start;
@@ -57,13 +57,18 @@
 .home-projects-list {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 20px;
 }
 
 @media (max-width: 640px) {
+  .home-projects-section {
+    margin-bottom: 18px;
+  }
+
   .home-projects-header {
-    padding: 16px;
-    gap: 12px;
+    padding: 16px 14px;
+    margin-bottom: 14px;
+    gap: 10px;
   }
 
   .home-projects-title {
@@ -71,6 +76,6 @@
   }
 
   .home-projects-list {
-    gap: 20px;
+    gap: 14px;
   }
 }

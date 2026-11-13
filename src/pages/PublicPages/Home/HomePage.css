@@ -1,3 +1,12 @@
 .home-page-container {
   width: 100%;
+  padding-top: clamp(16px, 2vw, 22px);
+  padding-bottom: clamp(40px, 5vw, 56px);
+}
+
+@media (max-width: 640px) {
+  .home-page-container {
+    padding-top: 14px;
+    padding-bottom: 32px;
+  }
 }

@@ -1,13 +1,13 @@
 .collab-teaser-section {
   width: 100%;
-  margin-bottom: 32px;
+  margin-bottom: 24px;
 }
 
 .collab-teaser-card {
   background-color: var(--bg-surface);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-lg, 8px);
-  padding: 28px;
+  padding: 24px 28px;
   box-shadow: var(--shadow-card);
 }
 
@@ -17,9 +17,9 @@
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 16px;
-  padding-bottom: 20px;
+  padding-bottom: 16px;
   border-bottom: 1px solid var(--border-subtle);
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
 .collab-teaser-title {
@@ -188,6 +188,10 @@
 }
 
 @media (max-width: 640px) {
+  .collab-teaser-section {
+    margin-bottom: 18px;
+  }
+
   .collab-teaser-card {
     padding: 16px 14px;
   }

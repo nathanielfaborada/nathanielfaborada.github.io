@@ -1,6 +1,6 @@
 .home-hero-section {
   width: 100%;
-  margin-bottom: 32px;
+  margin-bottom: 24px;
 }
 
 .home-hero-card {
@@ -261,6 +261,10 @@
 
 /* Mobile phone state */
 @media (max-width: 640px) {
+  .home-hero-section {
+    margin-bottom: 18px;
+  }
+
   .home-hero-card {
     padding: 18px 16px;
   }

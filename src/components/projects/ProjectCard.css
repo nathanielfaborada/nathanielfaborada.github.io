@@ -314,6 +314,11 @@
         font-size: 1.1rem;
     }
 
+    /* Hide Key Solutions & Delivered Contributions on mobile view per design requirement */
+    .project-contributions {
+        display: none !important;
+    }
+
     .project-footer {
         justify-content: stretch;
     }
@@ -371,31 +376,6 @@
     .project-description {
         font-size: 0.85rem;
         line-height: 1.5;
-    }
-
-    .project-contributions {
-        padding: 10px 12px;
-        margin-top: 2px;
-        border-radius: var(--radius-sm, 4px);
-    }
-
-    .contributions-title {
-        font-size: 0.72rem;
-        margin-bottom: 8px;
-    }
-
-    .contributions-list {
-        gap: 6px;
-    }
-
-    .contribution-item {
-        font-size: 0.78125rem;
-        line-height: 1.45;
-        gap: 6px;
-    }
-
-    .contribution-bullet {
-        margin-top: 2px;
     }
 
     .project-tags {

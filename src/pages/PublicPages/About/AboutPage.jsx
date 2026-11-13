@@ -3,6 +3,8 @@ import PersonalDetailsCard from '../../../components/profile/PersonalDetailsCard
 import WorkExperienceCard from '../../../components/profile/WorkExperienceCard';
 import LearnedSkillsCard from '../../../components/profile/LearnedSkillsCard';
 import EducationCard from '../../../components/profile/EducationCard';
+import CreatorChannelsCard from '../../../components/profile/CreatorChannelsCard';
+import DeveloperReferralsCard from '../../../components/profile/DeveloperReferralsCard';
 import { PROFILE_DATA } from '../../../data/profileData';
 import { useDocumentTitle } from '../../../hooks';
 import './AboutPage.css';
@@ -10,7 +12,7 @@ import './AboutPage.css';
 export default function AboutPage() {
   useDocumentTitle(
     "About Nathaniel Faborada | Junior Software Developer",
-    "In-depth background, technical competencies, work history, and academic credentials of Nathaniel Faborada.",
+    "In-depth background, technical competencies, work history, creator channels, and academic credentials of Nathaniel Faborada.",
     "/about"
   );
 
@@ -32,6 +34,8 @@ export default function AboutPage() {
 
           <div className="about-col">
             <LearnedSkillsCard skills={PROFILE_DATA.learnedSkills} />
+            <CreatorChannelsCard channels={PROFILE_DATA.creatorChannels} />
+            <DeveloperReferralsCard referrals={PROFILE_DATA.developerReferrals} />
           </div>
         </div>
       </div>

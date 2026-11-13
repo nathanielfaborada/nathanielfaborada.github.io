@@ -138,6 +138,223 @@
   color: var(--text-muted);
 }
 
+/* ==========================================================================
+   Creator & Social Channels Card
+   ========================================================================== */
+.creator-channels-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.creator-channel-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 14px;
+  min-height: 44px;
+  background-color: var(--bg-surface-subtle);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md, 6px);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.creator-channel-card:hover {
+  transform: translateY(-1px);
+  border-color: var(--accent-primary);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.creator-channel-card:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+}
+
+.creator-channel-icon-wrap {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm, 4px);
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-text);
+  flex-shrink: 0;
+}
+
+.creator-channel-icon {
+  flex-shrink: 0;
+}
+
+.creator-channel-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  flex: 1;
+  min-width: 0;
+}
+
+.creator-channel-heading {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.creator-channel-title {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.creator-channel-handle {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--accent-text);
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  padding: 1px 7px;
+  border-radius: var(--radius-sm, 4px);
+}
+
+.creator-channel-desc {
+  font-size: 0.78125rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+  margin: 0;
+}
+
+.creator-channel-action {
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+
+.creator-channel-card:hover .creator-channel-action {
+  color: var(--accent-primary);
+  transform: translate(1px, -1px);
+}
+
+/* ==========================================================================
+   Developer Perks & Referrals Card
+   ========================================================================== */
+.developer-referrals-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.developer-referral-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 12px 14px;
+  min-height: 44px;
+  background-color: var(--bg-surface-subtle);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md, 6px);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.developer-referral-card:hover {
+  transform: translateY(-1px);
+  border-color: var(--accent-primary);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.developer-referral-card:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+}
+
+.developer-referral-icon-wrap {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm, 4px);
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-text);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.developer-referral-icon {
+  flex-shrink: 0;
+}
+
+.developer-referral-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  flex: 1;
+  min-width: 0;
+}
+
+.developer-referral-header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.developer-referral-name {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.developer-referral-badge {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: var(--accent-text);
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  padding: 2px 7px;
+  border-radius: 9999px;
+  letter-spacing: 0.02em;
+}
+
+.developer-referral-category {
+  font-size: 0.71875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--accent-primary);
+}
+
+.developer-referral-desc {
+  font-size: 0.78125rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+  margin: 0;
+}
+
+.developer-referral-action {
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 4px;
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+
+.developer-referral-card:hover .developer-referral-action {
+  color: var(--accent-primary);
+  transform: translate(1px, -1px);
+}
+
 @media (max-width: 840px) {
   .about-cards-grid {
     grid-template-columns: 1fr;

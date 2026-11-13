@@ -36,11 +36,6 @@ export default function CollaboratorsTeaser() {
               Teammates and fellow student developers Nathaniel collaborated with on real projects.
             </p>
           </div>
-
-          <Link to="/collaborators" className="hero-btn hero-btn-secondary">
-            <span>View Full Roster</span>
-            <ArrowRightIcon size={14} />
-          </Link>
         </div>
 
         <div className="collab-teaser-grid">

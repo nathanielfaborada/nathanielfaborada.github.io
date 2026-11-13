@@ -274,11 +274,11 @@
   }
 
   .home-hero-avatar-frame {
-    width: 100px;
-    height: 100px;
+    width: clamp(135px, 38vw, 150px);
+    height: clamp(135px, 38vw, 150px);
     aspect-ratio: 1 / 1;
-    border-radius: var(--radius-md, 6px);
-    margin-bottom: 2px;
+    border-radius: var(--radius-lg, 8px);
+    margin-bottom: 4px;
   }
 
   .home-hero-intro {

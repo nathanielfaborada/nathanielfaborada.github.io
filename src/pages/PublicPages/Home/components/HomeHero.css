@@ -262,98 +262,104 @@
 /* Mobile phone state */
 @media (max-width: 640px) {
   .home-hero-card {
-    padding: 16px 14px;
+    padding: 18px 16px;
   }
 
   .home-hero-main {
-    display: grid;
-    grid-template-columns: 76px 1fr;
-    row-gap: 12px;
-    column-gap: 14px;
-    align-items: center;
-    margin-bottom: 14px;
-  }
-
-  .home-hero-avatar-frame {
-    grid-column: 1;
-    grid-row: 1;
-    width: 76px;
-    height: 76px;
-    aspect-ratio: 1 / 1;
-    border-radius: var(--radius-md, 6px);
-  }
-
-  .home-hero-intro {
-    display: contents;
-    min-height: auto;
-  }
-
-  .home-hero-names {
-    grid-column: 2;
-    grid-row: 1;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 3px;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .home-hero-avatar-frame {
+    width: 100px;
+    height: 100px;
+    aspect-ratio: 1 / 1;
+    border-radius: var(--radius-md, 6px);
+    margin-bottom: 2px;
+  }
+
+  .home-hero-intro {
+    width: 100%;
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .home-hero-names {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
     margin-bottom: 0;
   }
 
   .home-hero-name {
-    font-size: 1.35rem;
+    font-size: 1.45rem;
+    font-weight: 800;
     line-height: 1.2;
     margin: 0;
   }
 
   .home-hero-role {
-    font-size: 0.8125rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--accent-text);
   }
 
   .home-hero-statement {
-    grid-column: 1 / -1;
-    grid-row: 2;
     font-size: 0.875rem;
     line-height: 1.55;
+    color: var(--text-secondary);
     margin: 0;
   }
 
+  /* 2x2 Grid: Row 1 = Web Applications | React & JavaScript, Row 2 = Node.js & Laravel | Databases & Systems */
   .home-hero-chips {
-    grid-column: 1 / -1;
-    grid-row: 3;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    width: 100%;
     margin-top: 4px;
+    margin-bottom: 0;
   }
 
   .home-hero-chip {
-    padding: 3px 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 6px 8px;
     font-size: 0.72rem;
+    font-weight: 500;
+    white-space: nowrap;
+    box-sizing: border-box;
+    width: 100%;
   }
 
+  /* Vertical 1-column stack: Project -> Experience -> Education -> Specialty */
   .home-hero-spec-strip {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     border-radius: var(--radius-md, 6px);
-    margin-top: 14px;
+    margin-top: 16px;
     border: 1px solid var(--border-subtle);
     background-color: var(--bg-surface-subtle);
     overflow: hidden;
   }
 
   .spec-col {
-    padding: 10px 12px;
-    gap: 2px;
-    border-right: 1px solid var(--border-subtle);
+    padding: 12px 14px;
+    gap: 3px;
+    border-right: none;
     border-bottom: 1px solid var(--border-subtle);
     min-width: 0;
   }
 
-  .spec-col:nth-child(2n) {
-    border-right: none;
-  }
-
-  .spec-col:nth-child(3),
-  .spec-col:nth-child(4) {
+  .spec-col:last-child {
     border-bottom: none;
   }
 
@@ -362,15 +368,15 @@
   }
 
   .spec-primary {
-    font-size: 0.8125rem;
+    font-size: 0.88rem;
     font-weight: 700;
     white-space: normal;
     line-height: 1.25;
   }
 
   .spec-secondary {
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     white-space: normal;
-    line-height: 1.3;
+    line-height: 1.35;
   }
 }

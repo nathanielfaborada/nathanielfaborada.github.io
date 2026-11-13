@@ -421,7 +421,7 @@
     margin-bottom: 12px;
   }
 
-  /* Contact & Details: Tactile Touch Tiles */
+  /* Contact & Details: Collaborator-style Clean Identity Cards */
   .detail-list {
     display: flex;
     flex-direction: column;
@@ -429,77 +429,96 @@
   }
 
   .detail-item {
-    padding: 8px 12px;
-    background-color: var(--bg-surface-subtle);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px;
+    background-color: var(--bg-surface);
     border: 1px solid var(--border-subtle);
-    border-radius: var(--radius-md, 6px);
-    font-size: 0.8125rem;
-    gap: 10px;
-    min-height: 44px;
+    border-radius: var(--radius-lg, 8px);
+    box-shadow: var(--shadow-card);
+    min-height: 48px;
     box-sizing: border-box;
-    transition: background-color 0.15s ease, border-color 0.15s ease;
+    transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
   }
 
   .detail-item:hover {
     background-color: var(--bg-surface-hover);
-    border-color: var(--border-interactive);
+    border-color: var(--border-strong);
+    transform: translateY(-1px);
   }
 
   .detail-icon-wrap {
-    width: 28px;
-    height: 28px;
-    background-color: var(--bg-surface);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: var(--bg-surface-subtle);
     border: 1px solid var(--border-subtle);
-    border-radius: var(--radius-sm, 4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-text);
     flex-shrink: 0;
   }
 
-  .detail-link {
-    color: var(--text-primary);
-    font-weight: 600;
-    word-break: break-all;
-    font-size: 0.8125rem;
-  }
-
+  .detail-link,
   .detail-text {
-    word-break: break-word;
-    font-size: 0.8125rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    word-break: break-all;
   }
 
-  /* Creator & Social Channels: Sleek 1-line Compact Preview Strips */
+  /* Creator & Social Channels: Exact Collaborators Card Pattern (No Truncated Paragraphs) */
   .creator-channels-list {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 10px;
   }
 
   .creator-channel-card {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 12px;
-    padding: 10px 12px;
-    background-color: var(--bg-surface-subtle);
+    padding: 12px 14px;
+    background-color: var(--bg-surface);
     border: 1px solid var(--border-subtle);
-    border-radius: var(--radius-md, 6px);
-    min-height: 44px;
+    border-radius: var(--radius-lg, 8px);
+    box-shadow: var(--shadow-card);
+    min-height: 48px;
+    text-decoration: none;
+    color: inherit;
+    box-sizing: border-box;
+    transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .creator-channel-card:hover {
+    background-color: var(--bg-surface-hover);
+    border-color: var(--border-strong);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
   }
 
   .creator-channel-icon-wrap {
-    width: 34px;
-    height: 34px;
-    background-color: var(--bg-surface);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--bg-surface-subtle);
     border: 1px solid var(--border-subtle);
-    border-radius: var(--radius-sm, 4px);
-    flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
+    color: var(--accent-text);
+    flex-shrink: 0;
   }
 
   .creator-channel-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
     flex: 1;
     min-width: 0;
-    gap: 2px;
   }
 
   .creator-channel-heading {
@@ -510,98 +529,161 @@
   }
 
   .creator-channel-title {
-    font-size: 0.84rem;
+    font-size: 0.92rem;
     font-weight: 700;
+    color: var(--text-primary);
     line-height: 1.25;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .creator-channel-handle {
-    font-size: 0.6875rem;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--accent-text);
+    background-color: var(--bg-surface-subtle);
+    border: 1px solid var(--border-subtle);
     padding: 1px 6px;
-    background-color: var(--bg-surface);
+    border-radius: 9999px;
   }
 
+  /* Completely remove the truncated description on mobile */
   .creator-channel-desc {
-    font-size: 0.75rem;
-    color: var(--text-muted);
-    line-height: 1.35;
-    margin: 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
+    display: none !important;
   }
 
   .creator-channel-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    background-color: var(--bg-surface-subtle);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-sm, 6px);
+    padding: 6px 8px;
     flex-shrink: 0;
     margin-top: 0;
+    transition: color 0.15s ease, border-color 0.15s ease, background-color 0.15s ease;
   }
 
-  /* Recommended Tools & Referrals: Sleek 1-line Compact Preview Strips */
+  .creator-channel-card:hover .creator-channel-action {
+    color: var(--accent-primary);
+    border-color: var(--border-interactive);
+    background-color: var(--bg-surface);
+  }
+
+  /* Recommended Tools & Referrals: Exact Collaborators Card Pattern (No Truncated Paragraphs) */
   .developer-referrals-list {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 10px;
   }
 
   .developer-referral-card {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 12px;
-    padding: 10px 12px;
-    background-color: var(--bg-surface-subtle);
+    padding: 12px 14px;
+    background-color: var(--bg-surface);
     border: 1px solid var(--border-subtle);
-    border-radius: var(--radius-md, 6px);
-    min-height: 44px;
+    border-radius: var(--radius-lg, 8px);
+    box-shadow: var(--shadow-card);
+    min-height: 48px;
+    text-decoration: none;
+    color: inherit;
+    box-sizing: border-box;
+    transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .developer-referral-card:hover {
+    background-color: var(--bg-surface-hover);
+    border-color: var(--border-strong);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
   }
 
   .developer-referral-icon-wrap {
-    width: 34px;
-    height: 34px;
-    background-color: var(--bg-surface);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--bg-surface-subtle);
     border: 1px solid var(--border-subtle);
-    border-radius: var(--radius-sm, 4px);
-    flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
+    color: var(--accent-text);
+    flex-shrink: 0;
   }
 
   .developer-referral-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
     flex: 1;
     min-width: 0;
-    gap: 2px;
+  }
+
+  .developer-referral-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
   }
 
   .developer-referral-name {
-    font-size: 0.84rem;
+    font-size: 0.92rem;
     font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.25;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .developer-referral-badge {
-    font-size: 0.65rem;
+    font-size: 0.68rem;
+    font-weight: 600;
+    color: var(--accent-text);
+    background-color: var(--bg-surface-subtle);
+    border: 1px solid var(--border-subtle);
+    padding: 1px 6px;
+    border-radius: 9999px;
   }
 
   .developer-referral-category {
     font-size: 0.6875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--accent-primary);
+    margin: 0;
   }
 
+  /* Completely remove the truncated description on mobile */
   .developer-referral-desc {
-    font-size: 0.75rem;
-    color: var(--text-muted);
-    line-height: 1.35;
-    margin: 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
+    display: none !important;
   }
 
   .developer-referral-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    background-color: var(--bg-surface-subtle);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-sm, 6px);
+    padding: 6px 8px;
     flex-shrink: 0;
     margin-top: 0;
+    transition: color 0.15s ease, border-color 0.15s ease, background-color 0.15s ease;
+  }
+
+  .developer-referral-card:hover .developer-referral-action {
+    color: var(--accent-primary);
+    border-color: var(--border-interactive);
+    background-color: var(--bg-surface);
   }
 
   /* Learned Skills: Compact Category Spacing */

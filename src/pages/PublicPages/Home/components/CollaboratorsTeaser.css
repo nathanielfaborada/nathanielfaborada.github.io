@@ -1,6 +1,6 @@
 .collab-teaser-section {
   width: 100%;
-  margin-bottom: 24px;
+  margin-bottom: 28px;
 }
 
 .collab-teaser-card {
@@ -189,7 +189,7 @@
 
 @media (max-width: 640px) {
   .collab-teaser-section {
-    margin-bottom: 18px;
+    margin-bottom: 20px;
   }
 
   .collab-teaser-card {

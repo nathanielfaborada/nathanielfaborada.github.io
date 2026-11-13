@@ -19,7 +19,13 @@
   align-items: stretch;
 }
 
-.about-row-grid > * {
+.about-card-col {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.about-card-col > * {
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -370,12 +376,122 @@
 }
 
 @media (max-width: 840px) {
-  .about-row-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
+  .about-grid-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
   }
 
-  .about-grid-wrapper {
-    gap: 20px;
+  .about-row-grid {
+    display: contents;
+  }
+
+  .about-order-experience {
+    order: 1;
+  }
+
+  .about-order-education {
+    order: 2;
+  }
+
+  .about-order-skills {
+    order: 3;
+  }
+
+  .about-order-contact {
+    order: 4;
+  }
+
+  .about-order-creator {
+    order: 5;
+  }
+
+  .about-order-referrals {
+    order: 6;
+  }
+}
+
+@media (max-width: 640px) {
+  .detail-list {
+    gap: 10px;
+  }
+
+  .detail-item {
+    font-size: 0.8125rem;
+    gap: 10px;
+  }
+
+  .detail-link,
+  .detail-text {
+    word-break: break-all;
+    font-size: 0.8125rem;
+  }
+
+  .creator-channels-list {
+    gap: 8px;
+  }
+
+  .creator-channel-card {
+    padding: 10px 12px;
+    gap: 10px;
+  }
+
+  .creator-channel-icon-wrap {
+    width: 32px;
+    height: 32px;
+  }
+
+  .creator-channel-title {
+    font-size: 0.84rem;
+  }
+
+  .creator-channel-handle {
+    font-size: 0.7rem;
+    padding: 1px 6px;
+  }
+
+  .creator-channel-desc {
+    font-size: 0.75rem;
+    line-height: 1.4;
+  }
+
+  .developer-referrals-list {
+    gap: 8px;
+  }
+
+  .developer-referral-card {
+    padding: 10px 12px;
+    gap: 10px;
+  }
+
+  .developer-referral-icon-wrap {
+    width: 32px;
+    height: 32px;
+  }
+
+  .developer-referral-name {
+    font-size: 0.84rem;
+  }
+
+  .developer-referral-badge {
+    font-size: 0.65rem;
+  }
+
+  .developer-referral-category {
+    font-size: 0.6875rem;
+  }
+
+  .developer-referral-desc {
+    font-size: 0.75rem;
+    line-height: 1.4;
+  }
+
+  .skills-category {
+    margin-bottom: 12px;
+  }
+
+  .skills-category-title {
+    font-size: 0.72rem;
+    margin-bottom: 6px;
   }
 }

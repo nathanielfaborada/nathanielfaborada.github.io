@@ -28,20 +28,32 @@ export default function AboutPage() {
         <div className="about-grid-wrapper">
           {/* Row 1: Work Experience & Education */}
           <div className="about-row-grid">
-            <WorkExperienceCard experiences={PROFILE_DATA.workExperience} />
-            <EducationCard education={PROFILE_DATA.education} />
+            <div className="about-card-col about-order-experience">
+              <WorkExperienceCard experiences={PROFILE_DATA.workExperience} />
+            </div>
+            <div className="about-card-col about-order-education">
+              <EducationCard education={PROFILE_DATA.education} />
+            </div>
           </div>
 
           {/* Row 2: Learned Skills & Creator Channels */}
           <div className="about-row-grid">
-            <LearnedSkillsCard skills={PROFILE_DATA.learnedSkills} />
-            <CreatorChannelsCard channels={PROFILE_DATA.creatorChannels} />
+            <div className="about-card-col about-order-skills">
+              <LearnedSkillsCard skills={PROFILE_DATA.learnedSkills} />
+            </div>
+            <div className="about-card-col about-order-creator">
+              <CreatorChannelsCard channels={PROFILE_DATA.creatorChannels} />
+            </div>
           </div>
 
           {/* Row 3: Contact & Details & Recommended Tools */}
           <div className="about-row-grid">
-            <PersonalDetailsCard details={PROFILE_DATA.personalDetails} />
-            <DeveloperReferralsCard referrals={PROFILE_DATA.developerReferrals} />
+            <div className="about-card-col about-order-contact">
+              <PersonalDetailsCard details={PROFILE_DATA.personalDetails} />
+            </div>
+            <div className="about-card-col about-order-referrals">
+              <DeveloperReferralsCard referrals={PROFILE_DATA.developerReferrals} />
+            </div>
           </div>
         </div>
       </div>

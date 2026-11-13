@@ -8,11 +8,11 @@ export const PROJECTS_DATA = [
     project_date: "Nov 2026",
     headline: "Tagasugo (Content Scheduler): Cloud Video Storage & Page Scheduling System",
     description:
-      "Full-stack cloud video library and scheduling web application using React 19, Node.js, Express.js, Supabase Storage, and Tailwind CSS, featuring hierarchical folder navigation, video ingestion, and scheduled distribution.",
+      "Solves the daily burnout of manual social media publishing for creators and businesses. Provides a central cloud video vault and automated publishing pipeline that uploads, organizes, and schedules video posts to Facebook Pages on autopilot.",
     contributions: [
-      "Implemented multipart MP4 video uploads via Multer, file renaming, and cross-folder relocation across storage buckets with real-time state synchronization using Socket.IO and TanStack Query.",
-      "Integrated Google OAuth and Facebook Graph API for linking Facebook Pages, configuring looper schedules, and tracking post feeds.",
-      "Engineered modular REST endpoints backed by Supabase PostgreSQL for automated video distribution and asset metadata tracking.",
+      "Engineered structured cloud video storage with folder hierarchies, file renaming, and fast MP4 video ingestion via Multer and Supabase Storage.",
+      "Integrated official Facebook Graph API endpoints to automate scheduled posting, looper queues, and live post feed monitoring across multiple managed pages.",
+      "Built real-time upload progress indicators and background scheduling workers so creators can queue weeks of content in advance without manual intervention.",
     ],
     tags: ["React 19", "Node.js", "Express.js", "Supabase Storage", "Tailwind CSS", "Socket.IO", "Multer", "Facebook Graph API"],
     screenshots: [],
@@ -28,11 +28,11 @@ export const PROJECTS_DATA = [
     project_date: "Nov 2026",
     headline: "SpillRate: Community Business Rating & Moderation Platform",
     description:
-      "Full-stack business review and rating directory using React 19, Node.js, Express.js, Supabase PostgreSQL, and Tailwind CSS, featuring public storefronts, rating breakdowns, and merchant review management.",
+      "Solves review manipulation and spam for local merchants by providing a transparent community rating directory. Designed for neighborhood businesses that need an authentic way to collect customer reviews, showcase storefronts, and manage feedback without fear of fake bot attacks.",
     contributions: [
-      "Implemented a database-driven 24-hour anti-spam cooldown via IP and device verification, sequential business slugs, storefront QR code generation, and infinite scroll with TanStack Query.",
-      "Integrated Google OAuth, Cloudinary image uploads, and Google Analytics Data API across merchant and admin dashboards for verification and moderation.",
-      "Architected a modular Express REST API backed by Supabase PostgreSQL for business registration and customer review collection.",
+      "Engineered an anti-spam verification engine with 24-hour device cooldowns and IP tracking to protect store owners from review bombing.",
+      "Built dynamic merchant storefront profiles with instant QR code generation, allowing walk-in customers to scan and submit reviews on the spot.",
+      "Integrated secure Google OAuth sign-in, Cloudinary image upload workflows for receipt and photo proofs, and business performance analytics dashboards.",
     ],
     tags: ["React 19", "Node.js", "Express.js", "Supabase", "PostgreSQL", "Tailwind CSS", "TanStack Query", "Google OAuth"],
     screenshots: [],
@@ -143,11 +143,11 @@ export const PROJECTS_DATA = [
     project_date: "Aug 2026",
     headline: "Invitr: Digital Invitation & RSVP System",
     description:
-      "Full-stack event invitation and RSVP management system using Laravel 12, MySQL, and Tailwind CSS, featuring guest management, automated email notifications, and real-time RSVP tracking.",
+      "Solves high printing costs and messy guest headcounts for weddings, birthdays, and corporate events. Replaces disposable paper cards with interactive digital invitations where guests can view venue locations, confirm attendance, and receive instant email confirmations.",
     contributions: [
-      "Implemented three customizable invitation templates with live preview, Google Maps integration, QR code generation, and countdown timers using Alpine.js.",
-      "Integrated Brevo SMTP for automated email delivery and designed a mobile-responsive admin dashboard with guest analytics (attendance tracking, headcount summaries, CSV export).",
-      "Implemented RESTful endpoints, maintained database schema migrations, and wrote unit tests using PHPUnit.",
+      "Built customizable digital invitation pages featuring live event countdowns, interactive Google Maps venue directions, and mobile-friendly RSVP forms.",
+      "Integrated automated email workflows via Brevo SMTP to deliver immediate confirmation notices and event reminders to attending guests.",
+      "Designed an organizer management dashboard that tallies confirmed headcounts in real-time, tracks dietary preferences, and exports complete guest rosters to CSV.",
     ],
     tags: ["Laravel 12", "PHP", "Blade", "MySQL", "Tailwind CSS", "Alpine.js", "Brevo SMTP", "PHPUnit"],
     screenshots: [],
@@ -163,11 +163,11 @@ export const PROJECTS_DATA = [
     project_date: "Aug 2026",
     headline: "Immaculearn: Collaborative Learning Management System",
     description:
-      "Collaborated with a team to build a full-stack Learning Management System (React, Node.js, Express.js, MySQL) for academic institutions, supporting three distinct user roles (students, professors, admin) each with their own dashboards and tools.",
+      "Solves classroom disorganization by replacing scattered spreadsheets and chat groups with a centralized academic portal for schools. Built for College of Mary Immaculate to give teachers, students, and administrators dedicated dashboards where lessons, quizzes, grades, and campus announcements live in one seamless system.",
     contributions: [
-      "Collaborated with a team to build a full-stack Learning Management System supporting three distinct user roles (students, professors, admin).",
-      "Contributed to core features including collaborative document editing, activity and quiz creation, file sharing, class spaces, calendars, chat, and grade viewing.",
-      "Engineered backend REST APIs with Node.js and Express.js, persisting structured educational data in MySQL relational databases.",
+      "Engineered the backend REST APIs and MySQL database architecture to securely handle user authentication, class enrollments, and academic records across three distinct user roles.",
+      "Built interactive classroom modules including document sharing, quiz creation, automated submission tracking, and real-time class announcements.",
+      "Collaborated with student developer teammates to design clean, mobile-friendly interfaces ensuring smooth navigation for non-technical educators and students.",
     ],
     tags: ["React", "Node.js", "Express.js", "MySQL", "JavaScript", "REST APIs"],
     screenshots: [],

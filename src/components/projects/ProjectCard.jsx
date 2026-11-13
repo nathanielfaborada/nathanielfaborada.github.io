@@ -158,7 +158,7 @@ export default function ProjectCard({ project }) {
           {/* Key Engineering Highlights */}
           {hasContributions && (
             <div className="project-contributions">
-              <p className="contributions-title">Architectural & Engineering Highlights:</p>
+              <p className="contributions-title">Key Solutions & Delivered Contributions:</p>
               <ul className="contributions-list">
                 {project.contributions.map((contribution, index) => (
                   <li key={index} className="contribution-item">

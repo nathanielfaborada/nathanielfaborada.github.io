@@ -8,7 +8,7 @@ export const PROJECTS_DATA = [
     project_date: "Nov 2026",
     headline: "Tagasugo (Content Scheduler): Cloud Video Storage & Page Scheduling System",
     description:
-      "Solves creator burnout and daily manual uploading bottlenecks for social media managers and video creators. Delivers a centralized cloud video library and automated publishing pipeline that queues, organizes, and schedules video posts to Facebook Pages 24/7 on autopilot.",
+      "Built to eliminate the daily chore of manual video uploading for content creators and social media page managers. Delivers a centralized cloud video vault and automated publishing engine that schedules and distributes video posts to Facebook Pages 24/7 on autopilot.",
     contributions: [
       "Engineered a scalable cloud media repository utilizing Supabase Storage and Multer, supporting multipart MP4 uploads, folder hierarchy navigation, and automated file renaming.",
       "Integrated official Facebook Graph API endpoints to automate scheduled publishing, recurring looper queues, and live post feed monitoring across multiple managed business pages.",
@@ -29,7 +29,7 @@ export const PROJECTS_DATA = [
     project_date: "Nov 2026",
     headline: "SpillRate: Community Business Rating & Moderation Platform",
     description:
-      "Solves fake review manipulation and spam bot attacks for local brick-and-mortar merchants by providing a verified community rating platform. Empowers neighborhood businesses to collect authenticated customer feedback, showcase public storefronts, and track customer sentiment through interactive analytics.",
+      "Designed for local brick-and-mortar businesses that need an authentic way to collect customer reviews without worrying about fake accounts or review bombing. Provides neighborhood merchants with verified storefront profiles, instant QR code feedback collection, and live sentiment analytics.",
     contributions: [
       "Engineered an automated anti-spam verification engine utilizing IP logging and 24-hour device cooldowns, preventing bot review flooding and rating manipulation for registered merchants.",
       "Developed dynamic merchant storefront profiles with real-time QR code generation, enabling physical walk-in customers to scan and submit verified feedback in under 30 seconds.",
@@ -145,7 +145,7 @@ export const PROJECTS_DATA = [
     project_date: "Aug 2026",
     headline: "Invitr: Digital Invitation & RSVP System",
     description:
-      "Solves expensive paper printing costs and chaotic manual headcount tracking for weddings, birthdays, and corporate events. Replaces traditional paper invites with interactive digital event portals featuring instant RSVP confirmations, venue mapping, and automated guest notifications.",
+      "Replaces expensive paper stationery and stressful RSVP follow-ups with interactive digital event invitations for weddings and corporate gatherings. Enables guests to view venue maps, confirm attendance online, and receive automated email reminders with real-time headcount tracking for organizers.",
     contributions: [
       "Developed responsive digital event portals with interactive live countdown timers, integrated Google Maps venue navigation, and mobile-first RSVP submission forms.",
       "Integrated Brevo SMTP email automation pipelines to dispatch instant RSVP confirmations, QR check-in passes, and automated event reminders directly to attendee inboxes.",
@@ -166,7 +166,7 @@ export const PROJECTS_DATA = [
     project_date: "Aug 2026",
     headline: "Immaculearn: Collaborative Learning Management System",
     description:
-      "Solves academic disorganization in schools by replacing scattered messaging groups and manual grading spreadsheets with a centralized Learning Management System (LMS). Built as a full-stack academic portal for College of Mary Immaculate, streamlining course delivery, grade tracking, and real-time announcements across 3 distinct user roles.",
+      "Built to replace scattered spreadsheets and messy group chats with an all-in-one digital campus portal for College of Mary Immaculate. Gives teachers, students, and school administrators dedicated dashboards to deliver lessons, take quizzes, view grades, and publish campus announcements in one place.",
     contributions: [
       "Architected modular backend REST APIs and relational MySQL database schemas supporting Role-Based Access Control (RBAC) across 3 distinct user roles (Administrators, Faculty, Students).",
       "Engineered core academic tools including interactive quiz builders, automated grade calculations, structured course content repositories, and instant campus announcement feeds.",

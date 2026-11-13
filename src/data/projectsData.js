@@ -6,7 +6,7 @@ export const PROJECTS_DATA = [
     featured: true,
     featuredLabel: "Featured Project",
     project_date: "Nov 2026",
-    headline: "Content Scheduler: Cloud Video Storage & Page Scheduling System",
+    headline: "Tagasugo (Content Scheduler): Cloud Video Storage & Page Scheduling System",
     description:
       "Full-stack cloud video library and scheduling web application using React 19, Node.js, Express.js, Supabase Storage, and Tailwind CSS, featuring hierarchical folder navigation, video ingestion, and scheduled distribution.",
     contributions: [

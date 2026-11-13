@@ -3,8 +3,12 @@ import ProjectCard from '../../../../components/projects/ProjectCard';
 import { PROJECTS_DATA } from '../../../../data/projectsData';
 import './ProjectsSection.css';
 
+const FEATURED_ORDER = ['immaculearn', 'spill-rate', 'content-scheduler', 'invitr'];
+
 export default function ProjectsSection() {
-  const featuredProjects = PROJECTS_DATA.filter((p) => p.featured);
+  const featuredProjects = FEATURED_ORDER
+    .map((id) => PROJECTS_DATA.find((p) => p.id === id))
+    .filter(Boolean);
 
   return (
     <section id="projects" className="home-projects-section" aria-labelledby="projects-title">

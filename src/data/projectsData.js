@@ -13,6 +13,7 @@ export const PROJECTS_DATA = [
       "Engineered a scalable cloud media repository utilizing Supabase Storage and Multer, supporting multipart MP4 uploads, folder hierarchy navigation, and automated file renaming.",
       "Integrated official Facebook Graph API endpoints to automate scheduled publishing, recurring looper queues, and live post feed monitoring across multiple managed business pages.",
       "Built real-time upload progress tracking via Socket.IO and automated background scheduling workers, allowing operators to queue weeks of video content in advance with zero manual intervention.",
+      "Architected Supabase PostgreSQL queue tables with timestamp indexing and retry handlers, ensuring zero dropped publishing tasks during high-concurrency posting schedules.",
     ],
     tags: ["React 19", "Node.js", "Express.js", "Supabase Storage", "Tailwind CSS", "Socket.IO", "Multer", "Facebook Graph API"],
     screenshots: [],
@@ -32,6 +33,7 @@ export const PROJECTS_DATA = [
     contributions: [
       "Engineered an automated anti-spam verification engine utilizing IP logging and 24-hour device cooldowns, preventing bot review flooding and rating manipulation for registered merchants.",
       "Developed dynamic merchant storefront profiles with real-time QR code generation, enabling physical walk-in customers to scan and submit verified feedback in under 30 seconds.",
+      "Implemented TanStack Query infinite scrolling and optimistic UI state updates, delivering sub-second search and review feed load times across high-volume business listings.",
       "Integrated secure Google OAuth 2.0 authentication, Cloudinary image upload pipelines for receipt verification, and PostgreSQL analytics dashboards tracking rating trends and visitor volume.",
     ],
     tags: ["React 19", "Node.js", "Express.js", "Supabase", "PostgreSQL", "Tailwind CSS", "TanStack Query", "Google OAuth"],
@@ -148,6 +150,7 @@ export const PROJECTS_DATA = [
       "Developed responsive digital event portals with interactive live countdown timers, integrated Google Maps venue navigation, and mobile-first RSVP submission forms.",
       "Integrated Brevo SMTP email automation pipelines to dispatch instant RSVP confirmations, QR check-in passes, and automated event reminders directly to attendee inboxes.",
       "Architected a Laravel 12 and MySQL organizer dashboard tracking live headcount tallies, meal preferences, and attendance statuses with 1-click CSV roster export capability.",
+      "Authored automated feature and unit test suites using PHPUnit, ensuring robust data validation, zero regressions across RSVP submissions, and secure database migrations.",
     ],
     tags: ["Laravel 12", "PHP", "Blade", "MySQL", "Tailwind CSS", "Alpine.js", "Brevo SMTP", "PHPUnit"],
     screenshots: [],
@@ -165,9 +168,10 @@ export const PROJECTS_DATA = [
     description:
       "Solves academic disorganization in schools by replacing scattered messaging groups and manual grading spreadsheets with a centralized Learning Management System (LMS). Built as a full-stack academic portal for College of Mary Immaculate, streamlining course delivery, grade tracking, and real-time announcements across 3 distinct user roles.",
     contributions: [
-      "Architected modular backend REST APIs and relational MySQL database schemas supporting Role-Based Access Control (RBAC) for over 3 distinct user types (Administrators, Faculty, Students).",
+      "Architected modular backend REST APIs and relational MySQL database schemas supporting Role-Based Access Control (RBAC) across 3 distinct user roles (Administrators, Faculty, Students).",
       "Engineered core academic tools including interactive quiz builders, automated grade calculations, structured course content repositories, and instant campus announcement feeds.",
       "Developed responsive React front-end dashboards with client-side state caching, cutting down page reload overhead and ensuring accessibility for non-technical educators on desktop and mobile devices.",
+      "Implemented secure session authentication and payload validation middleware to protect sensitive student records and academic submissions against unauthorized access.",
     ],
     tags: ["React", "Node.js", "Express.js", "MySQL", "JavaScript", "REST APIs"],
     screenshots: [],

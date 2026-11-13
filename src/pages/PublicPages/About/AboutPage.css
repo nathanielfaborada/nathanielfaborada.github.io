@@ -1,298 +1,194 @@
 /* ==========================================================================
-   About Page Layout & Styles (Full-Width Symmetrical Modular Architecture)
+   About Page Layout & Styles (Symmetrical Row-By-Row Grid Architecture)
    ========================================================================== */
 
 .portfolio-about-page {
   width: 100%;
 }
 
-.about-page-flow {
+.about-grid-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 28px;
 }
 
-/* ==========================================================================
-   Hero Introduction Banner
-   ========================================================================== */
-.about-hero-header {
-  background-color: var(--bg-surface);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-lg, 8px);
-  padding: clamp(24px, 3.5vw, 36px);
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
-}
-
-.about-hero-badge-row {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.about-role-pill {
-  font-size: 0.8125rem;
-  font-weight: 700;
-  color: var(--accent-text);
-  background-color: var(--bg-surface-subtle);
-  border: 1px solid var(--border-subtle);
-  padding: 4px 12px;
-  border-radius: 9999px;
-  letter-spacing: 0.02em;
-}
-
-.about-status-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: var(--text-secondary);
-  background-color: var(--bg-surface-subtle);
-  border: 1px solid var(--border-subtle);
-  padding: 4px 12px;
-  border-radius: 9999px;
-}
-
-.status-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background-color: #22c55e;
-  flex-shrink: 0;
-}
-
-.about-hero-title {
-  font-size: clamp(1.6rem, 2.8vw, 2.2rem);
-  font-weight: 800;
-  color: var(--text-primary);
-  margin: 0;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
-}
-
-.about-hero-lead {
-  font-size: 1.05rem;
-  color: var(--text-secondary);
-  line-height: 1.65;
-  margin: 0;
-  max-width: 860px;
-}
-
-.about-hero-meta-row {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 12px;
-  padding-top: 4px;
-}
-
-.about-meta-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  font-size: 0.8125rem;
-  color: var(--text-secondary);
-  background-color: var(--bg-surface-subtle);
-  border: 1px solid var(--border-subtle);
-  padding: 6px 12px;
-  border-radius: var(--radius-sm, 4px);
-}
-
-.about-meta-chip svg {
-  color: var(--accent-text);
-}
-
-/* ==========================================================================
-   Full Section Wrapper
-   ========================================================================== */
-.about-full-section {
-  width: 100%;
-}
-
-.about-section-subhead {
-  font-size: 0.875rem;
-  color: var(--text-secondary);
-  margin: 0 0 18px 0;
-  line-height: 1.5;
-}
-
-/* ==========================================================================
-   Section 1: Career & Academic Journey (2-Column Symmetry)
-   ========================================================================== */
-.about-journey-grid {
+.about-row-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  gap: 28px;
+  align-items: stretch;
 }
 
-.journey-card-item {
-  background-color: var(--bg-surface-subtle);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-md, 6px);
-  padding: 20px;
+.about-row-grid > * {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Contact & Details List */
+.detail-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
-.journey-item-topbar {
+.detail-item {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  min-height: 28px;
 }
 
-.journey-icon-wrap {
-  width: 42px;
-  height: 42px;
-  border-radius: var(--radius-sm, 4px);
-  background-color: var(--bg-surface);
-  border: 1px solid var(--border-subtle);
+.detail-icon-wrap {
+  width: 28px;
+  height: 28px;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: var(--bg-surface-subtle);
+  border-radius: var(--radius-sm, 4px);
   color: var(--accent-text);
   flex-shrink: 0;
 }
 
-.journey-heading-wrap {
+.detail-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.detail-link {
+  color: var(--text-primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.15s ease;
+  word-break: break-all;
+}
+
+.detail-link:hover {
+  color: var(--accent-primary);
+  text-decoration: underline;
+}
+
+.detail-text {
+  color: var(--text-secondary);
+}
+
+/* Learned Skills inside SectionCard */
+.skills-desc {
+  font-size: 0.84375rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin: 0 0 16px 0;
+}
+
+.skills-category {
+  margin-bottom: 14px;
+}
+
+.skills-category:last-child {
+  margin-bottom: 0;
+}
+
+.skills-category-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent-primary);
+  margin: 0 0 6px 0;
+}
+
+.skill-scroll {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+/* Education Card Elements */
+.work-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.work-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md, 6px);
+  border: 1px solid var(--border-subtle);
+  background-color: var(--bg-surface-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--accent-text);
+}
+
+.work-details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.work-company {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.work-roles {
   display: flex;
   flex-direction: column;
   gap: 2px;
 }
 
-.journey-type-label {
-  font-size: 0.71875rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--accent-primary);
+.work-period {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
 }
 
-.journey-entity-name {
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin: 0;
+/* ==========================================================================
+   Creator & Social Channels Card
+   ========================================================================== */
+.creator-channels-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.journey-role-pill-wrap {
+.creator-channel-card {
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.journey-role-title {
-  font-size: 0.875rem;
-  font-weight: 700;
-  color: var(--text-primary);
-}
-
-.journey-period-badge {
-  font-size: 0.78125rem;
-  color: var(--text-muted);
-  background-color: var(--bg-surface);
-  border: 1px solid var(--border-subtle);
-  padding: 2px 8px;
-  border-radius: var(--radius-sm, 4px);
-}
-
-.journey-desc {
-  font-size: 0.84375rem;
-  color: var(--text-secondary);
-  line-height: 1.55;
-  margin: 0;
-}
-
-/* ==========================================================================
-   Section 2: Technical Skills Mosaic
-   ========================================================================== */
-.about-skills-intro {
-  font-size: 0.875rem;
-  color: var(--text-secondary);
-  margin: 0 0 18px 0;
-  line-height: 1.5;
-}
-
-.about-skills-mosaic {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 16px;
-}
-
-.skill-mosaic-category {
-  background-color: var(--bg-surface-subtle);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-md, 6px);
-  padding: 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.skill-mosaic-title {
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--accent-primary);
-  margin: 0;
-}
-
-.skill-mosaic-pills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-}
-
-/* ==========================================================================
-   Section 3: Creator Channels & Online Media
-   ========================================================================== */
-.about-channels-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 16px;
-}
-
-.about-channel-card {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding: 16px;
+  gap: 14px;
+  padding: 11px 14px;
   min-height: 44px;
   background-color: var(--bg-surface-subtle);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-md, 6px);
   text-decoration: none;
   color: inherit;
-  transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
+  transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
 }
 
-.about-channel-card:hover {
+.creator-channel-card:hover {
   transform: translateY(-2px);
-  background-color: var(--bg-surface);
   border-color: var(--accent-primary);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-.about-channel-card:focus-visible {
+.creator-channel-card:focus-visible {
   outline: 2px solid var(--accent-primary);
   outline-offset: 2px;
 }
 
-.about-channel-top {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.about-channel-icon-wrap {
-  width: 38px;
-  height: 38px;
+.creator-channel-icon-wrap {
+  width: 36px;
+  height: 36px;
   border-radius: var(--radius-sm, 4px);
   background-color: var(--bg-surface);
   border: 1px solid var(--border-subtle);
@@ -303,27 +199,49 @@
   flex-shrink: 0;
 }
 
-.about-channel-names {
+.creator-channel-icon {
+  flex-shrink: 0;
+}
+
+.creator-channel-info {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 3px;
   flex: 1;
   min-width: 0;
 }
 
-.about-channel-title {
-  font-size: 0.9rem;
+.creator-channel-heading {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.creator-channel-title {
+  font-size: 0.875rem;
   font-weight: 700;
   color: var(--text-primary);
 }
 
-.about-channel-handle {
+.creator-channel-handle {
   font-size: 0.75rem;
   font-weight: 600;
   color: var(--accent-text);
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  padding: 1px 7px;
+  border-radius: var(--radius-sm, 4px);
 }
 
-.about-channel-arrow {
+.creator-channel-desc {
+  font-size: 0.78125rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+  margin: 0;
+}
+
+.creator-channel-action {
   color: var(--text-muted);
   display: flex;
   align-items: center;
@@ -332,63 +250,48 @@
   transition: color 0.15s ease, transform 0.15s ease;
 }
 
-.about-channel-card:hover .about-channel-arrow {
+.creator-channel-card:hover .creator-channel-action {
   color: var(--accent-primary);
   transform: translate(1px, -1px);
 }
 
-.about-channel-desc {
-  font-size: 0.8125rem;
-  color: var(--text-secondary);
-  line-height: 1.45;
-  margin: 0;
-}
-
 /* ==========================================================================
-   Section 4: Recommended Developer Tools
+   Developer Perks & Referrals Card
    ========================================================================== */
-.about-referrals-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 18px;
-}
-
-.about-referral-tile {
+.developer-referrals-list {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 10px;
+}
+
+.developer-referral-card {
+  display: flex;
+  align-items: flex-start;
   gap: 14px;
-  padding: 18px;
+  padding: 12px 14px;
   min-height: 44px;
   background-color: var(--bg-surface-subtle);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-md, 6px);
   text-decoration: none;
   color: inherit;
-  transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
+  transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
 }
 
-.about-referral-tile:hover {
+.developer-referral-card:hover {
   transform: translateY(-2px);
-  background-color: var(--bg-surface);
   border-color: var(--accent-primary);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-.about-referral-tile:focus-visible {
+.developer-referral-card:focus-visible {
   outline: 2px solid var(--accent-primary);
   outline-offset: 2px;
 }
 
-.about-referral-top {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-}
-
-.about-referral-icon-wrap {
-  width: 40px;
-  height: 40px;
+.developer-referral-icon-wrap {
+  width: 36px;
+  height: 36px;
   border-radius: var(--radius-sm, 4px);
   background-color: var(--bg-surface);
   border: 1px solid var(--border-subtle);
@@ -397,23 +300,46 @@
   justify-content: center;
   color: var(--accent-text);
   flex-shrink: 0;
+  margin-top: 2px;
 }
 
-.about-referral-header-text {
+.developer-referral-icon {
+  flex-shrink: 0;
+}
+
+.developer-referral-info {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 3px;
   flex: 1;
   min-width: 0;
 }
 
-.about-referral-name {
-  font-size: 0.95rem;
+.developer-referral-header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.developer-referral-name {
+  font-size: 0.875rem;
   font-weight: 700;
   color: var(--text-primary);
 }
 
-.about-referral-cat {
+.developer-referral-badge {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: var(--accent-text);
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  padding: 2px 7px;
+  border-radius: 9999px;
+  letter-spacing: 0.02em;
+}
+
+.developer-referral-category {
   font-size: 0.71875rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -421,123 +347,35 @@
   color: var(--accent-primary);
 }
 
-.about-referral-pill {
-  font-size: 0.6875rem;
-  font-weight: 700;
-  color: var(--accent-text);
-  background-color: var(--bg-surface);
-  border: 1px solid var(--border-subtle);
-  padding: 3px 8px;
-  border-radius: 9999px;
-  white-space: nowrap;
-}
-
-.about-referral-desc {
-  font-size: 0.8125rem;
+.developer-referral-desc {
+  font-size: 0.78125rem;
   color: var(--text-secondary);
-  line-height: 1.5;
+  line-height: 1.45;
   margin: 0;
 }
 
-.about-referral-action {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.8125rem;
-  font-weight: 700;
-  color: var(--accent-primary);
-  margin-top: auto;
-}
-
-/* ==========================================================================
-   Section 5: Direct Contact Bar
-   ========================================================================== */
-.about-contact-bar {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 14px;
-}
-
-.about-contact-node {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 12px 14px;
-  min-height: 44px;
-  background-color: var(--bg-surface-subtle);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-md, 6px);
-}
-
-.about-contact-icon-wrap {
-  width: 32px;
-  height: 32px;
-  border-radius: var(--radius-sm, 4px);
-  background-color: var(--bg-surface);
-  border: 1px solid var(--border-subtle);
+.developer-referral-action {
+  color: var(--text-muted);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--accent-text);
   flex-shrink: 0;
+  margin-top: 4px;
+  transition: color 0.15s ease, transform 0.15s ease;
 }
 
-.about-contact-text-wrap {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  min-width: 0;
-}
-
-.about-contact-label {
-  font-size: 0.6875rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
+.developer-referral-card:hover .developer-referral-action {
   color: var(--accent-primary);
+  transform: translate(1px, -1px);
 }
 
-.about-contact-link {
-  font-size: 0.84375rem;
-  font-weight: 600;
-  color: var(--text-primary);
-  text-decoration: none;
-  word-break: break-all;
-  transition: color 0.15s ease;
-}
-
-.about-contact-link:hover {
-  color: var(--accent-primary);
-  text-decoration: underline;
-}
-
-.about-contact-val {
-  font-size: 0.84375rem;
-  color: var(--text-secondary);
-}
-
-/* ==========================================================================
-   Mobile Responsive Reflows
-   ========================================================================== */
 @media (max-width: 840px) {
-  .about-journey-grid {
+  .about-row-grid {
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 20px;
   }
 
-  .about-page-flow {
-    gap: 24px;
-  }
-
-  .about-channels-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .about-referrals-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .about-contact-bar {
-    grid-template-columns: 1fr;
+  .about-grid-wrapper {
+    gap: 20px;
   }
 }

@@ -37,6 +37,29 @@ export default function PublicNavbar() {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [mobileMenuOpen]);
 
+  // Lock body scroll when mobile menu is open (tabunan ang ilalim)
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [mobileMenuOpen]);
+
+  // Auto-close on resize to desktop viewports
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 860 && mobileMenuOpen) {
+        setMobileMenuOpen(false);
+      }
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [mobileMenuOpen]);
+
   const scrollToProjects = (e) => {
     if (location.pathname === '/') {
       e.preventDefault();
@@ -49,7 +72,10 @@ export default function PublicNavbar() {
   };
 
   return (
-    <header className="portfolio-navbar-wrapper" role="banner">
+    <header
+      className={`portfolio-navbar-wrapper ${mobileMenuOpen ? 'mobile-menu-active' : ''}`}
+      role="banner"
+    >
       <div className="portfolio-navbar-inner">
         {/* Brand identity */}
         <div className="portfolio-brand-col">

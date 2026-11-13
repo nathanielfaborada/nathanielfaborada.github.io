@@ -249,7 +249,24 @@
   outline-offset: 2px;
 }
 
-/* Mobile Drawer */
+/* Mobile Drawer: Full Screen Cover (Tabunan ang nasa ilalim) */
+.portfolio-navbar-wrapper.mobile-menu-active {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-surface);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
 .portfolio-mobile-drawer {
   background-color: var(--bg-surface);
   border-top: 1px solid var(--border-subtle);
@@ -258,6 +275,38 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
+}
+
+.portfolio-navbar-wrapper.mobile-menu-active .portfolio-mobile-drawer {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  border-top: 1px solid var(--border-subtle);
+  padding: 18px 20px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  box-sizing: border-box;
+  animation: mobileDrawerFadeIn 0.16s ease-out;
+}
+
+@keyframes mobileDrawerFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-navbar-wrapper.mobile-menu-active .portfolio-mobile-drawer {
+    animation: none;
+  }
 }
 
 .portfolio-mobile-links {

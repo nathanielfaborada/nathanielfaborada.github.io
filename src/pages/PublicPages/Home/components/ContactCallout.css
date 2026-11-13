@@ -58,23 +58,33 @@
 
 @media (max-width: 768px) {
   .contact-callout-card {
-    padding: 16px;
+    padding: 20px 16px;
     flex-direction: column;
     align-items: flex-start;
+    gap: 16px;
   }
 
   .contact-callout-title {
     font-size: 1.2rem;
+    line-height: 1.3;
+  }
+
+  .contact-callout-desc {
+    font-size: 0.875rem;
+    line-height: 1.5;
   }
 
   .contact-callout-actions {
     width: 100%;
+    display: flex;
     flex-direction: column;
     align-items: stretch;
+    gap: 10px;
   }
 
   .contact-callout-actions .hero-btn {
     width: 100%;
     justify-content: center;
+    min-height: 44px;
   }
 }

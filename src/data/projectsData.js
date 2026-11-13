@@ -8,11 +8,11 @@ export const PROJECTS_DATA = [
     project_date: "Nov 2026",
     headline: "Tagasugo (Content Scheduler): Cloud Video Storage & Page Scheduling System",
     description:
-      "Solves the daily burnout of manual social media publishing for creators and businesses. Provides a central cloud video vault and automated publishing pipeline that uploads, organizes, and schedules video posts to Facebook Pages on autopilot.",
+      "Solves creator burnout and daily manual uploading bottlenecks for social media managers and video creators. Delivers a centralized cloud video library and automated publishing pipeline that queues, organizes, and schedules video posts to Facebook Pages 24/7 on autopilot.",
     contributions: [
-      "Engineered structured cloud video storage with folder hierarchies, file renaming, and fast MP4 video ingestion via Multer and Supabase Storage.",
-      "Integrated official Facebook Graph API endpoints to automate scheduled posting, looper queues, and live post feed monitoring across multiple managed pages.",
-      "Built real-time upload progress indicators and background scheduling workers so creators can queue weeks of content in advance without manual intervention.",
+      "Engineered a scalable cloud media repository utilizing Supabase Storage and Multer, supporting multipart MP4 uploads, folder hierarchy navigation, and automated file renaming.",
+      "Integrated official Facebook Graph API endpoints to automate scheduled publishing, recurring looper queues, and live post feed monitoring across multiple managed business pages.",
+      "Built real-time upload progress tracking via Socket.IO and automated background scheduling workers, allowing operators to queue weeks of video content in advance with zero manual intervention.",
     ],
     tags: ["React 19", "Node.js", "Express.js", "Supabase Storage", "Tailwind CSS", "Socket.IO", "Multer", "Facebook Graph API"],
     screenshots: [],
@@ -28,11 +28,11 @@ export const PROJECTS_DATA = [
     project_date: "Nov 2026",
     headline: "SpillRate: Community Business Rating & Moderation Platform",
     description:
-      "Solves review manipulation and spam for local merchants by providing a transparent community rating directory. Designed for neighborhood businesses that need an authentic way to collect customer reviews, showcase storefronts, and manage feedback without fear of fake bot attacks.",
+      "Solves fake review manipulation and spam bot attacks for local brick-and-mortar merchants by providing a verified community rating platform. Empowers neighborhood businesses to collect authenticated customer feedback, showcase public storefronts, and track customer sentiment through interactive analytics.",
     contributions: [
-      "Engineered an anti-spam verification engine with 24-hour device cooldowns and IP tracking to protect store owners from review bombing.",
-      "Built dynamic merchant storefront profiles with instant QR code generation, allowing walk-in customers to scan and submit reviews on the spot.",
-      "Integrated secure Google OAuth sign-in, Cloudinary image upload workflows for receipt and photo proofs, and business performance analytics dashboards.",
+      "Engineered an automated anti-spam verification engine utilizing IP logging and 24-hour device cooldowns, preventing bot review flooding and rating manipulation for registered merchants.",
+      "Developed dynamic merchant storefront profiles with real-time QR code generation, enabling physical walk-in customers to scan and submit verified feedback in under 30 seconds.",
+      "Integrated secure Google OAuth 2.0 authentication, Cloudinary image upload pipelines for receipt verification, and PostgreSQL analytics dashboards tracking rating trends and visitor volume.",
     ],
     tags: ["React 19", "Node.js", "Express.js", "Supabase", "PostgreSQL", "Tailwind CSS", "TanStack Query", "Google OAuth"],
     screenshots: [],
@@ -143,11 +143,11 @@ export const PROJECTS_DATA = [
     project_date: "Aug 2026",
     headline: "Invitr: Digital Invitation & RSVP System",
     description:
-      "Solves high printing costs and messy guest headcounts for weddings, birthdays, and corporate events. Replaces disposable paper cards with interactive digital invitations where guests can view venue locations, confirm attendance, and receive instant email confirmations.",
+      "Solves expensive paper printing costs and chaotic manual headcount tracking for weddings, birthdays, and corporate events. Replaces traditional paper invites with interactive digital event portals featuring instant RSVP confirmations, venue mapping, and automated guest notifications.",
     contributions: [
-      "Built customizable digital invitation pages featuring live event countdowns, interactive Google Maps venue directions, and mobile-friendly RSVP forms.",
-      "Integrated automated email workflows via Brevo SMTP to deliver immediate confirmation notices and event reminders to attending guests.",
-      "Designed an organizer management dashboard that tallies confirmed headcounts in real-time, tracks dietary preferences, and exports complete guest rosters to CSV.",
+      "Developed responsive digital event portals with interactive live countdown timers, integrated Google Maps venue navigation, and mobile-first RSVP submission forms.",
+      "Integrated Brevo SMTP email automation pipelines to dispatch instant RSVP confirmations, QR check-in passes, and automated event reminders directly to attendee inboxes.",
+      "Architected a Laravel 12 and MySQL organizer dashboard tracking live headcount tallies, meal preferences, and attendance statuses with 1-click CSV roster export capability.",
     ],
     tags: ["Laravel 12", "PHP", "Blade", "MySQL", "Tailwind CSS", "Alpine.js", "Brevo SMTP", "PHPUnit"],
     screenshots: [],
@@ -163,11 +163,11 @@ export const PROJECTS_DATA = [
     project_date: "Aug 2026",
     headline: "Immaculearn: Collaborative Learning Management System",
     description:
-      "Solves classroom disorganization by replacing scattered spreadsheets and chat groups with a centralized academic portal for schools. Built for College of Mary Immaculate to give teachers, students, and administrators dedicated dashboards where lessons, quizzes, grades, and campus announcements live in one seamless system.",
+      "Solves academic disorganization in schools by replacing scattered messaging groups and manual grading spreadsheets with a centralized Learning Management System (LMS). Built as a full-stack academic portal for College of Mary Immaculate, streamlining course delivery, grade tracking, and real-time announcements across 3 distinct user roles.",
     contributions: [
-      "Engineered the backend REST APIs and MySQL database architecture to securely handle user authentication, class enrollments, and academic records across three distinct user roles.",
-      "Built interactive classroom modules including document sharing, quiz creation, automated submission tracking, and real-time class announcements.",
-      "Collaborated with student developer teammates to design clean, mobile-friendly interfaces ensuring smooth navigation for non-technical educators and students.",
+      "Architected modular backend REST APIs and relational MySQL database schemas supporting Role-Based Access Control (RBAC) for over 3 distinct user types (Administrators, Faculty, Students).",
+      "Engineered core academic tools including interactive quiz builders, automated grade calculations, structured course content repositories, and instant campus announcement feeds.",
+      "Developed responsive React front-end dashboards with client-side state caching, cutting down page reload overhead and ensuring accessibility for non-technical educators on desktop and mobile devices.",
     ],
     tags: ["React", "Node.js", "Express.js", "MySQL", "JavaScript", "REST APIs"],
     screenshots: [],

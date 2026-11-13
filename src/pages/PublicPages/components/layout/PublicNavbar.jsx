@@ -37,15 +37,18 @@ export default function PublicNavbar() {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [mobileMenuOpen]);
 
-  // Lock body scroll when mobile menu is open (tabunan ang ilalim)
+  // Lock body & html scroll when mobile menu is open (tabunan ang ilalim at bawal ma-scroll ang likod)
   useEffect(() => {
     if (mobileMenuOpen) {
-      document.body.style.overflow = 'hidden';
+      document.documentElement.classList.add('mobile-menu-open');
+      document.body.classList.add('mobile-menu-open');
     } else {
-      document.body.style.overflow = '';
+      document.documentElement.classList.remove('mobile-menu-open');
+      document.body.classList.remove('mobile-menu-open');
     }
     return () => {
-      document.body.style.overflow = '';
+      document.documentElement.classList.remove('mobile-menu-open');
+      document.body.classList.remove('mobile-menu-open');
     };
   }, [mobileMenuOpen]);
 

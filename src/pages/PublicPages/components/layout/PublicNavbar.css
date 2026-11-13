@@ -1,7 +1,8 @@
 .portfolio-navbar-wrapper {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
-  z-index: 50;
+  z-index: 100;
   width: 100%;
   background-color: var(--bg-nav-sticky);
   backdrop-filter: blur(10px);
@@ -265,6 +266,7 @@
   background-color: var(--bg-surface);
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
+  overscroll-behavior: contain;
 }
 
 .portfolio-mobile-drawer {
@@ -288,6 +290,8 @@
   gap: 16px;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  touch-action: pan-y !important;
   box-sizing: border-box;
   animation: mobileDrawerFadeIn 0.16s ease-out;
 }

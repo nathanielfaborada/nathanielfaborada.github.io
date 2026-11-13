@@ -4,7 +4,7 @@
   background-color: var(--bg-surface);
   color: var(--text-muted);
   font-size: 0.78rem;
-  padding: 18px 20px;
+  padding: 18px 24px;
 }
 
 .portfolio-footer-inner {
@@ -14,7 +14,7 @@
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 16px;
 }
 
 .portfolio-footer-brand {
@@ -41,22 +41,39 @@
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 12px;
+}
+
+.portfolio-footer-nav-group {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.portfolio-footer-nav-sep {
+  color: var(--border-interactive);
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
 }
 
 .portfolio-footer-link {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   min-height: 44px;
-  padding: 6px 4px;
+  padding: 6px 8px;
   box-sizing: border-box;
   color: var(--text-muted);
   text-decoration: none;
-  transition: color 0.15s ease;
+  border-radius: var(--radius-sm, 4px);
+  transition: color 0.15s ease, background-color 0.15s ease;
 }
 
 .portfolio-footer-link:hover {
   color: var(--text-primary);
+  background-color: var(--bg-surface-subtle);
 }
 
 .portfolio-footer-link:focus-visible {
@@ -64,9 +81,75 @@
   outline-offset: 2px;
 }
 
+/* Mobile View: Balanced, Centered, Tactile */
 @media (max-width: 640px) {
+  .portfolio-footer {
+    padding: 22px 16px 28px;
+  }
+
   .portfolio-footer-inner {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    text-align: center;
+    gap: 14px;
+  }
+
+  .portfolio-footer-nav {
+    order: 1;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    width: 100%;
+  }
+
+  .portfolio-footer-nav-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 4px 8px;
+    width: 100%;
+  }
+
+  .portfolio-footer-nav-sep {
+    display: none;
+  }
+
+  .portfolio-footer-link {
+    min-height: 44px;
+    padding: 6px 10px;
+    font-size: 0.8125rem;
+    color: var(--text-secondary);
+  }
+
+  .portfolio-footer-link:active {
+    background-color: var(--bg-surface-subtle);
+  }
+
+  .portfolio-footer-brand {
+    order: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding-top: 14px;
+    border-top: 1px solid var(--border-subtle);
+    width: 100%;
+    max-width: 340px;
+    font-size: 0.75rem;
+  }
+
+  .portfolio-footer-sep {
+    display: inline;
+  }
+
+  .portfolio-footer-name {
+    font-size: 0.8125rem;
+  }
+
+  .portfolio-footer-copy {
+    font-size: 0.75rem;
+    color: var(--text-muted);
   }
 }

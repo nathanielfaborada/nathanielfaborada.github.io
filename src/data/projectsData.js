@@ -3,27 +3,6 @@ export const PROJECTS_DATA = [
   // SECTION 1: ORGANIZATION & CAPSTONE PROJECTS
   // ==========================================
   {
-    id: "spill-rate",
-    category: "organization",
-    categoryLabel: "Organization Project",
-    featured: true,
-    featuredLabel: "Featured Project",
-    project_date: "Nov 2026",
-    headline: "SpillRate: Community Business Rating & Moderation Platform",
-    description:
-      "Designed for local brick-and-mortar businesses that need an authentic way to collect customer reviews without worrying about fake accounts or review bombing. Provides neighborhood merchants with verified storefront profiles, instant QR code feedback collection, and live sentiment analytics.",
-    contributions: [
-      "Engineered an automated anti-spam verification engine utilizing IP logging and 24-hour device cooldowns, preventing bot review flooding and rating manipulation for registered merchants.",
-      "Developed dynamic merchant storefront profiles with real-time QR code generation, enabling physical walk-in customers to scan and submit verified feedback in under 30 seconds.",
-      "Implemented TanStack Query infinite scrolling and optimistic UI state updates, delivering sub-second search and review feed load times across high-volume business listings.",
-      "Integrated secure Google OAuth 2.0 authentication, Cloudinary image upload pipelines for receipt verification, and PostgreSQL analytics dashboards tracking rating trends and visitor volume.",
-    ],
-    tags: ["React 19", "Node.js", "Express.js", "Supabase", "PostgreSQL", "Tailwind CSS", "TanStack Query", "Google OAuth"],
-    screenshots: [],
-    source_code_url: "https://github.com/sudo-spill-rate",
-    stars: null,
-  },
-  {
     id: "immaculearn",
     category: "organization",
     categoryLabel: "Capstone Project, College of Mary Immaculate",
@@ -105,6 +84,27 @@ export const PROJECTS_DATA = [
   // ==========================================
   // SECTION 2: PERSONAL PROJECTS
   // ==========================================
+  {
+    id: "spill-rate",
+    category: "personal",
+    categoryLabel: "Personal Project",
+    featured: true,
+    featuredLabel: "Featured Project",
+    project_date: "Nov 2026",
+    headline: "SpillRate: Community Business Rating & Moderation Platform",
+    description:
+      "Designed for local brick-and-mortar businesses that need an authentic way to collect customer reviews without worrying about fake accounts or review bombing. Provides neighborhood merchants with verified storefront profiles, instant QR code feedback collection, and live sentiment analytics.",
+    contributions: [
+      "Engineered an automated anti-spam verification engine utilizing IP logging and 24-hour device cooldowns, preventing bot review flooding and rating manipulation for registered merchants.",
+      "Developed dynamic merchant storefront profiles with real-time QR code generation, enabling physical walk-in customers to scan and submit verified feedback in under 30 seconds.",
+      "Implemented TanStack Query infinite scrolling and optimistic UI state updates, delivering sub-second search and review feed load times across high-volume business listings.",
+      "Integrated secure Google OAuth 2.0 authentication, Cloudinary image upload pipelines for receipt verification, and PostgreSQL analytics dashboards tracking rating trends and visitor volume.",
+    ],
+    tags: ["React 19", "Node.js", "Express.js", "Supabase", "PostgreSQL", "Tailwind CSS", "TanStack Query", "Google OAuth"],
+    screenshots: [],
+    source_code_url: "https://github.com/sudo-spill-rate",
+    stars: null,
+  },
   {
     id: "content-scheduler",
     category: "personal",

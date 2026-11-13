@@ -13,10 +13,10 @@ export default function CollaboratorsPage() {
   return (
     <div className="portfolio-collaborators-page">
       <div
-        className="app-container"
+        className="app-container collaborators-page-container"
         style={{
-          paddingTop: 'clamp(28px, 4vw, 40px)',
-          paddingBottom: '80px',
+          paddingTop: 'clamp(24px, 3.5vw, 36px)',
+          paddingBottom: 'clamp(48px, 6vw, 64px)',
         }}
       >
         <CollaboratorsFullView

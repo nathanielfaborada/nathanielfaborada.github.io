@@ -19,10 +19,10 @@ export default function AboutPage() {
   return (
     <div className="portfolio-about-page">
       <div
-        className="app-container"
+        className="app-container about-page-container"
         style={{
-          paddingTop: 'clamp(28px, 4vw, 40px)',
-          paddingBottom: '80px',
+          paddingTop: 'clamp(24px, 3.5vw, 36px)',
+          paddingBottom: 'clamp(48px, 6vw, 64px)',
         }}
       >
         <div className="about-grid-wrapper">

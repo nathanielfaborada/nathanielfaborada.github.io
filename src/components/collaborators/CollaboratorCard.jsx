@@ -1,7 +1,6 @@
 import React from 'react';
 import Avatar from '../common/Avatar';
-import Button from '../common/Button';
-import { ExternalLinkIcon } from '../common/Icons';
+import { GithubIcon, ExternalLinkIcon } from '../common/Icons';
 import './CollaboratorCard.css';
 
 export default function CollaboratorCard({ user }) {
@@ -20,40 +19,51 @@ export default function CollaboratorCard({ user }) {
     : [];
 
   return (
-    <div className="collab-card">
-      <Avatar
-        src={avatarUrl}
-        alt={displayName}
-        className="collab-avatar"
-      />
-      <div className="collab-info">
-        <span className="collab-name" title={displayName}>
-          {displayName}
-        </span>
-        {roleLabel && (
-          <span className="collab-stat" title={roleLabel}>
-            {roleLabel}
-          </span>
-        )}
-        {projectsList.length > 0 && (
-          <div className="collab-projects-pills">
-            {projectsList.map((p) => (
-              <span key={p} className="collab-project-pill">
-                {p}
+    <a
+      href={profileUrl}
+      className="collab-card"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={`View GitHub profile for ${displayName}`}
+    >
+      <div className="collab-card-top">
+        <div className="collab-user-row">
+          <Avatar
+            src={avatarUrl}
+            alt={displayName}
+            className="collab-avatar"
+          />
+          <div className="collab-user-text">
+            <span className="collab-name" title={displayName}>
+              {displayName}
+            </span>
+            {roleLabel && (
+              <span className="collab-stat" title={roleLabel}>
+                {roleLabel}
               </span>
-            ))}
+            )}
           </div>
-        )}
+        </div>
+
+        <span
+          className="collab-action-indicator"
+          aria-hidden="true"
+          title={`@${login} on GitHub`}
+        >
+          <GithubIcon size={16} className="collab-github-icon" />
+          <ExternalLinkIcon size={11} className="collab-external-icon" />
+        </span>
       </div>
-      <Button
-        href={profileUrl}
-        className="collab-visit"
-        target="_blank"
-        aria-label={`View GitHub Profile for ${displayName}`}
-      >
-        <ExternalLinkIcon size={13} />
-        <span>View GitHub Profile</span>
-      </Button>
-    </div>
+
+      {projectsList.length > 0 && (
+        <div className="collab-projects-pills">
+          {projectsList.map((p) => (
+            <span key={p} className="collab-project-pill">
+              {p}
+            </span>
+          ))}
+        </div>
+      )}
+    </a>
   );
 }

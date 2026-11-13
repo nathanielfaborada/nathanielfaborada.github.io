@@ -412,65 +412,171 @@
 }
 
 @media (max-width: 640px) {
+  .section-card {
+    padding: 16px 14px;
+  }
+
+  .section-title {
+    font-size: 1rem;
+    margin-bottom: 12px;
+  }
+
+  /* Contact & Details: Tactile Touch Tiles */
   .detail-list {
-    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
   }
 
   .detail-item {
+    padding: 8px 12px;
+    background-color: var(--bg-surface-subtle);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md, 6px);
     font-size: 0.8125rem;
     gap: 10px;
+    min-height: 44px;
+    box-sizing: border-box;
+    transition: background-color 0.15s ease, border-color 0.15s ease;
   }
 
-  .detail-link,
-  .detail-text {
+  .detail-item:hover {
+    background-color: var(--bg-surface-hover);
+    border-color: var(--border-interactive);
+  }
+
+  .detail-icon-wrap {
+    width: 28px;
+    height: 28px;
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-sm, 4px);
+    flex-shrink: 0;
+  }
+
+  .detail-link {
+    color: var(--text-primary);
+    font-weight: 600;
     word-break: break-all;
     font-size: 0.8125rem;
   }
 
+  .detail-text {
+    word-break: break-word;
+    font-size: 0.8125rem;
+  }
+
+  /* Creator & Social Channels: Sleek 1-line Compact Preview Strips */
   .creator-channels-list {
+    display: flex;
+    flex-direction: column;
     gap: 8px;
   }
 
   .creator-channel-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
     padding: 10px 12px;
-    gap: 10px;
+    background-color: var(--bg-surface-subtle);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md, 6px);
+    min-height: 44px;
   }
 
   .creator-channel-icon-wrap {
-    width: 32px;
-    height: 32px;
+    width: 34px;
+    height: 34px;
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-sm, 4px);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .creator-channel-info {
+    flex: 1;
+    min-width: 0;
+    gap: 2px;
+  }
+
+  .creator-channel-heading {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
   }
 
   .creator-channel-title {
     font-size: 0.84rem;
+    font-weight: 700;
+    line-height: 1.25;
   }
 
   .creator-channel-handle {
-    font-size: 0.7rem;
+    font-size: 0.6875rem;
     padding: 1px 6px;
+    background-color: var(--bg-surface);
   }
 
   .creator-channel-desc {
     font-size: 0.75rem;
-    line-height: 1.4;
+    color: var(--text-muted);
+    line-height: 1.35;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
   }
 
+  .creator-channel-action {
+    flex-shrink: 0;
+    margin-top: 0;
+  }
+
+  /* Recommended Tools & Referrals: Sleek 1-line Compact Preview Strips */
   .developer-referrals-list {
+    display: flex;
+    flex-direction: column;
     gap: 8px;
   }
 
   .developer-referral-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
     padding: 10px 12px;
-    gap: 10px;
+    background-color: var(--bg-surface-subtle);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md, 6px);
+    min-height: 44px;
   }
 
   .developer-referral-icon-wrap {
-    width: 32px;
-    height: 32px;
+    width: 34px;
+    height: 34px;
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-sm, 4px);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .developer-referral-info {
+    flex: 1;
+    min-width: 0;
+    gap: 2px;
   }
 
   .developer-referral-name {
     font-size: 0.84rem;
+    font-weight: 700;
   }
 
   .developer-referral-badge {
@@ -483,9 +589,22 @@
 
   .developer-referral-desc {
     font-size: 0.75rem;
-    line-height: 1.4;
+    color: var(--text-muted);
+    line-height: 1.35;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
   }
 
+  .developer-referral-action {
+    flex-shrink: 0;
+    margin-top: 0;
+  }
+
+  /* Learned Skills: Compact Category Spacing */
   .skills-category {
     margin-bottom: 12px;
   }
@@ -493,5 +612,10 @@
   .skills-category-title {
     font-size: 0.72rem;
     margin-bottom: 6px;
+  }
+
+  .skills-desc {
+    font-size: 0.8125rem;
+    margin-bottom: 12px;
   }
 }

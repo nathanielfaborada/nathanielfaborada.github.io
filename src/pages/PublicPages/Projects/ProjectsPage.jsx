@@ -11,6 +11,8 @@ export default function ProjectsPage() {
     "/projects"
   );
 
+  const directoryProjects = PROJECTS_DATA.filter((project) => !project.featured);
+
   return (
     <div className="portfolio-projects-page">
       <div
@@ -21,7 +23,7 @@ export default function ProjectsPage() {
         }}
       >
         <div className="projects-directory-list">
-          {PROJECTS_DATA.map((project) => (
+          {directoryProjects.map((project) => (
             <ProjectCard
               key={project.id || project.headline}
               project={project}

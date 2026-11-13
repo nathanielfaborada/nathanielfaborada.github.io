@@ -147,25 +147,6 @@ export const PROJECTS_DATA = [
     stars: null,
   },
   {
-    id: "keynest",
-    category: "personal",
-    categoryLabel: "Personal Project",
-    featured: false,
-    project_date: "Oct 2026",
-    headline: "KeyNest: Privacy-First Offline Password Manager PWA",
-    description:
-      "A privacy-first, offline password manager Progressive Web App with client-side encryption, secure local storage via IndexedDB, and zero cloud dependency.",
-    contributions: [
-      "Built client-side AES cryptographic vault supporting credential CRUD, password generator, and categorized search without network transmission.",
-      "Implemented inactivity auto-locking, encrypted vault backup and export, and offline recovery code validation.",
-      "Configured service worker offline caching for reliable installation and standalone usage across desktop and mobile browsers.",
-    ],
-    tags: ["React", "JavaScript", "PWA", "IndexedDB", "Web Crypto API", "Tailwind CSS"],
-    screenshots: [],
-    source_code_url: "https://github.com/nathanielfaborada/KeyNest",
-    stars: null,
-  },
-  {
     id: "storm-cast",
     category: "personal",
     categoryLabel: "Personal Project",
@@ -260,25 +241,6 @@ export const PROJECTS_DATA = [
     tags: ["React", "Capacitor", "IndexedDB", "JavaScript", "Tailwind CSS"],
     screenshots: [],
     source_code_url: "https://github.com/nathanielfaborada/utang-mo-app",
-    stars: null,
-  },
-  {
-    id: "attendance-api",
-    category: "personal",
-    categoryLabel: "Backend Project",
-    featured: false,
-    project_date: "Feb 2025",
-    headline: "Attendance API: Express REST Service for Identity & Event Tracking",
-    description:
-      "Backend REST service engineered with Node.js, Express.js, and MySQL for recording, validating, and retrieving student and personnel attendance timestamps.",
-    contributions: [
-      "Constructed relational database schema in MySQL for structured user identity and check-in log records.",
-      "Engineered RESTful endpoints with input validation, CORS protection, and request logging with Morgan.",
-      "Built database connection pooling to handle concurrent attendance check-in requests efficiently.",
-    ],
-    tags: ["Node.js", "Express.js", "MySQL", "REST APIs", "Backend"],
-    screenshots: [],
-    source_code_url: "https://github.com/nathanielfaborada/attendance-api",
     stars: null,
   },
 ];

@@ -103,7 +103,7 @@ export const PROJECTS_DATA = [
   },
 
   // ==========================================
-  // SECTION 2: PERSONAL & FLAGSHIP PROJECTS
+  // SECTION 2: PERSONAL PROJECTS
   // ==========================================
   {
     id: "content-scheduler",
@@ -127,23 +127,24 @@ export const PROJECTS_DATA = [
     stars: null,
   },
   {
-    id: "vscode-git-profile-switch",
+    id: "invitr",
     category: "personal",
-    categoryLabel: "Developer Tool",
-    featured: false,
-    project_date: "Nov 2026",
-    headline: "Git Profile & Workspace Sync: VS Code Developer Extension",
+    categoryLabel: "Personal Project",
+    featured: true,
+    featuredLabel: "Featured Project",
+    project_date: "Aug 2026",
+    headline: "Invitr: Digital Invitation & RSVP System",
     description:
-      "VS Code developer productivity extension that automates switching between multiple GitHub profiles, Git commit identities, and workspace repository directories in one click.",
+      "Replaces expensive paper stationery and stressful RSVP follow-ups with interactive digital event invitations for weddings and corporate gatherings. Enables guests to view venue maps, confirm attendance online, and receive automated email reminders with real-time headcount tracking for organizers.",
     contributions: [
-      "Engineered one-click status bar profile switcher dynamically updating local Git config user identity and push credentials without identity mismatch.",
-      "Built automatic repository organization engine categorizing disk repositories into profile-isolated directories with zero credential collisions.",
-      "Integrated secure secret storage using the VS Code SecretStorage API for encrypted Personal Access Token persistence.",
-      "Packaged and published extension VSIX build supporting automated workspace detection and multi-account GitHub synchronization.",
+      "Developed responsive digital event portals with interactive live countdown timers, integrated Google Maps venue navigation, and mobile-first RSVP submission forms.",
+      "Integrated Brevo SMTP email automation pipelines to dispatch instant RSVP confirmations, QR check-in passes, and automated event reminders directly to attendee inboxes.",
+      "Architected a Laravel 12 and MySQL organizer dashboard tracking live headcount tallies, meal preferences, and attendance statuses with 1-click CSV roster export capability.",
+      "Authored automated feature and unit test suites using PHPUnit, ensuring robust data validation, zero regressions across RSVP submissions, and secure database migrations.",
     ],
-    tags: ["VS Code Extension", "TypeScript", "Node.js", "Git Automation", "VS Code API"],
+    tags: ["Laravel 12", "PHP", "Blade", "MySQL", "Tailwind CSS", "Alpine.js", "Brevo SMTP", "PHPUnit"],
     screenshots: [],
-    source_code_url: "https://github.com/nathanielfaborada/vscode-git-profile-switch",
+    source_code_url: "https://github.com/nathanielfaborada/laravel-digital-invitation-rsvp-system",
     stars: null,
   },
   {
@@ -185,46 +186,6 @@ export const PROJECTS_DATA = [
     stars: null,
   },
   {
-    id: "antigravity-usage-monitor",
-    category: "personal",
-    categoryLabel: "Personal Utility",
-    featured: false,
-    project_date: "Oct 2026",
-    headline: "Antigravity Usage Monitor: VS Code Developer Extension",
-    description:
-      "VS Code status bar extension that tracks active Antigravity CLI quota limits, hourly reset times, and daily token budgets directly inside the developer editor.",
-    contributions: [
-      "Engineered status bar integration reading encrypted session credentials from Windows Credential Manager via native bindings.",
-      "Implemented real-time hover widgets showing weekly token limits, quota consumption velocity, and reset alarms.",
-      "Packaged and published local VSIX builds optimized for low-overhead background polling.",
-    ],
-    tags: ["VS Code Extension", "JavaScript", "Node.js", "Windows API"],
-    screenshots: [],
-    source_code_url: "https://github.com/nathanielfaborada/antigravity-usage-monitor",
-    stars: null,
-  },
-  {
-    id: "invitr",
-    category: "personal",
-    categoryLabel: "Personal Project",
-    featured: true,
-    featuredLabel: "Featured Project",
-    project_date: "Aug 2026",
-    headline: "Invitr: Digital Invitation & RSVP System",
-    description:
-      "Replaces expensive paper stationery and stressful RSVP follow-ups with interactive digital event invitations for weddings and corporate gatherings. Enables guests to view venue maps, confirm attendance online, and receive automated email reminders with real-time headcount tracking for organizers.",
-    contributions: [
-      "Developed responsive digital event portals with interactive live countdown timers, integrated Google Maps venue navigation, and mobile-first RSVP submission forms.",
-      "Integrated Brevo SMTP email automation pipelines to dispatch instant RSVP confirmations, QR check-in passes, and automated event reminders directly to attendee inboxes.",
-      "Architected a Laravel 12 and MySQL organizer dashboard tracking live headcount tallies, meal preferences, and attendance statuses with 1-click CSV roster export capability.",
-      "Authored automated feature and unit test suites using PHPUnit, ensuring robust data validation, zero regressions across RSVP submissions, and secure database migrations.",
-    ],
-    tags: ["Laravel 12", "PHP", "Blade", "MySQL", "Tailwind CSS", "Alpine.js", "Brevo SMTP", "PHPUnit"],
-    screenshots: [],
-    source_code_url: "https://github.com/nathanielfaborada/laravel-digital-invitation-rsvp-system",
-    stars: null,
-  },
-  {
     id: "utang-mo-app",
     category: "personal",
     categoryLabel: "Personal Project",
@@ -243,6 +204,49 @@ export const PROJECTS_DATA = [
     source_code_url: "https://github.com/nathanielfaborada/utang-mo-app",
     stars: null,
   },
+
+  // ==========================================
+  // SECTION 3: DEVELOPER TOOLS & EXTENSIONS
+  // ==========================================
+  {
+    id: "vscode-git-profile-switch",
+    category: "tools",
+    categoryLabel: "Developer Tool",
+    featured: false,
+    project_date: "Nov 2026",
+    headline: "Git Profile & Workspace Sync: VS Code Developer Extension",
+    description:
+      "VS Code developer productivity extension that automates switching between multiple GitHub profiles, Git commit identities, and workspace repository directories in one click.",
+    contributions: [
+      "Engineered one-click status bar profile switcher dynamically updating local Git config user identity and push credentials without identity mismatch.",
+      "Built automatic repository organization engine categorizing disk repositories into profile-isolated directories with zero credential collisions.",
+      "Integrated secure secret storage using the VS Code SecretStorage API for encrypted Personal Access Token persistence.",
+      "Packaged and published extension VSIX build supporting automated workspace detection and multi-account GitHub synchronization.",
+    ],
+    tags: ["VS Code Extension", "TypeScript", "Node.js", "Git Automation", "VS Code API"],
+    screenshots: [],
+    source_code_url: "https://github.com/nathanielfaborada/vscode-git-profile-switch",
+    stars: null,
+  },
+  {
+    id: "antigravity-usage-monitor",
+    category: "tools",
+    categoryLabel: "Developer Tool",
+    featured: false,
+    project_date: "Oct 2026",
+    headline: "Antigravity Usage Monitor: VS Code Developer Extension",
+    description:
+      "VS Code status bar extension that tracks active Antigravity CLI quota limits, hourly reset times, and daily token budgets directly inside the developer editor.",
+    contributions: [
+      "Engineered status bar integration reading encrypted session credentials from Windows Credential Manager via native bindings.",
+      "Implemented real-time hover widgets showing weekly token limits, quota consumption velocity, and reset alarms.",
+      "Packaged and published local VSIX builds optimized for low-overhead background polling.",
+    ],
+    tags: ["VS Code Extension", "JavaScript", "Node.js", "Windows API"],
+    screenshots: [],
+    source_code_url: "https://github.com/nathanielfaborada/antigravity-usage-monitor",
+    stars: null,
+  },
 ];
 
 export const HAS_CERTIFICATES = false;
@@ -251,6 +255,7 @@ const BASE_CATEGORY_FILTERS = [
   { key: "all", label: "All Projects" },
   { key: "organization", label: "Capstone & Organizations" },
   { key: "personal", label: "Personal Projects" },
+  { key: "tools", label: "Developer Tools" },
 ];
 
 export const CATEGORY_FILTERS = BASE_CATEGORY_FILTERS;
